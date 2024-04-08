@@ -6,10 +6,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
-  LoginHandler(data:any){
+  constructor(private router: Router) { }
+  LoginHandler(data: any) {
     console.log(data)
-    this.router.navigate(['adminDashboard']); 
+    if (data.username == "admin") {
+      this.router.navigate(['adminDashboard']);
+    }
+    else {
+
+    }
   }
 
 }

@@ -6,7 +6,9 @@ import { CoursesService } from 'src/app/courses.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  coursesData: any
+  coursesData: any;
+  selected: string | undefined;
+  employeeId: Boolean | undefined;
 
   constructor(private courseDetail: CoursesService) {
 
@@ -17,6 +19,21 @@ export class SignupComponent {
 
 
   }
+
+  selectOption(value: string): void {
+    this.selected = value; // Update the variable with the selected value
+    console.log(this.selected)
+    if (this.selected == "Railways") {
+      this.employeeId = false
+      // console.log(this.employeeId)
+    } else {
+      this.employeeId = true
+    }
+  }
+
+  selectEmpGrp(value: string): void {
+  }
+
 
   signupHandler(data: any) {
     console.log(data)

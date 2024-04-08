@@ -4,28 +4,30 @@
         <form #signupForm="ngForm" (ngSubmit)="signupHandler(signupForm.value)" class="row g-3">
             <div class="col-md-3">
                 <label for="inputEmail4" class="form-label">Course Name</label>
-                <select ngModel name="courseName" class="form-select" id="courseName" aria-label="courseName">
+                <select ngModel name="coursename" class="form-select" id="courseName" aria-label="courseName">
                     <option selected>Select Option</option>
-                    <option *ngFor="let courses of coursesData" value="Male">{{courses.courseName}}</option>
-                   
+                    <option *ngFor="let courses of coursesData" value={{courses.courseName}}>{{courses.courseName}}</option>
+
+                </select>
+            </div>
+            <div class="col-md-3 ">
+                <label for="employeeType" class="form-label">Employee Type</label>
+                <select [(ngModel)]="selected" (ngModelChange)="selectOption($event)" name="employeeType"
+                    class="form-select" id="employeeType">
+                    <option selected>Select Option</option>
+                    <option value="Railways">Railways</option>
+                    <option value="Non Railways">Non Railways</option>
                 </select>
             </div>
             <div class="col-md-3">
                 <label for="inputAddress" class="form-label">Emloyee ID</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Please Enter Employee ID">
+                <input [disabled]=employeeId type="text" class="form-control" id="inputAddress"
+                    placeholder="Please Enter Employee ID">
             </div>
-            <div class="col-md-3 ">
-                <label for="employeeType" class="form-label">Employee Type</label>
-                <select ngModel name="employeeType" class="form-select" id="employeeType" aria-label="employeeType">
-                    <option selected>Select Option</option>
-                    <option value="Male">Railways</option>
-                    <option value="Female">Non Railways</option>
-                </select>
-            </div>
-
             <div class="col-md-3">
                 <label for="employeName" class="form-label">Employee Name</label>
-                <input name="employeName" ngModel type="text" class="form-control" id="employeName" placeholder="Please Enter Name">
+                <input name="employeName" ngModel type="text" class="form-control" id="employeName"
+                    placeholder="Please Enter Name">
             </div>
             <div class="col-md-3 ">
                 <label for="gender" class="form-label">Gender</label>
@@ -45,35 +47,86 @@
             </div>
             <div class="col-md-3 ">
                 <label for="employeegroup" class="form-label">Group</label>
-                <select ngModel name="employeegroup" class="form-select" id="employeegroup" aria-label="employeegroup">
+                <select [(ngModel)]="selected" name="employeegroup" (ngModelChange)="selectEmpGrp($event)"
+                    class="form-select" id="employeegroup" aria-label="employeegroup">
                     <option selected>Select Option</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="groupA">Group A</option>
+                    <option value="groupBtoA">Group A (Promoted From Group B)</option>
+                    <option value="groupB">Group B</option>
+                    <option value="supervisor">Supervisor</option>
+                    <option value="nonSupervisor">Non Supervisor</option>
                 </select>
             </div>
             <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Grade</label>
-                <select class="form-select" aria-label="Default select example">
+                <select ngModel name="grade" class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <!-- Conditional rendering based on employeegroup -->
+                    <ng-container *ngIf="selected === 'groupA' || selected === 'groupBtoA' || selected === 'groupB'">
+                        <option value="HAG">HAG</option>
+                        <option value="HAGNF">HAG (NF)</option>
+                        <option value="SAG">SAG</option>
+                        <option value="SAGNF">SAG (NF)</option>
+                        <option value="JAG">JAG</option>
+                        <option value="SG">JAG (Adhoc)</option>
+                        <option value="SS">SS</option>
+                        <option value="JS">JS</option>
+                        <!-- Add other grade1 options here -->
+                    </ng-container>
+                    <ng-container *ngIf="selected !== 'groupA' && selected !== 'groupBtoA' && selected !== 'groupB'">
+                        <option value="GroupC54">Group C(GP-5400)</option>
+                        <option value="GroupC48">Group C(GP-4800)</option>
+                        <option value="GroupC46">Group C(GP-4600)</option>
+                        <option value="GroupC42">Group C(GP-4200)</option>
+                        <option value="GroupC28">Group C(GP-2800)</option>
+                        <option value="GroupC24">Group C(GP-2400)</option>
+                        <!-- Add other grade2 options here -->
+                    </ng-container>
                 </select>
             </div>
             <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Department</label>
-                <select class="form-select" aria-label="Default select example">
+                <select ngModel name="Department" class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <!-- Conditional rendering based on employeegroup -->
+                    <ng-container *ngIf="selected === 'groupA' || selected === 'groupBtoA' || selected === 'groupB'">
+                        <option value="IRMS">IRMS</option>
+                        <option value="IRTS(Traffic)">IRTS (Traffic)</option>
+                        <option value="IRSME(Mechanical)">IRSME (Mechanical)</option>
+                        <option value="IRSME(Electrical)">IRSEE (Electrical)</option>
+                        <option value="IRSEE(Signal&Telecom)">IRSEE (Signal & Telecom)</option>
+                        <option value="IRSS(Stores)">IRSS (Stores)</option>
+                        <option value="IRPS(Personnel)">IRPS (Personnel)</option>
+                        <option value="IRAS(Accounts)">IRAS (Accounts)</option>
+                        <option value="IRPFS(RPF)">IRPFS (RPF)</option>
+                        <option value="IRSE(CMS)">IRSE (CMS)</option>
+                        <option value="IRHS(Medical)">IRHS (Medical)</option>
+                        <!-- Add other grade1 options here -->
+                    </ng-container>
+                    <ng-container *ngIf="selected !== 'groupA' && selected !== 'groupBtoA' && selected !== 'groupB'">
+                        <option value="Traffic(Operations)">Traffic (Operations)</option>
+                        <option value="Traffic(commercial)">Traffic (commercial)</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Signal&Telecom">Signal & Telecom</option>
+                        <option value="Stores">Stores</option>
+                        <option value="Personnel">Personnel</option>
+                        <option value="Finance">Finance</option>
+                        <option value="RPF">RPF</option>
+                        <option value="Medical">Medical</option>
+                        <!-- Add other grade2 options here -->
+                    </ng-container>
                 </select>
             </div>
             <div class="col-md-3">
                 <label for="DesignationInEnglish" class="form-label">Designation in English</label>
-                <input type="text" name="DesignationInEnglish" ngModel class="form-control" id="DesignationInEnglish" placeholder="Please Enter Designation">
+                <input type="text" name="designationineng" ngModel class="form-control" id="DesignationInEnglish"
+                    placeholder="Please Enter Designation">
             </div>
             <div class="col-md-3">
                 <label for="DesignationInHindi" class="form-label">Designation in Hindi</label>
-                <input ngModel name="DesignationInHindi" type="text" class="form-control" id="DesignationInHindi">
+                <input ngModel name="designationinhindi" type="text" class="form-control" id="DesignationInHindi">
             </div>
             <div class="col-md-4 ">
                 <label for="inputState" class="form-label">Place of Posting</label>
@@ -88,15 +141,26 @@
                 </select>
             </div>
             <div class="col-md-4 ">
-                <label for="inputState" class="form-label">Zone</label>
+                <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other </label>
                 <select ngModel name="Zone" class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
-                    <option value="Male">Zone</option>
-                    <option value="Female">Railway PSU</option>
-                    <option value="Female">ZRTI</option>
-                    <option value="Female">CTI</option>
-                    <option value="Female">MDTI</option>
-                    <option value="Female">Other</option>
+                    <option value="Male"> Central Railway</option>
+                    <option value="Female">East Central Railway</option>
+                    <option value="Female">East Coast Railway</option>
+                    <option value="Female">Eastern Railway</option>
+                    <option value="Female">Metro Railway Kolkata</option>
+                    <option value="Female">North Central Railway</option>
+                    <option value="Male"> North Eastern Railway</option>
+                    <option value="Female">North Western Railway</option>
+                    <option value="Female">North East Frontier Railway</option>
+                    <option value="Female">Northern Railway</option>
+                    <option value="Female">South Central Railway</option>
+                    <option value="Female">South East Central Railway</option>
+                    <option value="Female">South Eastern Railway</option>
+                    <option value="Female">South Western Railway</option>
+                    <option value="Female">Southern Railway</option>
+                    <option value="Female">West Central Railway</option>
+                    <option value="Female">Western Railway</option>
                 </select>
             </div>
             <div class="col-md-4 ">
@@ -113,15 +177,16 @@
             </div>
             <div class="col-md-3">
                 <label for="Division" class="form-label">CUG Number</label>
-                <input  name="cugno" ngModel type="number" class="form-control" id="Division" placeholder="Please Enter Designation">
+                <input name="cugno" ngModel type="number" class="form-control" id="Division"
+                    placeholder="Please Enter Designation">
             </div>
             <div class="col-md-1">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                      Same
+                        Same
                     </label>
-                  </div>
+                </div>
             </div>
             <div class="col-md-3">
                 <label for="whatsappNo" class="form-label">Whatsapp Number</label>
@@ -133,7 +198,8 @@
             </div>
             <div class="col-md-4 ">
                 <label for="TravelType" class="form-label">Travel Type</label>
-                <select name="TravelType" ngModel class="form-select" id="TravelType" aria-label="Default select example">
+                <select name="TravelType" ngModel class="form-select" id="TravelType"
+                    aria-label="Default select example">
                     <option selected>Select Option</option>
                     <option value="Male">Train</option>
                     <option value="Female">Flight PSU</option>
@@ -155,7 +221,8 @@
             </div>
             <div class="col-md-4">
                 <label for="DepartureTrainFlightNo" class="form-label">Departure Train / Flight No</label>
-                <input name="DepartureTrainFlightNo" ngModel type="email" class="form-control" id="DepartureTrainFlightNo">
+                <input name="DepartureTrainFlightNo" ngModel type="email" class="form-control"
+                    id="DepartureTrainFlightNo">
             </div>
             <div class="col-md-4">
                 <label for="DepartureTime" class="form-label">Depature DateTime</label>
@@ -165,18 +232,23 @@
                 <label for="DepartureStation" class="form-label">Depature Station</label>
                 <input name="DepartureStation" ngModel type="text" class="form-control" id="DepartureStation">
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Person</label>
                 <select name="person" ngModel class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
-                    <option value="Male">1</option>
-                    <option value="Female">2</option>
-                    <option value="Female">3</option>
-                    <option value="Female">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
             </div>
+            <div class="col-md-3 ">
+                <label for="inputState" class="form-label mt-1">Requier Hostel </label><br />
+                <input required class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+            </div>
+
             <div class="col-12 text-center my-5">
-                <button type="submit"  class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
         </form>
     </div>

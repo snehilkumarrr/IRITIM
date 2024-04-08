@@ -7,7 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 
-
+// Carousel Module
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 // Import Modules
 import { UserAuthModule } from './user-auth/user-auth.module';
@@ -26,7 +27,8 @@ import { CoursesComponent } from './components/courses/courses.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
