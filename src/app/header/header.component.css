@@ -1,0 +1,18 @@
+@media (min-width: 544px) {
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+  }
+  .bg-danger {
+    background-color: #db1f48 !important;
+  }
+  .dropdown-item:hover {
+    background-color: #db1f48;
+    color: whitesmoke;
+  }
+  .nav-link:hover {
+    background-color: #ada7a7;
+    color: black !important;
+    font-weight: 600;
+    border-radius: 5px;
+  }

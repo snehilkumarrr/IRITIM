@@ -1,0 +1,51 @@
+.parallaxMain {
+ width: 100%;
+ height:900px;
+ background-image: url(../../assets/images/Admin.jpg);
+ background-size: cover;
+ background-attachment: fixed;
+}
+
+.parallax {
+  width: 100%;
+  height:600px;
+  background-image: url(../../assets/images/Admin.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+ }
+
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+/* Container holding the image and the overlaying div */
+.containerr {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+}
+
+/* Your image style */
+.containerr {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Overlaying div style */
+.Main-Title {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  font-size: 18px;
+  color: #FFE0AE;
+  font-weight: 900;
+  font-size: 250px;
+  letter-spacing: 0.3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for the 3D effect */
+}
+
