@@ -6,8 +6,8 @@
                 <label for="inputEmail4" class="form-label">Course Name</label>
                 <select ngModel name="courseName" class="form-select" id="courseName" aria-label="courseName">
                     <option selected>Select Option</option>
-                    <option value="Male">Railways</option>
-                    <option value="Female">Non Railways</option>
+                    <option *ngFor="let courses of coursesData" value="Male">{{courses.courseName}}</option>
+                   
                 </select>
             </div>
             <div class="col-md-3">
