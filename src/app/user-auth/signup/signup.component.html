@@ -15,7 +15,7 @@
                 <label for="employeeType" class="form-label">Employee Type</label>
                 <select [(ngModel)]="selected" (ngModelChange)="selectOption($event)" name="employeeType"
                     class="form-select" id="employeeType">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Railways">Railways</option>
                     <option value="Non Railways">Non Railways</option>
                 </select>
@@ -33,7 +33,7 @@
             <div class="col-md-3 ">
                 <label for="gender" class="form-label">Gender</label>
                 <select ngModel name="gender" class="form-select" id="gender" aria-label="gender">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
@@ -50,7 +50,7 @@
                 <label for="employeegroup" class="form-label">Group</label>
                 <select [(ngModel)]="selected" name="employeegroup" (ngModelChange)="selectEmpGrp($event)"
                     class="form-select" id="employeegroup" aria-label="employeegroup">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="groupA">Group A</option>
                     <option value="groupBtoA">Group A (Promoted From Group B)</option>
                     <option value="groupB">Group B</option>
@@ -132,7 +132,7 @@
             <div class="col-md-4 ">
                 <label for="inputState" class="form-label">Place of Posting</label>
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Male">Zone</option>
                     <option value="Female">Railway PSU</option>
                     <option value="Female">ZRTI</option>
@@ -144,7 +144,7 @@
             <div class="col-md-4 ">
                 <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other </label>
                 <select ngModel name="Zone" class="form-select" aria-label="Default select example">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Male"> Central Railway</option>
                     <option value="Female">East Central Railway</option>
                     <option value="Female">East Coast Railway</option>
@@ -167,7 +167,7 @@
             <div class="col-md-4 ">
                 <label for="Division" class="form-label">Division</label>
                 <select name="Division" ngModel class="form-select" id="Division" aria-label="Division">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Male">Zone</option>
                     <option value="Female">Railway PSU</option>
                     <option value="Female">ZRTI</option>
@@ -176,22 +176,27 @@
                     <option value="Female">Other</option>
                 </select>
             </div>
+            <!-- CUG Number input -->
             <div class="col-md-3">
                 <label for="Division" class="form-label">CUG Number</label>
-                <input name="cugno" ngModel type="number" class="form-control" id="Division"
-                    placeholder="Please Enter Designation">
+                <input name="cugno" ngModel type="number" class="form-control" id="Division" #cugInput>
             </div>
+
+            <!-- Same checkbox -->
             <div class="col-md-1">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                        [(ngModel)]="sameNumberChecked">
                     <label class="form-check-label" for="flexCheckDefault">
                         Same
                     </label>
                 </div>
             </div>
+
+            <!-- Whatsapp Number input -->
             <div class="col-md-3">
                 <label for="whatsappNo" class="form-label">Whatsapp Number</label>
-                <input name="whatsappNo" ngModel type="number" class="form-control" id="whatsappNo">
+                <input name="whatsappNo" ngModel type="number" class="form-control" id="whatsappNo" #whatsappInput>
             </div>
             <div class="col-md-4">
                 <label for="email" class="form-label">Email ID</label>
@@ -201,7 +206,7 @@
                 <label for="TravelType" class="form-label">Travel Type</label>
                 <select name="TravelType" ngModel class="form-select" id="TravelType"
                     aria-label="Default select example">
-                    <option selected>Select Option</option>
+                    <!-- <option selected>Select Option</option> -->
                     <option value="Train">Train</option>
                     <option value="Flight">Flight </option>
                     <option value="Road">Road</option>
@@ -233,27 +238,28 @@
                 <label for="DepartureStation" class="form-label">Depature Station</label>
                 <input name="DepartureStation" ngModel type="text" class="form-control" id="DepartureStation">
             </div>
-            <div class="col-md-3 ">
-                <label for="inputState" class="form-label">Person</label>
-                <select name="personType" ngModel class="form-select">
-                    <option selected>Select Option</option>
+            <div class="col-md-3">
+                <label for="inputState" class="form-label">Person Type</label>
+                <select name="personType" [(ngModel)]="selectedPersonType" class="form-select">
                     <option value="self">Self</option>
                     <option value="family">Family</option>
                 </select>
             </div>
-            <div class="col-md-3 ">
+
+            <div class="col-md-3" *ngIf="selectedPersonType === 'family'">
                 <label for="inputState" class="form-label">Person</label>
                 <select name="person" ngModel class="form-select" aria-label="Default select example">
-                    <option selected>Select Option</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
             </div>
+
             <div class="col-md-3 ">
                 <label for="inputState" class="form-label mt-1">Requier Hostel </label><br />
-                <input required class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                <input ngModel name="hostel" checked class="form-check-input" type="checkbox" id="checkboxNoLabel"
+                    value="true" aria-label="...">
             </div>
 
             <div class="col-12 text-center my-5">
