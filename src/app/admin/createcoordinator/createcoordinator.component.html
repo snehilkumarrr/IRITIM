@@ -1,0 +1,26 @@
+<div class="container" style="margin-top:190px;height: 50vh;">
+    <h1 class="text-center">Create Coordinator </h1>
+    <form #createCoordinator="ngForm" (ngSubmit)="createCoordinatorHandler(createCoordinator.value)" class="row g-3">
+        <div class="col-md-3">
+            <label for="inputEmail4" class="form-label">Coordinator Name</label>
+            <input ngModel name="name" type="text" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-3">
+            <label for="inputEmail4" class="form-label">Employee ID</label>
+            <input ngModel name="empid" type="text" class="form-control" id="inputEmail4">
+        </div>
+
+        <div class="col-md-3">
+            <label for="inputAddress" class="form-label">Email ID</label>
+            <input ngModel name="emailid" type="text" class="form-control" id="inputAddress">
+        </div>
+        <div class="col-md-3">
+            <label for="inputPassword4" class="form-label">Mobile No</label>
+            <input ngModel name="mobileno" type="text" class="form-control" id="inputAddress">
+        </div>
+
+        <div class="col-12 text-center my-4">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>

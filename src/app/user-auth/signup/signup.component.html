@@ -11,31 +11,36 @@
 
                 </select>
             </div>
+            <div class="col-md-3">
+                <label for="inputAddress" class="form-label">Course Code</label>
+                <input ngModel name="coursecode" type="text" class="form-control" id="inputAddress"
+                    >
+            </div>
             <div class="col-md-3 ">
                 <label for="employeeType" class="form-label">Employee Type</label>
-                <select [(ngModel)]="selected" (ngModelChange)="selectOption($event)" name="employeeType"
+                <select [(ngModel)]="selected" (ngModelChange)="selectOption($event)" name="employeetype"
                     class="form-select" id="employeeType">
                     <!-- <option selected>Select Option</option> -->
                     <option value="Railways">Railways</option>
                     <option value="Non Railways">Non Railways</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div  *ngIf="selected === 'Railways'" class="col-md-3">
                 <label for="inputAddress" class="form-label">Emloyee ID</label>
-                <input [disabled]=employeeId type="text" class="form-control" id="inputAddress"
+                <input  type="text" class="form-control" name="hrmsid" ngModel id="inputAddress"
                     placeholder="Please Enter Employee ID">
             </div>
             <div class="col-md-3">
                 <label for="employeName" class="form-label">Employee Name</label>
-                <input name="employeName" ngModel type="text" class="form-control" id="employeName"
+                <input name="name" ngModel type="text" class="form-control" id="employeName"
                     placeholder="Please Enter Name">
             </div>
             <div class="col-md-3 ">
                 <label for="gender" class="form-label">Gender</label>
                 <select ngModel name="gender" class="form-select" id="gender" aria-label="gender">
                     <!-- <option selected>Select Option</option> -->
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
                 </select>
             </div>
             <div class="col-md-3">
@@ -44,11 +49,11 @@
             </div>
             <div class="col-md-3">
                 <label for="doj" class="form-label">D.o.J</label>
-                <input name="doj" ngModel type="date" class="form-control" id="doj">
+                <input name="dateofappointment" ngModel type="date" class="form-control" id="doj">
             </div>
             <div class="col-md-3 ">
                 <label for="employeegroup" class="form-label">Group</label>
-                <select [(ngModel)]="selected" name="employeegroup" (ngModelChange)="selectEmpGrp($event)"
+                <select [(ngModel)]="selectGroup" name="group" (ngModelChange)="selectEmpGrp($event)"
                     class="form-select" id="employeegroup" aria-label="employeegroup">
                     <!-- <option selected>Select Option</option> -->
                     <option value="groupA">Group A</option>
@@ -63,7 +68,7 @@
                 <select ngModel name="grade" class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
                     <!-- Conditional rendering based on employeegroup -->
-                    <ng-container *ngIf="selected === 'groupA' || selected === 'groupBtoA' || selected === 'groupB'">
+                    <ng-container *ngIf="selectGroup === 'groupA' || selectGroup === 'groupBtoA' || selectGroup === 'groupB'">
                         <option value="HAG">HAG</option>
                         <option value="HAGNF">HAG (NF)</option>
                         <option value="SAG">SAG</option>
@@ -74,7 +79,7 @@
                         <option value="JS">JS</option>
                         <!-- Add other grade1 options here -->
                     </ng-container>
-                    <ng-container *ngIf="selected !== 'groupA' && selected !== 'groupBtoA' && selected !== 'groupB'">
+                    <ng-container *ngIf="selectGroup !== 'groupA' && selectGroup !== 'groupBtoA' && selectGroup !== 'groupB'">
                         <option value="GroupC54">Group C(GP-5400)</option>
                         <option value="GroupC48">Group C(GP-4800)</option>
                         <option value="GroupC46">Group C(GP-4600)</option>
@@ -87,10 +92,10 @@
             </div>
             <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Department</label>
-                <select ngModel name="Department" class="form-select" aria-label="Default select example">
+                <select ngModel name="department" class="form-select" aria-label="Default select example">
                     <option selected>Select Option</option>
                     <!-- Conditional rendering based on employeegroup -->
-                    <ng-container *ngIf="selected === 'groupA' || selected === 'groupBtoA' || selected === 'groupB'">
+                    <ng-container *ngIf="selectGroup === 'groupA' || selectGroup === 'groupBtoA' || selectGroup === 'groupB'">
                         <option value="IRMS">IRMS</option>
                         <option value="IRTS(Traffic)">IRTS (Traffic)</option>
                         <option value="IRSME(Mechanical)">IRSME (Mechanical)</option>
@@ -104,7 +109,7 @@
                         <option value="IRHS(Medical)">IRHS (Medical)</option>
                         <!-- Add other grade1 options here -->
                     </ng-container>
-                    <ng-container *ngIf="selected !== 'groupA' && selected !== 'groupBtoA' && selected !== 'groupB'">
+                    <ng-container *ngIf="selectGroup !== 'groupA' && selectGroup !== 'groupBtoA' && selectGroup !== 'groupB'">
                         <option value="Traffic(Operations)">Traffic (Operations)</option>
                         <option value="Traffic(commercial)">Traffic (commercial)</option>
                         <option value="Mechanical">Mechanical</option>
@@ -125,65 +130,43 @@
                 <input type="text" name="designationineng" ngModel class="form-control" id="DesignationInEnglish"
                     placeholder="Please Enter Designation">
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <label for="DesignationInHindi" class="form-label">Designation in Hindi</label>
                 <input ngModel name="designationinhindi" type="text" class="form-control" id="DesignationInHindi">
-            </div>
+            </div> -->
             <div class="col-md-4 ">
                 <label for="inputState" class="form-label">Place of Posting</label>
-                <select class="form-select" aria-label="Default select example">
+                <select [(ngModel)]="placeofposting" name="placeofposting" (ngModelChange)="selectpop($event)" class="form-select" aria-label="Default select example">
                     <!-- <option selected>Select Option</option> -->
-                    <option value="Male">Zone</option>
-                    <option value="Female">Railway PSU</option>
-                    <option value="Female">ZRTI</option>
-                    <option value="Female">CTI</option>
-                    <option value="Female">MDTI</option>
-                    <option value="Female">Other</option>
+                    <option value="ZN">Zone</option>
+                    <option value="PU">Railway PSU</option>
+                    <option value="RB">Railway Board</option>
+                    <option value="TC">Railway Institute</option>
                 </select>
             </div>
             <div class="col-md-4 ">
                 <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other </label>
-                <select ngModel name="Zone" class="form-select" aria-label="Default select example">
+                <select [(ngModel)]="railwaydivisions" name="zone" (ngModelChange)="selectDivision($event)" class="form-select" aria-label="Default select example">
                     <!-- <option selected>Select Option</option> -->
-                    <option value="Male"> Central Railway</option>
-                    <option value="Female">East Central Railway</option>
-                    <option value="Female">East Coast Railway</option>
-                    <option value="Female">Eastern Railway</option>
-                    <option value="Female">Metro Railway Kolkata</option>
-                    <option value="Female">North Central Railway</option>
-                    <option value="Male"> North Eastern Railway</option>
-                    <option value="Female">North Western Railway</option>
-                    <option value="Female">North East Frontier Railway</option>
-                    <option value="Female">Northern Railway</option>
-                    <option value="Female">South Central Railway</option>
-                    <option value="Female">South East Central Railway</option>
-                    <option value="Female">South Eastern Railway</option>
-                    <option value="Female">South Western Railway</option>
-                    <option value="Female">Southern Railway</option>
-                    <option value="Female">West Central Railway</option>
-                    <option value="Female">Western Railway</option>
+                    <option *ngFor="let zonal of railwaysData" value="{{zonal.zn_CD}}"> {{zonal.zn_NM}}</option>
                 </select>
             </div>
             <div class="col-md-4 ">
                 <label for="Division" class="form-label">Division</label>
-                <select name="Division" ngModel class="form-select" id="Division" aria-label="Division">
+                <select name="division" ngModel class="form-select" id="Division" aria-label="Division">
                     <!-- <option selected>Select Option</option> -->
-                    <option value="Male">Zone</option>
-                    <option value="Female">Railway PSU</option>
-                    <option value="Female">ZRTI</option>
-                    <option value="Female">CTI</option>
-                    <option value="Female">MDTI</option>
-                    <option value="Female">Other</option>
+                    <option *ngFor="let division of rlydivision" value="{{division.div_CD}}">{{division.div_NM}}</option>
+                    
                 </select>
             </div>
             <!-- CUG Number input -->
             <div class="col-md-3">
                 <label for="Division" class="form-label">CUG Number</label>
-                <input name="cugno" ngModel type="number" class="form-control" id="Division" #cugInput>
+                <input name="contactnumber" ngModel type="number" class="form-control" id="Division" #cugInput>
             </div>
 
             <!-- Same checkbox -->
-            <div class="col-md-1">
+            <!-- <div class="col-md-1">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="flexCheckDefault"
                         [(ngModel)]="sameNumberChecked">
@@ -191,20 +174,20 @@
                         Same
                     </label>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Whatsapp Number input -->
             <div class="col-md-3">
                 <label for="whatsappNo" class="form-label">Whatsapp Number</label>
-                <input name="whatsappNo" ngModel type="number" class="form-control" id="whatsappNo" #whatsappInput>
+                <input name="whatsappno" ngModel type="number" class="form-control" id="whatsappNo" #whatsappInput>
             </div>
             <div class="col-md-4">
                 <label for="email" class="form-label">Email ID</label>
-                <input name="email" ngModel type="email" class="form-control" id="email">
+                <input name="emailid" ngModel type="email" class="form-control" id="email">
             </div>
             <div class="col-md-4 ">
-                <label for="TravelType" class="form-label">Travel Type</label>
-                <select name="TravelType" ngModel class="form-select" id="TravelType"
+                <label for="TravelType" class="form-label">Arrival Travel Type</label>
+                <select name="arrivalmode" ngModel class="form-select" id="TravelType"
                     aria-label="Default select example">
                     <!-- <option selected>Select Option</option> -->
                     <option value="Train">Train</option>
@@ -215,32 +198,43 @@
             </div>
             <div class="col-md-4">
                 <label for="ArrivalTrainFlightNo" class="form-label">Arrival Train / Flight No</label>
-                <input name="ArrivalTrainFlightNo" ngModel type="email" class="form-control" id="ArrivalTrainFlightNo">
+                <input name="arrivalnumber" ngModel type="email" class="form-control" id="ArrivalTrainFlightNo">
             </div>
             <div class="col-md-2">
                 <label for="ArrivalStation" class="form-label">Arrival DateTime</label>
-                <input name="ArrivalDateTime" ngModel type="datetime-local" class="form-control" id="ArrivalStation">
+                <input name="arrivalscheduletime" ngModel type="datetime-local" class="form-control" id="ArrivalStation">
             </div>
             <div class="col-md-2">
                 <label for="ArrivalStation" class="form-label">Arrival Station</label>
-                <input name="ArrivalStation" ngModel type="text" class="form-control" id="ArrivalStation">
+                <input name="arrivallocation" ngModel type="text" class="form-control" id="ArrivalStation">
+            </div>
+            <div class="col-md-4 ">
+                <label for="departuremode" class="form-label">Dept Travel Type</label>
+                <select name="departuremode" ngModel class="form-select" id="departuremode"
+                    aria-label="Default select example">
+                    <!-- <option selected>Select Option</option> -->
+                    <option value="Train">Train</option>
+                    <option value="Flight">Flight </option>
+                    <option value="Road">Road</option>
+                    <option value="LocalResident">Local Resident</option>
+                </select>
             </div>
             <div class="col-md-4">
                 <label for="DepartureTrainFlightNo" class="form-label">Departure Train / Flight No</label>
-                <input name="DepartureTrainFlightNo" ngModel type="email" class="form-control"
+                <input name="departurenumber" ngModel type="email" class="form-control"
                     id="DepartureTrainFlightNo">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="DepartureTime" class="form-label">Depature DateTime</label>
-                <input name="DepartureTime" ngModel type="datetime-local" class="form-control" id="DepartureTime">
+                <input name="departurescheduletime" ngModel type="datetime-local" class="form-control" id="DepartureTime">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="DepartureStation" class="form-label">Depature Station</label>
-                <input name="DepartureStation" ngModel type="text" class="form-control" id="DepartureStation">
+                <input name="departurelocation" ngModel type="text" class="form-control" id="DepartureStation">
             </div>
             <div class="col-md-3">
                 <label for="inputState" class="form-label">Person Type</label>
-                <select name="personType" [(ngModel)]="selectedPersonType" class="form-select">
+                <select name="familydetails" [(ngModel)]="selectedPersonType" class="form-select">
                     <option value="self">Self</option>
                     <option value="family">Family</option>
                 </select>
@@ -248,7 +242,7 @@
 
             <div class="col-md-3" *ngIf="selectedPersonType === 'family'">
                 <label for="inputState" class="form-label">Person</label>
-                <select name="person" ngModel class="form-select" aria-label="Default select example">
+                <select name="noofmember" ngModel class="form-select" aria-label="Default select example">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -256,11 +250,11 @@
                 </select>
             </div>
 
-            <div class="col-md-3 ">
+            <!-- <div class="col-md-3 ">
                 <label for="inputState" class="form-label mt-1">Requier Hostel </label><br />
                 <input ngModel name="hostel" checked class="form-check-input" type="checkbox" id="checkboxNoLabel"
                     value="true" aria-label="...">
-            </div>
+            </div> -->
 
             <div class="col-12 text-center my-5">
                 <button type="submit" class="btn btn-primary">Sign in</button>

@@ -8,6 +8,9 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
 import { CreatecourseComponent } from './admin/createcourse/createcourse.component';
 import { ViewCourseComponent } from './admin/view-course/view-course.component';
 import { ScheduleCourseComponent } from './admin/schedule-course/schedule-course.component';
+import { CreatecoordinatorComponent } from './admin/createcoordinator/createcoordinator.component';
+import { ViewcoordinatorComponent } from './admin/viewcoordinator/viewcoordinator.component';
+import { EditcoordinatorComponent } from './admin/editcoordinator/editcoordinator.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -17,10 +20,13 @@ const routes: Routes = [
   { path: 'CreateCourse', component: CreatecourseComponent },
   { path: 'ViewCourse', component: ViewCourseComponent },
   { path: 'ScheduleCourse', component: ScheduleCourseComponent },
+  { path: 'CreateCoordinator', component: CreatecoordinatorComponent },
+  { path: 'ViewCoordinator', component: ViewcoordinatorComponent },
+  { path: 'Editcoordinator', component: EditcoordinatorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

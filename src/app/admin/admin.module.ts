@@ -5,19 +5,25 @@ import { CoursesComponent } from './courses/courses.component';
 import { CreatecourseComponent } from './createcourse/createcourse.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { ScheduleCourseComponent } from './schedule-course/schedule-course.component';
-
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { CreatecoordinatorComponent } from './createcoordinator/createcoordinator.component';
+import { ViewcoordinatorComponent } from './viewcoordinator/viewcoordinator.component';
+import { EditcoordinatorComponent } from './editcoordinator/editcoordinator.component';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     CoursesComponent,
     CreatecourseComponent,
     ViewCourseComponent,
-    ScheduleCourseComponent
+    ScheduleCourseComponent,
+    CreatecoordinatorComponent,
+    ViewcoordinatorComponent,
+    EditcoordinatorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule
   ]
 })
 export class AdminModule { }

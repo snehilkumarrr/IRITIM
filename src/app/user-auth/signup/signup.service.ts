@@ -4,9 +4,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class SignupService {
-  url=""
-  data:any
+  url = "http://172.16.14.78:8080/Dashboard/saveregistraiondata"
+
   constructor(private http: HttpClient) {
-    this.http.post(this.url,this.data)
   }
+
+  saveUser(data: any) {
+    console.log(data)
+    return this.http.post(this.url, data)
+  }
+
+
 }

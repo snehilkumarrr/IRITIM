@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-dashboard.component.css'],
 })
 export class AdminDashboardComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   createCourses() {
     this.router.navigate(['CreateCourse']);
   }
@@ -15,5 +15,11 @@ export class AdminDashboardComponent {
   }
   ScheduleCourse() {
     this.router.navigate(['ScheduleCourse']);
+  }
+  CreateCoordinator() {
+    this.router.navigate(['CreateCoordinator']);
+  }
+  ViewCoordinator(){
+    this.router.navigate(['ViewCoordinator']);
   }
 }
