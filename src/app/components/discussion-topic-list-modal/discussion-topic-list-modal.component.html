@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Topic</h4>
+  </div>
+  <div class="modal-body">
+  <div class="container">
+    <div style="text-align: center;" *ngIf="message!=null">
+        <h6 [ngClass]="colorClass">{{message}}</h6>
+    </div>
+      <form #form="ngForm" (ngSubmit)="addTopicSubmit(form)" class="row">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <div class="form-group">
+                  <h5>Topic <font color="red">*</font></h5>
+                  <textarea [(ngModel)]="topicModel.topic" name="topicModel.topic" style="width:100%;height:300px" required></textarea>
+                </div>
+              </div>
+              </div>
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+              <button type="button" class="close btn btn-secondary" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+                Cancel
+              </button>
+            </div>
+      </form>
+  </div>
+  </div>
+  

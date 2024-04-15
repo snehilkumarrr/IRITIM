@@ -1,0 +1,75 @@
+<div class="container" style="margin-top:190px ;">
+    <div class="row justify-content-center mt-5">
+        <div class="card">
+            <div class="card-header" style="text-align: center;">
+                <h4>Discussion</h4>
+            </div>
+            <div class="card-body">
+                <div style="text-align: center;" *ngIf="message!=null">
+                    <h6 [ngClass]="colorClass">{{message}}</h6>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <h5>Topic:</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="single-comment justify-content-between d-flex">
+                            <div class="user justify-content-between d-flex">
+                                <div class="desc">
+                                    <h6>{{topicCommentListModel.topicModel.createdBy}}</h6>
+                                    <p class="date">{{topicCommentListModel.topicModel.createdAt}}</p>
+                                    <p>
+                                        {{topicCommentListModel.topicModel.topic}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="reply-btn">
+                                <button type="button" *ngIf="topicCommentListModel.topicModel.open" (click)="replyCommentModel(topicCommentListModel.topicModel)"
+                                    class="btn-reply text-uppercase">Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments-area">
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <h5>Comments:</h5>
+                        </div>
+                    </div>
+                    <div class="comment-list">
+
+                        <app-discussion-topic-comments-inner *ngIf="topicCommentListModel.topicCommentModelList!=null"
+                            [innerCommentList]="topicCommentListModel.topicCommentModelList"
+                            [topicId]="topicCommentListModel.topicModel.id" [pageNo]="pageNo"
+                            [open]="topicCommentListModel.topicModel.open"
+                            (topicCommentListModel)="receiveTopicCommentListModel($event)"></app-discussion-topic-comments-inner>
+
+                    </div>
+                    <div class="row" *ngIf="topicCommentListModel.topicModel.totalPages==0">
+                        <div class="col-md-12 mb-2" style="text-align: center;">
+                            <p style="text-align:center">
+                                No comment found
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="topicCommentListModel.topicModel.totalPages>0">
+                        <div class="col-md-12 mb-2" style="text-align: center;">
+                            Page No. {{pageNo}} of {{topicCommentListModel.topicModel.totalPages}}
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="topicCommentListModel.topicModel.totalPages>1">
+                        <div class="col-md-12 mb-2" style="text-align: center;">
+                            <small><a *ngIf="pageNo>1" [routerLink]="['/DiscussionTopicComments']"
+                                [queryParams]="{topicId: topicCommentListModel.topicModel.id,pageNo:pageNo-1}">Previous
+                                Page</a>&nbsp;&nbsp;
+                            <a *ngIf="pageNo<topicCommentListModel.topicModel.totalPages"
+                                [routerLink]="['/DiscussionTopicComments']"
+                                [queryParams]="{topicId: topicCommentListModel.topicModel.id,pageNo:+pageNo+1}">Next
+                                Page</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
