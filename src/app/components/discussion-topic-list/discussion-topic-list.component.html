@@ -1,0 +1,66 @@
+<div class="container" style="margin-top:190px ;">
+    <div class="row justify-content-center mt-5">
+        <div class="card">
+            <div class="card-header" style="text-align: center;">
+                <h5>Discussion Forum</h5>
+            </div>
+            <div class="card-body">
+                <div style="text-align: center;" *ngIf="message!=null">
+                    <h6 [ngClass]="colorClass">{{message}}</h6>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        Search Topic: <input type="text" [(ngModel)]="searchTopic" name="searchTopic"/>&nbsp;&nbsp;
+                        <button type="button" class="btn btn-sm btn-primary" (click)="searchTopicFromList()">Submit</button>&nbsp;&nbsp;
+                        <button type="button" class="btn btn-sm btn-secondary" (click)="clearSearch()">Clear</button>
+                    </div>
+
+                </div>
+                <div class="table-responsive"  style="height:50vh">
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">S.No.</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Open/Closed</th>
+                        <th scope="col">Creation Time</th>
+                        <th scope="col">Created By</th>
+                        <th scope="col">View Discussion</th>
+                        <th scope="col">Close</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor='let topic of topicModel.topicModelList; index as i'>
+                        <th scope="row">{{topic.sno}}</th>
+                        <td>{{topic.topic}}</td>
+                        <td>{{topic.open?'OPEN':'CLOSED'}}</td>
+                        <td>{{topic.createdAt}}</td>
+                        <td>{{topic.createdBy}}</td>
+                        <td><a [routerLink]="['/DiscussionTopicComments']" [queryParams]="{topicId: topic.id,pageNo:1 }">View</a></td>
+                        <td><a *ngIf="topic.open" href="#" (click)="closeTopic(topic.id)">Close</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                  <div style="text-align: center;"  *ngIf="topicModel.totalPages>0">
+                    Page No. {{pageNo}} of {{topicModel.totalPages}}
+                </div>
+                <div class="mb-2" style="text-align: center;" *ngIf="topicModel.totalPages>1">
+                    <small><a *ngIf="pageNo>1" [routerLink]="['/DiscussionTopicList']"
+                        [queryParams]="{pageNo:pageNo-1}"
+                        [state]="{ searchTopic:searchTopic}">Previous
+                        Page</a>&nbsp;&nbsp;
+                    <a *ngIf="pageNo<topicModel.totalPages"
+                        [routerLink]="['/DiscussionTopicList']"
+                        [queryParams]="{pageNo:+pageNo+1}"
+                        [state]="{ searchTopic:searchTopic}">Next
+                        Page</a></small>
+                </div>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-primary" (click)="addTopicModal()">Add Topic</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

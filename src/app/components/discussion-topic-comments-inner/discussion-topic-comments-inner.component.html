@@ -1,0 +1,25 @@
+<div *ngFor="let topicCommentModel of innerCommentList">
+    <div class="comment-list left-padding mb-2" style="border-left: 1px solid rgba(0, 0, 0, 0.175);">
+        <div class="single-comment justify-content-between d-flex">
+            <div class="user justify-content-between d-flex">
+                <div class="desc">
+                    <h6>{{topicCommentModel.createdBy}}</h6>
+                    <p class="date">{{topicCommentModel.createdAt}}</p>
+                    <p class="comment">
+                        {{topicCommentModel.comment}}
+                    </p>
+                </div>
+            </div>
+            <div class="reply-btn">
+                <button type="button" (click)="replyCommentModel(topicCommentModel)" *ngIf="open"
+                    class="btn-reply text-uppercase">Reply</button>
+            </div>
+        </div>
+        <div id="divider-transparent"><br></div>
+        <app-discussion-topic-comments-inner *ngIf="topicCommentModel.innerCommentList!=null"
+            [innerCommentList]="topicCommentModel.innerCommentList" [topicId]="topicId" [pageNo]="pageNo"
+            [open]="open"
+            (topicCommentListModel)="receiveTopicCommentListModel($event)"></app-discussion-topic-comments-inner>
+
+    </div>
+</div>
