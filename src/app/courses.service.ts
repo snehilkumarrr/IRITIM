@@ -16,6 +16,24 @@ export class CoursesService {
     const url = "http://172.16.14.78:8080/Dashboard/createcourse"
     this.http.post(url, data)
   }
+  scheduleCourse(data: any) {
+
+    const url = "http://172.16.14.78:8080/Dashboard/add-course-schedule"
+    return this.http.post(url, data)
+  }
+
+  getScheduleCourse() {
+    const url = "http://172.16.14.78:8080/Dashboard/getall-course-schedule"
+    return this.http.get(url);
+
+  }
+
+  CourseDelete() {
+    const url = ""
+    return this.http.delete(url)
+  }
+
+
 
 }
 

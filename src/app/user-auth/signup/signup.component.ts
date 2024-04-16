@@ -3,6 +3,7 @@ import { CoursesService } from 'src/app/courses.service';
 import { SignupService } from "./signup.service"
 import { ZoneService } from './zone.service';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -22,7 +23,7 @@ export class SignupComponent implements OnInit {
   Msg: any;
   railwaysData: any
 
-  constructor(private courseDetail: CoursesService, private userData: SignupService, private railwayType: ZoneService) {
+  constructor(private courseDetail: CoursesService, private userData: SignupService, private railwayType: ZoneService,private toastr: ToastrService) {
     courseDetail.getCourse().subscribe((courseResponse) => {
       // console.log(data)
       this.coursesData = courseResponse;
@@ -66,6 +67,7 @@ export class SignupComponent implements OnInit {
       console.log(jsonResp)
       this.Msg = jsonResp
       alert(this.Msg.msg)
+      this.toastr.success('Hello world!', this.Msg.msg);
     })
   }
 

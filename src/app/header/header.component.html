@@ -2,20 +2,19 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-white">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img height="79px" src="../../assets/images/logo.png" alt="Ashoka_Stambh" srcset="" />
+                <img height="89px" src="../../assets/images/logo.png" alt="Ashoka_Stambh" srcset="" />
             </a>
             <div class=" bgtext-color source-serif-heading">
-                <p class="h5 fw-bolder">Indian Railways Institue of Transport Management</p>
-                <p> Government of India</p>
+                <p class="h2 fw-bolder">Indian Railways Institue of Transport Management</p>
+                <p class="h5 fw-bold"> Government of India</p>
 
             </div>
+            <!-- <img style="height: 89px" class="mx-4" src="../../assets/images/IRITM_logo2-removebg.png"
+            alt="Indian RailWay Logo" srcset="" /> -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
+                
                 <li class="nav-item">
                     <img style="height: 85px" class="mx-4" src="../../assets/images/IRITM_logo2-removebg.png"
-                        alt="Indian RailWay Logo" srcset="" />
-                </li>
-                <li class="nav-item">
-                    <img style="height: 85px" class="mx-4" src="../../assets/images/Indian_Railway_Logo_2.png"
                         alt="Indian RailWay Logo" srcset="" />
                 </li>
 
@@ -107,8 +106,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link navText text-white" [routerLink]="['/DiscussionTopicList']"
+                        [queryParams]="{pageNo:1}"
+                        [state]="{ searchTopic:''}">DiscussionForum</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link navText text-white"
-                            href="https://iritm.indianrailways.gov.in/IRITM_new/BookDetails.jsp">Search Book</a>
+                            href="https://iritm.indianrailways.gov.in/IRITM_new/BookDetails.jsp">Books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navText text-white" routerLink="register">Register</a>

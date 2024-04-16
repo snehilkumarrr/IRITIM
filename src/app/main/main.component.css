@@ -1,20 +1,36 @@
 .parallaxMain {
- width: 100%;
- height:900px;
- background-image: url(../../assets/images/Admin.jpg);
- background-size: cover;
- background-attachment: fixed;
+  width: 100%;
+  height: 900px;
+  background-image: url(../../assets/images/Picture1.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
 }
 
 .parallax {
   width: 100%;
-  height:600px;
-  background-image: url(../../assets/images/Admin.jpg);
+  height: 600px;
+  background-image: url(../../assets/images/DSC_2541.JPG);
   background-size: cover;
   background-attachment: fixed;
- }
+}
 
 
+
+.parallaxOne {
+  width: 100%;
+  height: 600px;
+  background-image: url(../../assets/images/abhinav.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.parallaxTwo {
+  width: 100%;
+  height: 600px;
+  background-image: url(../../assets/images/aarohi.JPG);
+  background-size: cover;
+  background-attachment: fixed;
+}
 /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
 @media only screen and (max-device-width: 1366px) {
   .parallax {
@@ -39,13 +55,37 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0);
   padding: 10px;
   font-size: 18px;
-  color: #FFE0AE;
   font-weight: 900;
   font-size: 250px;
   letter-spacing: 0.3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for the 3D effect */
 }
 
+.linear-text-gradient {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.main-title-text {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.testimonial-text {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

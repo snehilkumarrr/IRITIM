@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,8 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 
-// Carousel Module
-import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 // Import Modules
 import { AdminModule } from './admin/admin.module';
@@ -20,7 +19,11 @@ import { FormsModule } from '@angular/forms';
 import { DiscussionTopicCommentsComponent } from './components/discussion-topic-comments/discussion-topic-comments.component';
 import { DiscussionTopicCommentsInnerComponent } from './components/discussion-topic-comments-inner/discussion-topic-comments-inner.component';
 import { DiscussionCommentReplyModalComponent } from './components/discussion-comment-reply-modal/discussion-comment-reply-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @NgModule({
   declarations: [
@@ -39,11 +42,12 @@ import { DiscussionCommentReplyModalComponent } from './components/discussion-co
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
-    CarouselModule,
     AdminModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

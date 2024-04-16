@@ -17,9 +17,15 @@ export class CoordinatorService {
     return this.http.post(url, data)
   }
 
-  editCordinator(data: any) {
-    const url = "http://172.16.14.78:8080/Dashboard/addcoordinator"
-    return this.http.post(url, data)
+  getSingleCoordinator(id: number) {
+    const url = `http://172.16.14.78:8080/Dashboard/getcoordinator/${id}`
+    return this.http.get(url)
+
+  }
+
+  editCordinator(id: number, data: any) {
+    const url = `http://172.16.14.78:8080/Dashboard/editcoordinator/${id}`
+    return this.http.put(url, data)
   }
 
 

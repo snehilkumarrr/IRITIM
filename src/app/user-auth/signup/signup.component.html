@@ -2,18 +2,20 @@
     <div class="row ">
         <p class="text-dark h3 text-center">Registration</p>
         <form #signupForm="ngForm" (ngSubmit)="signupHandler(signupForm.value)" class="row g-3">
-            <div class="col-md-3">
+            <div class="col-md-3 d-none">
                 <label for="inputEmail4" class="form-label">Course Name</label>
-                <select ngModel name="coursename" class="form-select" id="courseName" aria-label="courseName">
+                <!-- <select ngModel name="coursename" class="form-select" id="courseName" aria-label="courseName">
                     <option selected>Select Option</option>
                     <option *ngFor="let courses of coursesData" value={{courses.courseName}}>{{courses.courseName}}
                     </option>
 
-                </select>
+                </select> -->
+                <input ngModel name="coursename" type="hidden" class="form-control" id="inputAddress"
+                >
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-none">
                 <label for="inputAddress" class="form-label">Course Code</label>
-                <input ngModel name="coursecode" type="text" class="form-control" id="inputAddress"
+                <input ngModel name="coursecode" type="hidden" class="form-control" id="inputAddress"
                     >
             </div>
             <div class="col-md-3 ">
@@ -69,14 +71,14 @@
                     <option selected>Select Option</option>
                     <!-- Conditional rendering based on employeegroup -->
                     <ng-container *ngIf="selectGroup === 'groupA' || selectGroup === 'groupBtoA' || selectGroup === 'groupB'">
-                        <option value="HAG">HAG</option>
-                        <option value="HAGNF">HAG (NF)</option>
-                        <option value="SAG">SAG</option>
-                        <option value="SAGNF">SAG (NF)</option>
-                        <option value="JAG">JAG</option>
-                        <option value="SG">JAG (Adhoc)</option>
-                        <option value="SS">SS</option>
-                        <option value="JS">JS</option>
+                        <option value="HAG">Higher Administrative Grade--HAG</option>
+                        <option value="HAGNF">Higher Administrative Grade (NF)--HAGNF</option>
+                        <option value="SAG">Senior Administrative Grade--SAG</option>
+                        <option value="SAGNF">Senior Administrative Grade(NF)-SAGNF</option>
+                        <option value="JAG">Junior Administrative Grade--JAG</option>
+                        <option value="SG">Junior Administrative Grade(Adhoc)--SG</option>
+                        <option value="SS">Senior Scale--SS</option>
+                        <option value="JS">Junior Scale--JS</option>
                         <!-- Add other grade1 options here -->
                     </ng-container>
                     <ng-container *ngIf="selectGroup !== 'groupA' && selectGroup !== 'groupBtoA' && selectGroup !== 'groupB'">
@@ -134,7 +136,7 @@
                 <label for="DesignationInHindi" class="form-label">Designation in Hindi</label>
                 <input ngModel name="designationinhindi" type="text" class="form-control" id="DesignationInHindi">
             </div> -->
-            <div class="col-md-4 ">
+            <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Place of Posting</label>
                 <select [(ngModel)]="placeofposting" name="placeofposting" (ngModelChange)="selectpop($event)" class="form-select" aria-label="Default select example">
                     <!-- <option selected>Select Option</option> -->
@@ -144,14 +146,14 @@
                     <option value="TC">Railway Institute</option>
                 </select>
             </div>
-            <div class="col-md-4 ">
+            <div class="col-md-3 ">
                 <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other </label>
                 <select [(ngModel)]="railwaydivisions" name="zone" (ngModelChange)="selectDivision($event)" class="form-select" aria-label="Default select example">
                     <!-- <option selected>Select Option</option> -->
                     <option *ngFor="let zonal of railwaysData" value="{{zonal.zn_CD}}"> {{zonal.zn_NM}}</option>
                 </select>
             </div>
-            <div class="col-md-4 ">
+            <div class="col-md-3 ">
                 <label for="Division" class="form-label">Division</label>
                 <select name="division" ngModel class="form-select" id="Division" aria-label="Division">
                     <!-- <option selected>Select Option</option> -->
@@ -165,96 +167,19 @@
                 <input name="contactnumber" ngModel type="number" class="form-control" id="Division" #cugInput>
             </div>
 
-            <!-- Same checkbox -->
-            <!-- <div class="col-md-1">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexCheckDefault"
-                        [(ngModel)]="sameNumberChecked">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Same
-                    </label>
-                </div>
-            </div> -->
+    
 
-            <!-- Whatsapp Number input -->
+      
             <div class="col-md-3">
                 <label for="whatsappNo" class="form-label">Whatsapp Number</label>
                 <input name="whatsappno" ngModel type="number" class="form-control" id="whatsappNo" #whatsappInput>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="email" class="form-label">Email ID</label>
                 <input name="emailid" ngModel type="email" class="form-control" id="email">
             </div>
-            <div class="col-md-4 ">
-                <label for="TravelType" class="form-label">Arrival Travel Type</label>
-                <select name="arrivalmode" ngModel class="form-select" id="TravelType"
-                    aria-label="Default select example">
-                    <!-- <option selected>Select Option</option> -->
-                    <option value="Train">Train</option>
-                    <option value="Flight">Flight </option>
-                    <option value="Road">Road</option>
-                    <option value="LocalResident">Local Resident</option>
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="ArrivalTrainFlightNo" class="form-label">Arrival Train / Flight No</label>
-                <input name="arrivalnumber" ngModel type="email" class="form-control" id="ArrivalTrainFlightNo">
-            </div>
-            <div class="col-md-2">
-                <label for="ArrivalStation" class="form-label">Arrival DateTime</label>
-                <input name="arrivalscheduletime" ngModel type="datetime-local" class="form-control" id="ArrivalStation">
-            </div>
-            <div class="col-md-2">
-                <label for="ArrivalStation" class="form-label">Arrival Station</label>
-                <input name="arrivallocation" ngModel type="text" class="form-control" id="ArrivalStation">
-            </div>
-            <div class="col-md-4 ">
-                <label for="departuremode" class="form-label">Dept Travel Type</label>
-                <select name="departuremode" ngModel class="form-select" id="departuremode"
-                    aria-label="Default select example">
-                    <!-- <option selected>Select Option</option> -->
-                    <option value="Train">Train</option>
-                    <option value="Flight">Flight </option>
-                    <option value="Road">Road</option>
-                    <option value="LocalResident">Local Resident</option>
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="DepartureTrainFlightNo" class="form-label">Departure Train / Flight No</label>
-                <input name="departurenumber" ngModel type="email" class="form-control"
-                    id="DepartureTrainFlightNo">
-            </div>
-            <div class="col-md-2">
-                <label for="DepartureTime" class="form-label">Depature DateTime</label>
-                <input name="departurescheduletime" ngModel type="datetime-local" class="form-control" id="DepartureTime">
-            </div>
-            <div class="col-md-2">
-                <label for="DepartureStation" class="form-label">Depature Station</label>
-                <input name="departurelocation" ngModel type="text" class="form-control" id="DepartureStation">
-            </div>
-            <div class="col-md-3">
-                <label for="inputState" class="form-label">Person Type</label>
-                <select name="familydetails" [(ngModel)]="selectedPersonType" class="form-select">
-                    <option value="self">Self</option>
-                    <option value="family">Family</option>
-                </select>
-            </div>
-
-            <div class="col-md-3" *ngIf="selectedPersonType === 'family'">
-                <label for="inputState" class="form-label">Person</label>
-                <select name="noofmember" ngModel class="form-select" aria-label="Default select example">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-
-            <!-- <div class="col-md-3 ">
-                <label for="inputState" class="form-label mt-1">Requier Hostel </label><br />
-                <input ngModel name="hostel" checked class="form-check-input" type="checkbox" id="checkboxNoLabel"
-                    value="true" aria-label="...">
-            </div> -->
+   
+      
 
             <div class="col-12 text-center my-5">
                 <button type="submit" class="btn btn-primary">Sign in</button>

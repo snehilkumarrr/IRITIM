@@ -1,7 +1,12 @@
-<div class="container" style="margin-top: 190px;height:400vh">
+<div class="container" style="margin-top: 190px;height:100vh">
     <div class="row">
         <h1 class="text-center my-2">View Coordinator</h1>
+        <div>
+            <button (click)="CreateCoordinator()" class=" btn btn-primary mt-5">Create Coordinator
+            </button>
+        </div>
         <table class="table border table-bordered my-5">
+
             <thead>
                 <tr>
                     <th scope="col">S.No</th>
@@ -19,8 +24,8 @@
                     <td>{{ item.emailid }}</td>
 
                     <td>
-                        <button (click)=" EditCoordinator()"  class="btn btn-success mx-3">Edit</button>
-                        <!-- <button (click)="deleteCoordinator({{ item.id }})" class="btn btn-danger">Delete</button> -->
+                        <button (click)=" EditCoordinator(item.id)" class="btn btn-success mx-3">Edit</button>
+                        <button (click)="deleteCoordinator(item.id )" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>

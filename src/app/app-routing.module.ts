@@ -13,6 +13,8 @@ import { ViewcoordinatorComponent } from './admin/viewcoordinator/viewcoordinato
 import { EditcoordinatorComponent } from './admin/editcoordinator/editcoordinator.component';
 import { DiscussionTopicListComponent } from './components/discussion-topic-list/discussion-topic-list.component';
 import { DiscussionTopicCommentsComponent } from './components/discussion-topic-comments/discussion-topic-comments.component';
+import {VehicleComponent} from "./user/vehicle/vehicle.component"
+import {HostelComponent} from "./user/hostel/hostel.component"
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'Editcoordinator', component: EditcoordinatorComponent },
   { path: 'DiscussionTopicList', component: DiscussionTopicListComponent },
   { path: 'DiscussionTopicComments', component: DiscussionTopicCommentsComponent },
+  { path: 'Vehicle', component: VehicleComponent },
+  { path: 'Hostel', component: HostelComponent },
 ];
 
 @NgModule({

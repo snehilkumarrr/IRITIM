@@ -1,0 +1,14 @@
+.login-bg {
+  background-image: url(../../../assets/images/DSC_2541.JPG);
+  background-size: 100% 100%;
+  display: grid;
+  background-repeat: no-repeat;
+  height: 500%;
+  background-position: center;
+  
+
+ 
+}
+.login-form-bg{
+    background-color: rgba(0, 0, 0, 0.55);
+}
