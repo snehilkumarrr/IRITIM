@@ -7,18 +7,16 @@ import { CoordinatorService } from 'src/app/services/coordinator.service';
 })
 export class CreatecoordinatorComponent {
 
-Message:any
+  Sucessmsg: any
   constructor(private createCoordinator: CoordinatorService) {
   }
 
 
   createCoordinatorHandler(data: any) {
-    // console.log(data)
+    console.log(data)
     this.createCoordinator.createCordinator(data).subscribe((resData) => {
-      console.log(resData)
-      this.Message=resData
-      alert(this.Message.msg)
-
+      this.Sucessmsg = resData
+      alert(this.Sucessmsg.message)
     })
   }
 
