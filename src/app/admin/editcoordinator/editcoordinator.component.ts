@@ -20,7 +20,7 @@ export class EditcoordinatorComponent {
       // console.log(data);
       this.coordinatorDetail = data
       this.EditCoForm = new FormGroup({
-        name: new FormControl(this.coordinatorDetail.name),
+        name2: new FormControl("user"),
         empid: new FormControl(this.coordinatorDetail.empid),
         emailid: new FormControl(this.coordinatorDetail.emailid),
         mobileno: new FormControl(this.coordinatorDetail.mobileno)

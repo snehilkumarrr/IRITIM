@@ -14,7 +14,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
                 
                 <li class="nav-item">
-                    <img style="height: 85px" class="mx-4" src="../../assets/images/IRITM_logo2-removebg.png"
+                    <img style="height: 115px" class="mx-4" src="../../assets/images/IRITM_logo2-removebg.png"
                         alt="Indian RailWay Logo" srcset="" />
                 </li>
 
@@ -114,13 +114,26 @@
                         <a class="nav-link navText text-white"
                             href="https://iritm.indianrailways.gov.in/IRITM_new/BookDetails.jsp">Books</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navText text-white" routerLink="register">Register</a>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link navText text-white" *ngIf="username">{{ username }}</a>
+                      </li> -->
+                      <li class="nav-item dropdown" *ngIf="username">
+                        <a class="nav-link dropdown-toggle navText text-white"  role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ username }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button (click)="LogoutHandler()" class="dropdown-item" >Logout</button></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navText text-white" routerLink="login">Login</a>
-                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText text-white" *ngIf="!username" routerLink="register">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link navText text-white" *ngIf="!username" routerLink="login">Login</a>
+                      </li>
                   
+
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navText text-white" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,75 +1,79 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from 'src/app/courses.service';
-import { SignupService } from "./signup.service"
-import { ZoneService } from './zone.service';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { SignupService } from './signup.service'
+import { FormControl, FormGroup, Validators } from '@angular/forms'; // Import FormsModule
 import { ToastrService } from 'ngx-toastr';
+import { HrmsService } from 'src/app/services/hrms.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  coursesData: any;
-  selected: string = "Railways";
   employeeId: Boolean | undefined;
-  selectGroup: string = "groupA";
-  selectedPersonType: string = 'self'; // Initialize with a default value
-  placeofposting: string = ''
-  railwaydivisions: string | undefined;
-  rlydivision :any
-  cugNumber: number | undefined;
-  sameNumberChecked: boolean = false;
-  Msg: any;
   railwaysData: any
+  SuccessMsg: any;
+  EmployeeDetail: any
+  SignupForm!: FormGroup;
 
-  constructor(private courseDetail: CoursesService, private userData: SignupService, private railwayType: ZoneService,private toastr: ToastrService) {
-    courseDetail.getCourse().subscribe((courseResponse) => {
-      // console.log(data)
-      this.coursesData = courseResponse;
-    });
-  }
-  selectOption(value: string): void {
-    this.selected = value; // Update the variable with the selected value
-    // console.log(this.selected);
-    if (this.selected == 'Railways') {
-      this.employeeId = false;
-      // console.log(this.employeeId)
-    } else {
-      this.employeeId = true;
-    }
+  emptype: any
+
+
+
+  constructor(private toastr: ToastrService, private hrmsdetail: HrmsService, private signupservice: SignupService) {
+
   }
 
-  selectpop(value: string): void {
-    // console.log(value)
-    this.railwayType.getzoneType(value).subscribe((respData) => {
-      // console.log(respData)
-      this.railwaysData = respData
+  getValue(hrmsIdValue: string) {
+    console.log('HRMS ID:', hrmsIdValue);
+    this.hrmsdetail.getEmp(hrmsIdValue).subscribe((resData) => {
+      this.EmployeeDetail = resData
+      console.warn(this.EmployeeDetail)
+
     })
-
-  }
-
-  selectDivision(value: string) {
-    console.log(value)
-    this.railwayType.getDivision(value).subscribe((resData)=>{
-      console.log(resData)
-      this.rlydivision =resData
-    })
+    // You can perform further actions with the value here
   }
 
 
 
-  selectEmpGrp(value: string): void { }
+  EmployeeTypeHandler(data: any) {
+    console.log(data.target.value)
+    this.emptype = data.target.value
+  }
 
-  signupHandler(data: any) {
-    // console.log(data);
-    this.userData.saveUser(data).subscribe((jsonResp) => {
-      console.log(jsonResp)
-      this.Msg = jsonResp
-      alert(this.Msg.msg)
-      this.toastr.success('Hello world!', this.Msg.msg);
+
+  signupHandler() {
+    console.log(this.SignupForm.value);
+    this.signupservice.saveUser(this.SignupForm.value).subscribe((resData) => {
+      console.log(resData);
+      this.SuccessMsg = resData
+      alert(this.SuccessMsg.message )
     })
   }
 
-  ngOnInit(): void { }
+  ngOnInit() {
+
+    this.SignupForm = new FormGroup({
+      employeetype: new FormControl(this.emptype),
+      hrmsid: new FormControl("", Validators.required),
+      name: new FormControl(null),
+      usernamehindi: new FormControl(null),
+      gender: new FormControl("male"),
+      dob: new FormControl(null),
+      dateofappointment: new FormControl(null),
+      group: new FormControl(null),
+      grade: new FormControl(null),
+      department: new FormControl(null),
+      emailid: new FormControl(null),
+      whatsappno: new FormControl(null),
+      division: new FormControl(null),
+      zone: new FormControl(null),
+      placeofposting: new FormControl(null),
+      designationinhindi: new FormControl(null),
+      designationineng: new FormControl(null),
+      divyangjan: new FormControl(null),
+      education: new FormControl(null),
+      organization: new FormControl(null)
+    })
+
+  }
 }

@@ -12,17 +12,17 @@
         <div class="col-md-3">
             <label for="arrivalBy" class="form-label">Arrival By</label>
             <select id="arrivalBy" class="form-select" >
-                <option value="Choose..." disabled>Choose...</option>
+                <option selected>Choose...</option>
                 <option value="Train">Train</option>
                 <option value="AirPort">Airport</option>
                 <option value="By Road">By Road</option>
             </select>
         </div>
         
-        <div class="col-md-3" *ngIf="selectedArrivalBy === 'Train'">
+        <div class="col-md-3" >
             <label for="station" class="form-label">Station</label>
             <select id="station" class="form-select">
-                <option value="Choose..." disabled>Choose...</option>
+                <option selected>Choose...</option>
                 <option value="LKO">LKO</option>
                 <option value="LJN">LJN</option>
                 <option value="ASH">ASH</option>

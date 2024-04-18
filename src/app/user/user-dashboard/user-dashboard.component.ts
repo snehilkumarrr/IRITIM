@@ -12,10 +12,11 @@ export class UserDashboardComponent {
   }
 
 
-
+  ApplyCourse() {
+    this.router.navigate(['ApplyCourse'])
+  }
   vehicle() {
     this.router.navigate(['Vehicle'])
   }
-  Hostel() 
-  { this.router.navigate(['Hostel']) }
+  Hostel() { this.router.navigate(['Hostel']) }
 }

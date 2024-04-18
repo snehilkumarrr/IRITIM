@@ -1,25 +1,39 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router, private loginService: LoginService) { }
-  LoginHandler(data: any) {
-    // console.log(data);
+  loginMsg: any
+  loginForm = new FormGroup({
+    usernameOrEmail: new FormControl(''),
+    password: new FormControl('')
 
-    this.loginService.Login(data).subscribe((data) => {
-      console.log(data)
+  });
+  constructor(private router: Router, private loginService: LoginService) { }
+
+
+
+  LoginHandler() {
+    // console.log(this.loginForm.value);
+    this.loginService.Login(this.loginForm.value).subscribe((resData) => {
+      // console.log(resData)
+      this.loginMsg = resData
+      if (this.loginMsg.roleId == 4) {
+        localStorage.setItem('username', this.loginMsg.username)
+        this.router.navigate(['userDashboard']);
+      } else  {
+        this.router.navigate(['adminDashboard']);
+      }
     })
 
-    // if (data.username == 'admin') {
-    //   this.router.navigate(['adminDashboard']);
-    // } else {
-    //   this.router.navigate(['userDashboard']);
-    // }
   }
 
+
 }
+
+
