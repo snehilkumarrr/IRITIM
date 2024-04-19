@@ -11,6 +11,7 @@ import { ScheduleCourseComponent } from './admin/schedule-course/schedule-course
 import { CreatecoordinatorComponent } from './admin/createcoordinator/createcoordinator.component';
 import { ViewcoordinatorComponent } from './admin/viewcoordinator/viewcoordinator.component';
 import { EditcoordinatorComponent } from './admin/editcoordinator/editcoordinator.component';
+import {EditcourseComponent} from './admin/editcourse/editcourse.component'
 import { DiscussionTopicListComponent } from './components/discussion-topic-list/discussion-topic-list.component';
 import { DiscussionTopicCommentsComponent } from './components/discussion-topic-comments/discussion-topic-comments.component';
 import { VehicleComponent } from "./user/vehicle/vehicle.component"
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'CreateCoordinator', component: CreatecoordinatorComponent },
   { path: 'ViewCoordinator', component: ViewcoordinatorComponent },
   { path: 'Editcoordinator', component: EditcoordinatorComponent },
+  { path: 'Editcourse/:id', component: EditcourseComponent },
   { path: 'DiscussionTopicList', component: DiscussionTopicListComponent },
   { path: 'DiscussionTopicComments', component: DiscussionTopicCommentsComponent },
   { path: 'Vehicle', component: VehicleComponent },

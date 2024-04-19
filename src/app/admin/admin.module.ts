@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CreatecoordinatorComponent } from './createcoordinator/createcoordinator.component';
 import { ViewcoordinatorComponent } from './viewcoordinator/viewcoordinator.component';
 import { EditcoordinatorComponent } from './editcoordinator/editcoordinator.component';
+import { EditcourseComponent } from './editcourse/editcourse.component';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -18,7 +19,8 @@ import { EditcoordinatorComponent } from './editcoordinator/editcoordinator.comp
     ScheduleCourseComponent,
     CreatecoordinatorComponent,
     ViewcoordinatorComponent,
-    EditcoordinatorComponent
+    EditcoordinatorComponent,
+    EditcourseComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule
