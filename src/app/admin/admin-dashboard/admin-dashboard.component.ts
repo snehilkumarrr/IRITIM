@@ -16,10 +16,14 @@ export class AdminDashboardComponent {
   HostelRequestHandler() {
     this.router.navigate(['HostelRequest']);
   }
+
+  VehicleRequestHandler() {
+    this.router.navigate(['VehicleReq']);
+  }
   CreateCoordinator() {
     this.router.navigate(['CreateCoordinator']);
   }
-  ViewCoordinator(){
+  ViewCoordinator() {
     this.router.navigate(['ViewCoordinator']);
   }
 }

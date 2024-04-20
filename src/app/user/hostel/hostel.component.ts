@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class HostelComponent {
   selectedArrivalBy: any;
   selectedDeptlBy: any;
+  showChidren: any
   hostelform: FormGroup = new FormGroup({
     arrivaldatetime: new FormControl(null),
     arrivalby: new FormControl(null),
@@ -27,7 +28,14 @@ export class HostelComponent {
     this.selectedDeptlBy = data.target.value
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+    if (localStorage.getItem('officertype') === "GAZETTED") {
+      this.showChidren = true
+    }
+
+
+  }
 
 
   ApplyHostelHandler() {

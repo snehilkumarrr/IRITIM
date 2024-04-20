@@ -12,6 +12,7 @@ import { CreatecoordinatorComponent } from './admin/createcoordinator/createcoor
 import { ViewcoordinatorComponent } from './admin/viewcoordinator/viewcoordinator.component';
 import { EditcoordinatorComponent } from './admin/editcoordinator/editcoordinator.component';
 import { EditcourseComponent } from './admin/editcourse/editcourse.component'
+import { VehicleReqComponent } from './admin/vehicle-req/vehicle-req.component';
 import { DiscussionTopicListComponent } from './components/discussion-topic-list/discussion-topic-list.component';
 import { DiscussionTopicCommentsComponent } from './components/discussion-topic-comments/discussion-topic-comments.component';
 import { VehicleComponent } from "./user/vehicle/vehicle.component"
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'Hostel', component: HostelComponent },
   { path: "ApplyCourse", component: AppliedCourseComponent },
   { path: "HostelRequest", component: HostelReqtsComponent },
-  { path: "ViewScheduleCourse", component: ViewScheduleCourseComponent }
+  { path: "ViewScheduleCourse", component: ViewScheduleCourseComponent },
+  { path: "VehicleReq", component: VehicleReqComponent }
 ];
 
 @NgModule({
