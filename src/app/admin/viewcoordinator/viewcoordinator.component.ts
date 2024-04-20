@@ -16,7 +16,7 @@ export class ViewcoordinatorComponent {
     })
   }
   EditCoordinator(id:number) {
-    this.router.navigate(['Editcoordinator',{ someData: id }]);
+    this.router.navigate([`/Editcoordinator/${id}`]);
   }
   CreateCoordinator() {
     this.router.navigate(['CreateCoordinator']);

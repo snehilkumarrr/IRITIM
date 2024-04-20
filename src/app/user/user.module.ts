@@ -6,8 +6,9 @@ import { AppliedCourseComponent } from './applied-course/applied-course.componen
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { BooksComponent } from './books/books.component';
 import { HostelComponent } from './hostel/hostel.component';
-import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    HttpClientModule,
+    BrowserModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

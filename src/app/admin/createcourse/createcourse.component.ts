@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CoursesService } from 'src/app/courses.service';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormControl, FormGroup } from '@angular/forms'; // Import FormsModule
 @Component({
   selector: 'createcourse',
   templateUrl: './createcourse.component.html',
@@ -8,8 +8,21 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 })
 export class CreatecourseComponent {
 
-  createCourseHandler(data: any) {
-    console.log(data)
+  createcourseform: FormGroup = new FormGroup({
+    coursename: new FormControl(null),
+    coursecode: new FormControl(null),
+    coursedescription: new FormControl(null)
+  })
+
+  constructor(private crcourse: CoursesService) { }
+  createCourseHandler() {
+    console.log(this.createcourseform.value)
+    this.crcourse.createcourse(this.createcourseform.value).subscribe((resData: any) => {
+      console.log(resData.message)
+      alert(resData.message)
+    })
+
+
   }
 
 }

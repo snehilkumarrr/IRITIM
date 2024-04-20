@@ -1,18 +1,14 @@
 <p>vehicle works!</p>
 <div class="container mb-4" style="margin-top:190px ;">
-    <h1 class="my-3">Book Vehicle</h1> 
-    <form class="row g-3">
+    <h1 class="my-3">Book Vehicle</h1>
+    <form [formGroup]="vehicleform" class="row g-3" (ngSubmit)=" ApplyVehicleHandler()">
         <div class="col-md-3">
-            <label for="inputEmail4" class="form-label">Arrival-Date</label>
-            <input type="date" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-3">
-            <label for="inputEmail4" class="form-label">Arrival-Time</label>
-            <input type="time" class="form-control" id="inputEmail4">
+            <label for="inputEmail4" class="form-label">Arrival-Date Time</label>
+            <input formControlName="arrivaldatetime" type="datetime-local" class="form-control" id="inputEmail4">
         </div>
         <div class="col-md-3">
             <label for="inputState" class="form-label"> Arrival By</label>
-            <select id="inputState" class="form-select">
+            <select formControlName="" (change)=" ArrivalTypeHandler($event)" class="form-select">
                 <option selected>Choose...</option>
                 <option>Train</option>
                 <option>Air Port</option>
@@ -21,7 +17,7 @@
         </div>
         <div class="col-md-3">
             <label for="inputState" class="form-label"> Station</label>
-            <select id="inputState" class="form-select">
+            <select formControlName="" class="form-select">
                 <option selected>Choose...</option>
                 <option>LKO</option>
                 <option>LJN</option>
@@ -30,18 +26,17 @@
             </select>
         </div>
         <div class="col-md-3">
-            <label for="inputPassword4" class="form-label">Departure-Date </label>
-            <input type="date" class="form-control" id="inputPassword4">
+            <label for="inputPassword4" class="form-label">Arrival Train No </label>
+            <input formControlName="" type="datetime-local" class="form-control" id="inputPassword4">
         </div>
         <div class="col-md-3">
-            <label for="inputPassword4" class="form-label">Departure-Time </label>
-            <input type="time" class="form-control" id="inputPassword4">
+            <label for="inputPassword4" class="form-label">Departure-Date Time </label>
+            <input formControlName="" type="datetime-local" class="form-control" id="inputPassword4">
         </div>
 
         <div class="col-md-3">
             <label for="inputState" class="form-label"> Departure By </label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
+            <select formControlName="" (change)="DeptTypeHandler($event)" class="form-select">
                 <option>Train</option>
                 <option>Air Port</option>
                 <option>By Road</option>
@@ -49,8 +44,8 @@
         </div>
         <div class="col-md-3">
             <label for="inputState" class="form-label"> Station</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
+            <select formControlName="" class="form-select">
+
                 <option>LKO</option>
                 <option>LJN</option>
                 <option>ASH</option>
@@ -58,9 +53,13 @@
             </select>
         </div>
         <div class="col-md-3">
+            <label for="inputPassword4" class="form-label">Departure Train No </label>
+            <input formControlName="" type="datetime-local" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-md-3">
             <label for="inputCity" class="form-label">Adults</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
+            <select formControlName="" class="form-select">
+
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -70,8 +69,8 @@
         </div>
         <div class="col-md-3">
             <label for="inputState" class="form-label">Childrens</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
+            <select formControlName="" class="form-select">
+                <option value="0">0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

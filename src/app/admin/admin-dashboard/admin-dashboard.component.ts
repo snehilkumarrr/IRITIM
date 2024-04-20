@@ -13,8 +13,8 @@ export class AdminDashboardComponent {
   viewCourse() {
     this.router.navigate(['ViewCourse']);
   }
-  ScheduleCourse() {
-    this.router.navigate(['ScheduleCourse']);
+  HostelRequestHandler() {
+    this.router.navigate(['HostelRequest']);
   }
   CreateCoordinator() {
     this.router.navigate(['CreateCoordinator']);

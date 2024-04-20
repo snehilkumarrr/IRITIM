@@ -11,6 +11,8 @@ import { CreatecoordinatorComponent } from './createcoordinator/createcoordinato
 import { ViewcoordinatorComponent } from './viewcoordinator/viewcoordinator.component';
 import { EditcoordinatorComponent } from './editcoordinator/editcoordinator.component';
 import { EditcourseComponent } from './editcourse/editcourse.component';
+import { HostelReqtsComponent } from './hostel-reqts/hostel-reqts.component';
+import { ViewScheduleCourseComponent } from './view-schedule-course/view-schedule-course.component';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -20,7 +22,9 @@ import { EditcourseComponent } from './editcourse/editcourse.component';
     CreatecoordinatorComponent,
     ViewcoordinatorComponent,
     EditcoordinatorComponent,
-    EditcourseComponent
+    EditcourseComponent,
+    HostelReqtsComponent,
+    ViewScheduleCourseComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule

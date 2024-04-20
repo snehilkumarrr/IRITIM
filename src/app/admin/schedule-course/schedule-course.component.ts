@@ -3,6 +3,7 @@ import { CoursesService } from 'src/app/courses.service';
 import { CoordinatorService } from 'src/app/services/coordinator.service';
 import { FacultyService } from 'src/app/services/faculty.service';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-schedule-course',
   templateUrl: './schedule-course.component.html',
@@ -14,7 +15,7 @@ export class ScheduleCourseComponent {
   FacultyDetail: any
   ScheduleMSG: any
 
-  constructor(private courseDetail: CoursesService, private CoordinatorDetail: CoordinatorService, private Faculty: FacultyService) {
+  constructor(private courseDetail: CoursesService, private CoordinatorDetail: CoordinatorService, private Faculty: FacultyService,private router : Router) {
     courseDetail.getCourse().subscribe((resData) => {
       // console.log(resData)
       this.coursesData = resData
@@ -38,6 +39,9 @@ export class ScheduleCourseComponent {
       alert(this.ScheduleMSG.msg)
     })
 
+  }
+  ViewScheduleCourseHandler(){
+    this.router.navigate(['ViewScheduleCourse'])
   }
 
 

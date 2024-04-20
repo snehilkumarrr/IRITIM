@@ -10,20 +10,24 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class EditcoordinatorComponent {
   coordinatorId: any;
   coordinatorDetail: any
-  EditCoForm: any
+  EditCoForm: FormGroup = new FormGroup({
+    name: new FormControl(null),
+    empid: new FormControl(null),
+    emailid: new FormControl(null),
+    mobileno: new FormControl(null)
+  });
   SuccessMsg: any
   constructor(private route: ActivatedRoute, private Coordinator: CoordinatorService) {
-    this.coordinatorId = this.route.snapshot.paramMap.get('someData');
+    this.coordinatorId = this.route.snapshot.paramMap.get('id');
     // Use 'data' in your component logic.
 
-    this.Coordinator.getSingleCoordinator(this.coordinatorId).subscribe((data) => {
+    this.Coordinator.getSingleCoordinator(this.coordinatorId).subscribe((data:any) => {
       // console.log(data);
-      this.coordinatorDetail = data
       this.EditCoForm = new FormGroup({
-        name2: new FormControl("user"),
-        empid: new FormControl(this.coordinatorDetail.empid),
-        emailid: new FormControl(this.coordinatorDetail.emailid),
-        mobileno: new FormControl(this.coordinatorDetail.mobileno)
+        name: new FormControl(data.name),
+        empid: new FormControl(data.empid),
+        emailid: new FormControl(data.emailid),
+        mobileno: new FormControl(data.mobileno)
       });
 
     })
@@ -31,8 +35,8 @@ export class EditcoordinatorComponent {
 
   }
   EditFormHandler() {
-    // console.log(this.EditCoForm.value)
-    this.Coordinator.editCordinator(this.coordinatorDetail.id, this.EditCoForm.value).subscribe((resdata) => {
+    console.log(this.coordinatorId)
+    this.Coordinator.editCordinator(this.coordinatorId, this.EditCoForm.value).subscribe((resdata) => {
       console.log(resdata);
       this.SuccessMsg = resdata
       alert(this.SuccessMsg.msg)

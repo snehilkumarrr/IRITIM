@@ -8,26 +8,31 @@ import { Router } from '@angular/router';
 })
 export class ViewCourseComponent implements OnInit {
   ItemsArray: any;
-  constructor(private courseDetail: CoursesService,private router: Router) {
-
-
-
-   }
+  constructor(private courseDetail: CoursesService, private router: Router) { }
   ngOnInit() {
 
     this.courseDetail.getCourse().subscribe((res) => {
       this.ItemsArray = res
     })
-    
+
   }
   createCourses() {
     this.router.navigate(['CreateCourse']);
   }
-  SechduleCoure(){
-    this.router.navigate(['ScheduleCourse'])
+  editCourseHandler(id: number) {
+    // console.log(id);
+    this.router.navigate([`/Editcourse//${id}`]);
   }
-  deleteCourse(id:any){
-       this.courseDetail
+  deleteCourse(id: any) {
+    console.log(id)
+    this.courseDetail.CourseDelete(id).subscribe((resData: any) => {
+      console.log(resData)
+      alert(resData.message)
+      window.location.reload();
+    })
+  }
+  SechduleCoure() {
+    this.router.navigate(['ScheduleCourse'])
   }
 }
 

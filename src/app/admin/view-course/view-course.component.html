@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 190px;height: 100vh;">
+<div class="container" style="margin-top: 190px;height: 150vh;">
     <div class="row">
         <h1 class="text-center my-2">Course</h1>
         <div>
@@ -7,9 +7,9 @@
             <button (click)="SechduleCoure()" class=" btn btn-primary mt-5 mx-3">Sechdule Course
             </button>
         </div>
-        
+
         <table class="table border table-bordered mt-2 ">
-            <thead>
+            <thead class="table-primary">
                 <tr>
                     <th scope="col">S.No</th>
                     <th scope="col">Course Code</th>
@@ -25,8 +25,8 @@
                     <td>{{ item.courseName }}</td>
                     <td class="text-justify">{{ item.courseDescription }}</td>
                     <td class="p-4 mx-2">
-                        <a class="btn btn-success">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                        <button (click)="editCourseHandler(item.id)" class="btn btn-success">Edit</button>
+                        <button (click)="deleteCourse(item.id)" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>

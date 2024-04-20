@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 
 // Import Modules
 import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { CoursesComponent } from './components/courses/courses.component';
 import { DiscussionTopicListComponent } from './components/discussion-topic-list/discussion-topic-list.component';
@@ -43,6 +44,7 @@ register();
     AppRoutingModule,
     UserAuthModule,
     AdminModule,
+    UserModule,
     FormsModule,
     NgbModule
   ],

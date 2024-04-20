@@ -8,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  loginMsg: any
+  statucode: number = 400
   loginForm = new FormGroup({
     usernameOrEmail: new FormControl(''),
     password: new FormControl('')
@@ -19,17 +19,26 @@ export class LoginComponent {
 
 
   LoginHandler() {
-    // console.log(this.loginForm.value);
-    this.loginService.Login(this.loginForm.value).subscribe((resData) => {
+    this.loginService.Login(this.loginForm.value).subscribe((resData: any) => {
       // console.log(resData)
-      this.loginMsg = resData
-      if (this.loginMsg.roleId == 4) {
-        localStorage.setItem('username', this.loginMsg.username)
-        this.router.navigate(['userDashboard']);
-      } else  {
-        this.router.navigate(['adminDashboard']);
+      if (resData.statuscode === 400) {
+        alert("Please Enter Valid Username and Password")
+      } else {
+        if (resData.roleId == 4) {
+          localStorage.setItem('username', resData.username)
+          this.router.navigate(['userDashboard']);
+        } else {
+          this.router.navigate(['adminDashboard']);
+        }
       }
+
+
+
+
+
     })
+
+
 
   }
 

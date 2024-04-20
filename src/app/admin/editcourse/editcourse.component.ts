@@ -12,26 +12,35 @@ export class EditcourseComponent {
   userDetail: any = [{}];
 
   editcourseform: FormGroup = new FormGroup({
-    firstname: new FormControl(''),
-    lastname: new FormControl(''),
+    coursename: new FormControl(null),
+    coursecode: new FormControl(null),
+    coursedescription: new FormControl(null),
   });
   constructor(private route: ActivatedRoute, private http: HttpClient) {
-    this.getCourse();
-  }
-
-  getCourse() {
-    console.log(this.route.snapshot.paramMap.get('id'));
     this.id = this.route.snapshot.paramMap.get('id');
     this.http
-      .get(`https://dummyjson.com/users/${this.id}`)
+      .get(`http://172.16.14.78:8080/Dashboard/getcoursewithid/${this.id}`)
       .subscribe((resData: any) => {
+        // console.log(resData);
         this.editcourseform = new FormGroup({
-          firstname: new FormControl(resData.firstName),
-          lastname: new FormControl(resData.lastName),
+          coursename: new FormControl(resData.courseName),
+          coursecode: new FormControl(resData.courseCode),
+          coursedescription: new FormControl(resData.courseDescription),
         });
       });
   }
+
   editCourseHandler() {
     console.log(this.editcourseform.value);
+
+    this.http
+      .put(
+        `http://172.16.14.78:8080/Dashboard/editcourse/${this.id}`,
+        this.editcourseform.value
+      )
+      .subscribe((resData: any) => {
+        console.log(resData);
+        alert(resData.msg);
+      });
   }
 }

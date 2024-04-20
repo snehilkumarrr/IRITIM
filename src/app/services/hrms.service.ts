@@ -8,9 +8,9 @@ export class HrmsService {
   constructor(private http: HttpClient) {
   }
 
-  getEmp(id: any) {
-    const url = `http://localhost:3000/users/${id}`
- return   this.http.get(url)
+  getEmp(data:any) {
+    const url = `http://172.16.14.78:8080/Dashboard/callHrmsId`
+ return   this.http.post(url,{hrms_id:data})
   }
 
 }

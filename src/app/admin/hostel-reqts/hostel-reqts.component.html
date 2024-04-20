@@ -1,0 +1,36 @@
+<div class="container" style="margin-top: 190px;height: 60vh;">
+    <div class="row mt-5 ">
+        <h4 class="mt-3 text-center">Hostel Requests</h4>
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">S . NO</th>
+                        <th scope="col">Name </th>
+                        <th scope="col">Arrival Date</th>
+                        <th scope="col">Arrival By</th>
+                        <th scope="col">Departure Date</th>
+                        <th scope="col">Departure By</th>
+                        <th scope="col">Adults</th>
+                        <th scope="col">Children</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let HostelRq of  HostelRequest;let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{HostelRq.userid}}</td>
+                        <td>{{HostelRq.arrivaldatetime|date}}</td>
+                        <td>{{HostelRq.arrivalby}}</td>
+                        <td>{{HostelRq.departuredatetime|date}}</td>
+                        <td>{{HostelRq.departureby}}</td>
+                        <td>{{HostelRq.adults}}</td>
+                        <td>{{HostelRq.children}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
