@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent {
+
+username = localStorage.getItem("uname")
   constructor(private router: Router) {
 
   }
@@ -19,4 +21,7 @@ export class UserDashboardComponent {
     this.router.navigate(['Vehicle'])
   }
   Hostel() { this.router.navigate(['Hostel']) }
+  feedback() {
+    this.router.navigate(['FeedBack'])
+  }
 }

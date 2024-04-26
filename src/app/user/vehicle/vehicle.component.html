@@ -1,6 +1,6 @@
 <p>vehicle works!</p>
-<div class="container mb-4" style="margin-top:190px ;">
-    <h1 class="my-3">Book Vehicle</h1>
+<div class="container mb-4" style="margin-top:190px ;height: 70vh;">
+    <h1 class="my-3 text-center">Book Vehicle</h1>
     <form [formGroup]="vehicleform" class="row g-3" (ngSubmit)=" ApplyVehicleHandler()">
         <div class="col-md-3">
             <label for="inputEmail4" class="form-label">Arrival-Date Time</label>
@@ -86,4 +86,42 @@
             <button type="submit" class="btn btn-primary">Book</button>
         </div>
     </form>
+
+    <div class="row mt-3">
+        <h3 class="text-center">  Vehicle  Requests</h3>
+          <table class="table table-bordered">
+              <thead class="table-primary">
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Arrival Date Time</th>
+                  <th scope="col">Arival By</th>
+                  <th scope="col">Arrival Train/Flight No </th>
+                  <th scope="col">Arrival Station </th>
+                  <th scope="col">Departure Date Time</th>
+                  <th scope="col">Departure By</th>
+                  <th scope="col">Departure Train/Flight No </th>
+                  <th scope="col">Departure Station </th>
+                  <th scope="col">Adults</th>
+                  <th scope="col">Children</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let userreq of  vehicleReq;let i = index" >
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{userreq.arrivaldatetime|date}}</td>
+                  <td>{{userreq.arrivalby}}</td>
+                  <td>{{userreq.arrivalmodeno}}</td>
+                  <td>{{userreq.arrivalstation}}</td>
+                  <td>{{userreq.departuredatetime|date}}</td>
+                  <td>{{userreq.departureby}}</td>
+                  <td>{{userreq.departuremodeno}}</td>
+                  <td>{{userreq.departurestation}}</td>
+                  <td>{{userreq.adults}}</td>
+                  <td>{{userreq.children}}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+      </div>
 </div>

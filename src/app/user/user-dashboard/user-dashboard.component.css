@@ -1,4 +1,36 @@
 .courseBg {
+  background-image: url(../images/cc.png);
+  background-size: 100%;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+.HostelHq {
+  background-image: url(../images/hostel.png);
+  background-size: 100%;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+.VehicleHq {
   background-image: url(../images/course.png);
   background-size: 100%;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+.FeedBack {
+  background-image: url(../images/feedback.png);
+  background-size: 100%;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+.courseBg:hover {
+transform: scale(1.2);
+cursor: pointer;
+}
+.HostelHq:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.VehicleHq:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.FeedBack:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }

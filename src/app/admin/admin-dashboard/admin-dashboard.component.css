@@ -2,3 +2,30 @@
   background-image: url(../images/course.png);
   background-size: 100%;
 }
+.createcourse {
+  background-image: url(../images/cc.png);
+  background-size: 100%;
+}
+
+.createcoordinator {
+  background-image: url(../images/coordinator.png);
+  background-size: 100%;
+}
+.hostelhq {
+  background-image: url(../images/hostel.png);
+  background-size: 100%;
+  filter: blur();
+}
+.hostelhq:hover {
+  transform: scale(1.2);
+
+}
+.createcoordinator:hover {
+  transform: scale(1.2);
+}
+.createcourse:hover {
+  transform: scale(1.2);
+}
+.courseBg:hover {
+  transform: scale(1.2);
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CoursesService } from 'src/app/courses.service';
 import { FormControl, FormGroup } from '@angular/forms'; // Import FormsModule
+import Swal from 'sweetalert2'
 @Component({
   selector: 'createcourse',
   templateUrl: './createcourse.component.html',
@@ -18,8 +19,13 @@ export class CreatecourseComponent {
   createCourseHandler() {
     console.log(this.createcourseform.value)
     this.crcourse.createcourse(this.createcourseform.value).subscribe((resData: any) => {
-      console.log(resData.message)
+      console.log(resData)
       alert(resData.message)
+      Swal.fire({
+        title: "Success",
+        text: resData.message,
+        icon: "success"
+      });
     })
 
 

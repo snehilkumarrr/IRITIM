@@ -5,7 +5,7 @@
             <table class="table table-bordered">
                 <thead class="table-primary">
                     <tr>
-                        <th scope="col">S . NO</th>
+                        <th scope="col">S.No</th>
                         <th scope="col">Name </th>
                         <th scope="col">Arrival Date</th>
                         <th scope="col">Arrival By</th>
@@ -18,7 +18,7 @@
                 <tbody>
                     <tr *ngFor="let HostelRq of  HostelRequest;let i = index">
                         <th scope="row">{{ i + 1 }}</th>
-                        <td>{{HostelRq.userid}}</td>
+                        <td>{{HostelRq.username}}</td>
                         <td>{{HostelRq.arrivaldatetime|date}}</td>
                         <td>{{HostelRq.arrivalby}}</td>
                         <td>{{HostelRq.departuredatetime|date}}</td>

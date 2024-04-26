@@ -1,7 +1,7 @@
 <form class="login-bg" [formGroup]="loginForm" (ngSubmit)="LoginHandler()">
-    <div class="container  mb-5 login-form-bg" style="margin-top:190px;">
-        <h3 class="text-center text-white">Login</h3>
-        <div class="row g-3 justify-content-center">
+    <div class="container  mb-5 login-form-bg" style="margin-top:190px;height:50vh;">
+        <h3 class="text-center text-white source-serif-heading mt-5 ">Login</h3>
+        <div class="row g-3 mt-2 justify-content-center">
             <div class="col-auto">
                 <div class="form-floating my-3">
                     <input formControlName="usernameOrEmail" type="text" name="usernameOrEmail" placeholder="Username"
@@ -23,7 +23,7 @@
         </div>
         <div class="row g-3 justify-content-center my-2">
             <div class="col-auto">
-                <button class="btn btn-primary">Login</button>
+                <button class="btn btn-primary">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
             </div>
 
         </div>

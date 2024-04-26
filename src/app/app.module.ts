@@ -8,7 +8,6 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 
 
-
 // Import Modules
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
@@ -46,7 +45,8 @@ register();
     AdminModule,
     UserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

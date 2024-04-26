@@ -4,7 +4,7 @@
         <table class="table table-bordered mt-5">
             <thead class="table-primary">
                 <tr>
-                    <th scope="col">S.NO</th>
+                    <th scope="col">S.No</th>
                     <th scope="col">Username</th>
                     <th scope="col">Arrival Date Time</th>
                     <th scope="col">Arrival By</th>
@@ -20,7 +20,7 @@
             <tbody>
                 <tr *ngFor="let VehicleR of vehicleReqDetail;let i = index">
                     <td >{{ i + 1 }}</td>
-                    <td>{{VehicleR.userid}}</td>
+                    <td>{{VehicleR.username}}</td>
                     <td>{{VehicleR.arrivaldatetime | date}}</td>
                     <td>{{VehicleR.arrivalby}}</td>
                     <td>{{VehicleR.arrivalmodeno}}</td>

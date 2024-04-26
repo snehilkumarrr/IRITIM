@@ -126,39 +126,17 @@
         <div class="row  my-3">
             <h2 class="text-center my-4 source-serif-heading testimonial-text fw-bolder">Testimonials</h2>
             <div class="row p-4">
-                <swiper-container slides-per-view="2" space-between="30" autoplay="true" pagination="true" loop="true"
+                <swiper-container slides-per-view="2" space-between="30" autoplay="true"  pagination="true" loop="true"
                     navigation="false">
-                    <swiper-slide>
-                        <div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">User 1</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">User 2</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
+                    <swiper-slide *ngFor="let feedbacks of   feedbackdetails">
                         <div>
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">User 3</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
+                                
+                                     <ngb-rating class="h3 text-warning" [max]="5" [rate]="feedbacks.rating" [readonly]="true" />
+                                  
+                                    <p class="card-text">{{feedbacks.comment}}</p>
+                                    <h5 class="card-title text-center text-primary">{{feedbacks.userid}}</h5>
 
                                 </div>
                             </div>
@@ -166,15 +144,13 @@
                     </swiper-slide>
                 </swiper-container>
 
-
-
             </div>
         </div>
     </div>
     <div class="parallaxTwo"></div>
     <div class="container bg-white">
         <div class="row py-2">
-            <swiper-container slides-per-view="4" space-between="" autoplay="true" loop="true">
+            <swiper-container slides-per-view="4" autoplay="true" loop="true">
                 <swiper-slide>
                     <div>
                         <img src="../../assets/images/cris-logo.png" alt="cris" />
@@ -182,7 +158,8 @@
                 </swiper-slide>
                 <swiper-slide>
                     <div>
-                        <img src="../../assets/images/gst-indianraiways.png" alt="cris" />
+                        <img src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/bfi_thumb/2019032217-q16g867drg9vnyo2n1kiptb10wi2gw8vmd6lw3rht4.png"
+                            alt="cris" />
                     </div>
                 </swiper-slide>
                 <swiper-slide>
@@ -192,14 +169,24 @@
                 </swiper-slide>
                 <swiper-slide>
                     <div>
-                        <img src="../../assets/images/coms.jpg" alt="cris" />
+                        <img src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/bfi_thumb/2019041050-q16g7yoo8rzl32yzuybi5v7c9tj4rbf0xbyq1w2n6w.png"
+                            alt="cris" />
                     </div>
                 </swiper-slide>
                 <swiper-slide>
                     <div>
-                        <img src="../../assets/images/pg4.gif" alt="cris" />
+                        <img src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/bfi_thumb/2019052222-q16g7vv5o9vq4933bf3mgdwyhnx1483twy09m26tpk.png"
+                            alt="cris" />
                     </div>
                 </swiper-slide>
+                <swiper-slide>
+                    <div>
+                        <img src="   https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/bfi_thumb/2019052265-q16g7uxbhfufsn4ggwozvw5hwa1nwj03ktcs4s87vs.png"
+                            alt="cris" />
+                    </div>
+                </swiper-slide>
+
+
             </swiper-container>
 
         </div>

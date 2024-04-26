@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-dashboard.component.css'],
 })
 export class AdminDashboardComponent {
+  username = localStorage.getItem('uname')
   constructor(private router: Router) { }
   createCourses() {
     this.router.navigate(['CreateCourse']);
@@ -26,4 +27,8 @@ export class AdminDashboardComponent {
   ViewCoordinator() {
     this.router.navigate(['ViewCoordinator']);
   }
+  Faculty(){
+    this.router.navigate(['ViewFaculty'])
+  }
 }
+

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './user-auth/login/login.component';
@@ -20,6 +20,10 @@ import { HostelComponent } from "./user/hostel/hostel.component"
 import { AppliedCourseComponent } from "./user/applied-course/applied-course.component"
 import { HostelReqtsComponent } from './admin/hostel-reqts/hostel-reqts.component';
 import { ViewScheduleCourseComponent } from "./admin/view-schedule-course/view-schedule-course.component"
+import { FeedbackComponent } from './user/feedback/feedback.component';
+import { FacultyComponent } from './admin/faculty/faculty.component';
+import { EditFacultyComponent } from './admin/edit-faculty/edit-faculty.component';
+import { ViewFacultyComponent } from './admin/view-faculty/view-faculty.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -40,7 +44,11 @@ const routes: Routes = [
   { path: "ApplyCourse", component: AppliedCourseComponent },
   { path: "HostelRequest", component: HostelReqtsComponent },
   { path: "ViewScheduleCourse", component: ViewScheduleCourseComponent },
-  { path: "VehicleReq", component: VehicleReqComponent }
+  { path: "VehicleReq", component: VehicleReqComponent },
+  { path: "FeedBack", component: FeedbackComponent },
+  { path: 'CreateFaculty', component: FacultyComponent },
+  { path: 'EditFaculty/:id', component: EditFacultyComponent },
+  { path: 'ViewFaculty', component: ViewFacultyComponent }
 ];
 
 @NgModule({

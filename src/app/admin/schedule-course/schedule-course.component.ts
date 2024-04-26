@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CoursesService } from 'src/app/courses.service';
 import { CoordinatorService } from 'src/app/services/coordinator.service';
 import { FacultyService } from 'src/app/services/faculty.service';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-schedule-course',
   templateUrl: './schedule-course.component.html',
@@ -15,7 +15,7 @@ export class ScheduleCourseComponent {
   FacultyDetail: any
   ScheduleMSG: any
 
-  constructor(private courseDetail: CoursesService, private CoordinatorDetail: CoordinatorService, private Faculty: FacultyService,private router : Router) {
+  constructor(private courseDetail: CoursesService, private CoordinatorDetail: CoordinatorService, private Faculty: FacultyService, private router: Router) {
     courseDetail.getCourse().subscribe((resData) => {
       // console.log(resData)
       this.coursesData = resData
@@ -33,14 +33,18 @@ export class ScheduleCourseComponent {
   }
   ScheduleCourseHandler(data: any) {
     console.log(data)
-    this.courseDetail.scheduleCourse(data).subscribe((resData) => {
+    this.courseDetail.scheduleCourse(data).subscribe((resData: any) => {
       console.log(resData)
-      this.ScheduleMSG = resData
-      alert(this.ScheduleMSG.msg)
+      // alert(resData.msg)
+      Swal.fire({
+        title: "Success",
+        text: resData.msg,
+        icon: "success"
+      });
     })
 
   }
-  ViewScheduleCourseHandler(){
+  ViewScheduleCourseHandler() {
     this.router.navigate(['ViewScheduleCourse'])
   }
 

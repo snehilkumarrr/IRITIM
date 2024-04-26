@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SignupService } from './signup.service'
 import { FormControl, FormGroup, Validators } from '@angular/forms'; // Import FormsModule
 import { HrmsService } from 'src/app/services/hrms.service';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -48,7 +49,7 @@ export class SignupComponent {
     this.hrmsdetail.getEmp(hrmsIdValue).subscribe((resData: any) => {
       console.log(resData)
       this.SignupForm = new FormGroup({
-        employeetype: new FormControl(null),
+        employeetype: new FormControl(this.emptype),
         hrmsid: new FormControl(resData.emp_hrms_id),
         name: new FormControl(resData.employee_name),
         usernamehindi: new FormControl(null),
@@ -86,7 +87,12 @@ export class SignupComponent {
     this.signupservice.saveUser(this.SignupForm.value).subscribe((resData) => {
       console.log(resData);
       this.SuccessMsg = resData
-      alert(this.SuccessMsg.message)
+      // alert(this.SuccessMsg.message)
+      Swal.fire({
+        title: "SignUp",
+        text: this.SuccessMsg.message,
+        icon: 'success'
+      });
     })
   }
 

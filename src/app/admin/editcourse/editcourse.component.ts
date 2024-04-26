@@ -2,6 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-editcourse',
   templateUrl: './editcourse.component.html',
@@ -40,7 +41,12 @@ export class EditcourseComponent {
       )
       .subscribe((resData: any) => {
         console.log(resData);
-        alert(resData.msg);
+        // alert(resData.msg);
+        Swal.fire({
+          title: "Success",
+          text: resData.msg,
+          icon: "success"
+        });
       });
   }
 }

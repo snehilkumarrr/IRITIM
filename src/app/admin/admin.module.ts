@@ -14,6 +14,9 @@ import { EditcourseComponent } from './editcourse/editcourse.component';
 import { HostelReqtsComponent } from './hostel-reqts/hostel-reqts.component';
 import { ViewScheduleCourseComponent } from './view-schedule-course/view-schedule-course.component';
 import { VehicleReqComponent } from './vehicle-req/vehicle-req.component';
+import { FacultyComponent } from './faculty/faculty.component';
+import { ViewFacultyComponent } from './view-faculty/view-faculty.component';
+import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -26,7 +29,10 @@ import { VehicleReqComponent } from './vehicle-req/vehicle-req.component';
     EditcourseComponent,
     HostelReqtsComponent,
     ViewScheduleCourseComponent,
-    VehicleReqComponent
+    VehicleReqComponent,
+    FacultyComponent,
+    ViewFacultyComponent,
+    EditFacultyComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule

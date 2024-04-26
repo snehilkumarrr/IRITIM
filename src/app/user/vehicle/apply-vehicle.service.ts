@@ -12,9 +12,12 @@ export class ApplyVehicleService {
 
 
   }
+  getVehicle() {
+   return this.http.get('http://172.16.14.78:8080/Dashboard/getVehicleRequest/ya0146')
+  }
   VehicleRequest(data: any) {
     const url = "http://172.16.14.78:8080/Dashboard/VehicleRequest"
-  return  this.http.post(url, data)
+    return this.http.post(url, data)
 
 
   }

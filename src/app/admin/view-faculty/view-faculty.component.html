@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 190px;height: 50vh;">
+    <h3 class="text-center">View Faculties</h3>
+    <button (click)="createfaculty()" class="my-2 btn btn-primary">Create Faculty <i class="fa fa-pencil"
+            aria-hidden="true"></i></button>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="row">S . No</th>
+                    <th>Name</th>
+                    <th>Employee ID</th>
+                    <th>Email ID</th>
+                    <th>Mobile No</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Faculties of FacultyDetails; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{Faculties.fname}}</td>
+                    <td>{{Faculties.fempid}}</td>
+                    <td>{{Faculties.femailid}}</td>
+                    <td>{{Faculties.fmobileno}}</td>
+                    <td>
+                        <button (click)="editfaculty(Faculties.id)" class="btn btn-success">Edit</button>
+                        <button (click)="deleteFaculty(Faculties.id)" class="btn btn-danger mx-1">Delete</button>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

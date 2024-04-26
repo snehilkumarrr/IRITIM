@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoordinatorService } from 'src/app/services/coordinator.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-editcoordinator',
   templateUrl: './editcoordinator.component.html',
@@ -36,10 +37,14 @@ export class EditcoordinatorComponent {
   }
   EditFormHandler() {
     console.log(this.coordinatorId)
-    this.Coordinator.editCordinator(this.coordinatorId, this.EditCoForm.value).subscribe((resdata) => {
+    this.Coordinator.editCordinator(this.coordinatorId, this.EditCoForm.value).subscribe((resdata:any) => {
       console.log(resdata);
-      this.SuccessMsg = resdata
-      alert(this.SuccessMsg.msg)
+      // alert(this.SuccessMsg.msg)
+      Swal.fire({
+        title: "Success",
+        text: resdata.msg,
+        icon: "success"
+      });
     })
   }
 
