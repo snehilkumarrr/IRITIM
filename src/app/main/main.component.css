@@ -15,8 +15,6 @@
   background-attachment: fixed;
 }
 
-
-
 .parallaxOne {
   width: 100%;
   height: 600px;
@@ -50,16 +48,23 @@
 }
 
 /* Overlaying div style */
+
 .Main-Title {
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  font-size: 18px;
+  font-size: 218px; /* Adjust this value for mobile devices */
   font-weight: 900;
-  font-size: 250px;
   letter-spacing: 0.3rem;
+}
+
+/* Media query for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+  .Main-Title {
+    font-size: 90px; /* Adjust this value for smaller screens */
+  }
 }
 
 .linear-text-gradient {

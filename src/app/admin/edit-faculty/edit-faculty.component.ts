@@ -23,7 +23,7 @@ export class EditFacultyComponent {
     console.log(this.route.snapshot.paramMap.get('id'))
     this.id = this.route.snapshot.paramMap.get('id');
     this.Faculty.getFacultywithId(this.id).subscribe((resData: any) => {
-      // console.log(resData)
+   console.log(resData)
       this.facultyeditform = new FormGroup({
 
         fname: new FormControl(resData.fname),

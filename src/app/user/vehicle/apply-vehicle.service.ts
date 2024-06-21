@@ -13,10 +13,10 @@ export class ApplyVehicleService {
 
   }
   getVehicle() {
-   return this.http.get('http://172.16.14.78:8080/Dashboard/getVehicleRequest/ya0146')
+   return this.http.get('http://10.64.29.243:8080/IRITM/Dashboard/getVehicleRequest/ya0146')
   }
   VehicleRequest(data: any) {
-    const url = "http://172.16.14.78:8080/Dashboard/VehicleRequest"
+    const url = "http://10.64.29.243:8080/IRITM/Dashboard/VehicleRequest"
     return this.http.post(url, data)
 
 

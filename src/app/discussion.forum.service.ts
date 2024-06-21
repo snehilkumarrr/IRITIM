@@ -14,31 +14,31 @@ export class DiscussionForum {
   listAllTopics(searchTopic:any,pageNo:any){
     if(searchTopic!=null){
       const queryParams = new HttpParams().set('searchTopic', searchTopic);
-      let url = "http://172.16.14.78:8080/discussionForum/listAllTopics/"+pageNo;
+      let url = "http://10.64.29.243:8080/IRITM/discussionForum/listAllTopics/"+pageNo;
       return this.http.get(url,{params: queryParams });
     }else{
-      let url = "http://172.16.14.78:8080/discussionForum/listAllTopics/"+pageNo;
+      let url = "http://10.64.29.243:8080/IRITM/discussionForum/listAllTopics/"+pageNo;
       return this.http.get(url);
     }
   }
 
   addTopic(topicModel:any){
-    let url = "http://172.16.14.78:8080/discussionForum/addTopic";
+    let url = "http://10.64.29.243:8080/IRITM/discussionForum/addTopic";
     return this.http.post(url,topicModel);
   }
 
   getCommentsByTopic(topicId:any,pageNo:any){
-    let url = "http://172.16.14.78:8080/discussionForum/getCommentsByTopic/"+topicId+"/"+pageNo;
+    let url = "http://10.64.29.243:8080/IRITM/discussionForum/getCommentsByTopic/"+topicId+"/"+pageNo;
     return this.http.get(url);
   }
 
   addComment(topicCommentModel:any,pageNo:any){
-    let url = "http://172.16.14.78:8080/discussionForum/addComment/"+pageNo;
+    let url = "http://10.64.29.243:8080/IRITM/discussionForum/addComment/"+pageNo;
     return this.http.post(url,topicCommentModel);
   }
 
   closeTopic(topicModel:any,pageNo:any){
-    let url = "http://172.16.14.78:8080/discussionForum/closeTopic/"+pageNo;
+    let url = "http://10.64.29.243:8080/IRITM/discussionForum/closeTopic/"+pageNo;
     return this.http.post(url,topicModel);
   }
   

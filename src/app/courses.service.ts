@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CoursesService {
 
-  url = 'http://172.16.14.78:8080/Dashboard/getcourse';
+  url = 'http://10.64.29.243:8080/IRITM/Dashboard/getcourse';
   constructor(private http: HttpClient) { }
   getCourse() {
     return this.http.get(this.url);
@@ -13,29 +13,29 @@ export class CoursesService {
 
 
   createcourse(data: any) {
-    const url = "http://172.16.14.78:8080/Dashboard/createcourse"
+    const url = "http://10.64.29.243:8080/IRITM/Dashboard/createcourse"
     return this.http.post(url, data)
   }
 
   courseedit(id:number,data:any){
-    const url =`http://172.16.14.78:8080/Dashboard/editcourse/${id}`
+    const url =`http://10.64.29.243:8080/IRITM/Dashboard/editcourse/${id}`
     return this.http.post(url,data)
   }
 
   CourseDelete(id: number) {
-    const url = `http://172.16.14.78:8080/Dashboard/deletecourse/${id}`
+    const url = `http://10.64.29.243:8080/IRITM/Dashboard/deletecourse/${id}`
     return this.http.delete(url)
   }
 
 
   scheduleCourse(data: any) {
 
-    const url = "http://172.16.14.78:8080/Dashboard/add-course-schedule"
+    const url = "http://10.64.29.243:8080/IRITM/Dashboard/add-course-schedule"
     return this.http.post(url, data)
   }
 
   getScheduleCourse() {
-    const url = "http://172.16.14.78:8080/Dashboard/getall-course-schedule"
+    const url = "http://10.64.29.243:8080/IRITM/Dashboard/getall-course-schedule"
     return this.http.get(url);
 
   }
@@ -44,17 +44,20 @@ export class CoursesService {
 
 
   CourseApply(data:any) {
-    const url = "http://172.16.14.78:8080/Dashboard/saveAppliedCourse"
+    const url = "http://10.64.29.243:8080/IRITM/Dashboard/saveAppliedCourse"
     return this.http.post(url,data)
   }
   UserAppliedCourse(id:any) {
     // console.log(id)
-    const url = `http://172.16.14.78:8080/Dashboard/getAppliedCourse/${id}`
+    const url = `http://10.64.29.243:8080/IRITM/Dashboard/getAppliedCourse/${id}`
     return this.http.get(url)
 
   }
 
-
+getAllappliedCourse(){
+  const url = `http://172.16.14.78:8080/Dashboard/getAppliedAllCourse`
+    return this.http.get(url)
+}
 
 
 }

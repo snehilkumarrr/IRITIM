@@ -24,6 +24,8 @@ import { FeedbackComponent } from './user/feedback/feedback.component';
 import { FacultyComponent } from './admin/faculty/faculty.component';
 import { EditFacultyComponent } from './admin/edit-faculty/edit-faculty.component';
 import { ViewFacultyComponent } from './admin/view-faculty/view-faculty.component';
+import { AboutComponent } from "./about/about.component"
+import { AppliedCoursesComponent } from './admin/applied-courses/applied-courses.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -48,7 +50,9 @@ const routes: Routes = [
   { path: "FeedBack", component: FeedbackComponent },
   { path: 'CreateFaculty', component: FacultyComponent },
   { path: 'EditFaculty/:id', component: EditFacultyComponent },
-  { path: 'ViewFaculty', component: ViewFacultyComponent }
+  { path: 'ViewFaculty', component: ViewFacultyComponent },
+  { path: 'Mission', component: AboutComponent },
+  { path: 'AppliedCourse', component: AppliedCoursesComponent },
 ];
 
 @NgModule({

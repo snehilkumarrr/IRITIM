@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class SignupService {
-  url = "http://172.16.14.78:8080/Dashboard/saveregistraiondata"
+  url = "http://10.64.29.243:8080/IRITM/Dashboard/saveregistraiondata"
 
   constructor(private http: HttpClient) {
   }

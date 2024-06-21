@@ -9,7 +9,7 @@ export class ViewScheduleCourseComponent {
   scheduleDetail: any
 
   constructor(private http: HttpClient) {
-    this.http.get("http://172.16.14.78:8080/Dashboard/getall-course-schedule").subscribe((resData: any) => {
+    this.http.get("10.64.29.243:8080/IRITM/Dashboard/getall-course-schedule").subscribe((resData: any) => {
       console.log(resData)
       this.scheduleDetail = resData
     })

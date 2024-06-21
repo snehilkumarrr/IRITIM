@@ -10,7 +10,7 @@ export class HostelReqtsComponent {
 
   constructor(private http: HttpClient) {
 
-    this.http.get('http://172.16.14.78:8080/Dashboard/getAllHostelRequest').subscribe((resData) => {
+    this.http.get('http://10.64.29.243:8080/IRITM/Dashboard/getAllHostelRequest').subscribe((resData) => {
       console.log(resData)
       this.HostelRequest = resData
     })

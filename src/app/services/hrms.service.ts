@@ -9,7 +9,7 @@ export class HrmsService {
   }
 
   getEmp(data:any) {
-    const url = `http://172.16.14.78:8080/Dashboard/callHrmsId`
+    const url = `http://10.64.29.243:8080/IRITM/Dashboard/callHrmsId`
  return   this.http.post(url,{hrms_id:data})
   }
 

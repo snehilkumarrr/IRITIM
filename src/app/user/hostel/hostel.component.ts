@@ -37,7 +37,7 @@ export class HostelComponent {
     if (localStorage.getItem('officertype') === "GAZETTED") {
       this.showChidren = true
     }
-    this.http.get(`http://172.16.14.78:8080/Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
+    this.http.get(`http://10.64.29.243:8080/IRITM/Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
       console.log(resData)
       this.hostelReq = resData
 
@@ -48,7 +48,7 @@ export class HostelComponent {
 
   ApplyHostelHandler() {
     console.log(this.hostelform.value)
-    this.http.post('http://172.16.14.78.:8080/Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
+    this.http.post('http://10.64.29.243:8080/IRITM/Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
 
       // alert(resData.message)
 

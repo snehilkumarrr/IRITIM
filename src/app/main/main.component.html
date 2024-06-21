@@ -3,7 +3,7 @@
     <div class="Main-Title">
         <p class="main-title-text">IRITM</p>
     </div>
-    <div class="container p-5">
+    <div id="iritmabout" class="container p-5">
         <h1 class=" text-justify text-center mx-1 fw-bold source-serif-heading text-danger">About IRITM </h1>
         <strong>The Indian Railways Institute of Transport Management (IRITM)</strong> has been set up by the Minstry of
         Railways in August 1999 as a centralized training institute with the objective of imparting a a focused training
@@ -35,12 +35,12 @@
     <div class="parallax"></div>
     <div class="container bg-white">
         <div class="row p-4">
-            <div class="col-5">
+            <div class="col-sm-5">
                 <div class="card">
                     <div class="card-header bg-danger text-white source-serif-heading h4">
                         Photo Gallary
                     </div>
-                    <div class="mx-2 my-3 text-center " style="width:480px ;">
+                    <div class="mx-sm-2 my-3 text-center " style="width:480px ;">
                         <a href="../../assets/images/DSC_2260.JPG" class="mx-1 mb-1"> <img height="150px" width="150px"
                                 src="../../assets/images/DSC_2260.JPG" /></a>
                         <a href="../../assets/images/DSC_2541.JPG" class="mx-1 mb-1"> <img height="150px" width="150px"
@@ -57,13 +57,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header bg-danger text-white source-serif-heading h4">
                         Video Gallery
                     </div>
                     <div class="card-body">
-                        <swiper-container slides-per-view="1" space-between="5" autoplay="true" loop="true">
+                        <swiper-container slides-per-view="1" grid-rows="1" grab-cursor="true" space-between="5" autoplay="true"
+                            loop="true">
                             <swiper-slide>
                                 <video width="590" height="295" autoplay controls loop muted>
                                     <source src="../../assets/images/main.mp4" type="video/mp4">
@@ -126,15 +127,16 @@
         <div class="row  my-3">
             <h2 class="text-center my-4 source-serif-heading testimonial-text fw-bolder">Testimonials</h2>
             <div class="row p-4">
-                <swiper-container slides-per-view="2" space-between="30" autoplay="true"  pagination="true" loop="true"
+                <swiper-container slides-per-view="2" space-between="30" autoplay="true" grab-cursor="true" pagination="true" loop="true"
                     navigation="false">
                     <swiper-slide *ngFor="let feedbacks of   feedbackdetails">
                         <div>
                             <div class="card">
                                 <div class="card-body text-center">
-                                
-                                     <ngb-rating class="h3 text-warning" [max]="5" [rate]="feedbacks.rating" [readonly]="true" />
-                                  
+
+                                    <ngb-rating class="h3 text-warning" [max]="5" [rate]="feedbacks.rating"
+                                        [readonly]="true" />
+
                                     <p class="card-text">{{feedbacks.comment}}</p>
                                     <h5 class="card-title text-center text-primary">{{feedbacks.userid}}</h5>
 
@@ -150,7 +152,7 @@
     <div class="parallaxTwo"></div>
     <div class="container bg-white">
         <div class="row py-2">
-            <swiper-container slides-per-view="4" autoplay="true" loop="true">
+            <swiper-container slides-per-view="4" grab-cursor="true"  autoplay="true" loop="true">
                 <swiper-slide>
                     <div>
                         <img src="../../assets/images/cris-logo.png" alt="cris" />

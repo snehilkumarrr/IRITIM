@@ -22,6 +22,8 @@ import { DiscussionCommentReplyModalComponent } from './components/discussion-co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { register } from 'swiper/element/bundle';
+import { AboutComponent } from './about/about.component';
+import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 // register Swiper custom elements
 register();
 
@@ -37,6 +39,7 @@ register();
     DiscussionTopicCommentsComponent,
     DiscussionTopicCommentsInnerComponent,
     DiscussionCommentReplyModalComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ register();
     NgbModule,
 
   ],
-  providers: [],
+  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

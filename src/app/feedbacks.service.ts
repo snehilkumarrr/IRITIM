@@ -8,10 +8,10 @@ export class FeedbacksService {
   constructor(private http : HttpClient) { }
 
 getTestimonials(){
-return   this.http.get('http://172.16.14.78:8080/Dashboard/getfeedback')
+return   this.http.get('http://10.64.29.243:8080/IRITM/Dashboard/getfeedback')
 }
 postfeedback(data:any){
-  return this.http.post('http://172.16.14.78:8080/Dashboard/savefeedback',data)
+  return this.http.post('http://10.64.29.243:8080/IRITM/Dashboard/savefeedback',data)
 }
 
 }

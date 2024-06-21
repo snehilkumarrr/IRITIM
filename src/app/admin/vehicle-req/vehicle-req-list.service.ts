@@ -10,7 +10,7 @@ export class VehicleReqListService {
   
    }
    showVehicle(){
-    const url ="http://172.16.14.78:8080/Dashboard/getAllVehicleRequest"
+    const url ="http://10.64.29.243:8080/IRITM/Dashboard/getAllVehicleRequest"
    return this.http.get(url)
    }
 }

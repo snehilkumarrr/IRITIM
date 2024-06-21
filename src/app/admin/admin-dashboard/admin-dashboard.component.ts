@@ -30,5 +30,8 @@ export class AdminDashboardComponent {
   Faculty(){
     this.router.navigate(['ViewFaculty'])
   }
+  ViewAppliedCourse(){
+    this.router.navigate(['AppliedCourse'])
+  }
 }
 
