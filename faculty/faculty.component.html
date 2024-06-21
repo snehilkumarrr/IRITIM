@@ -1,0 +1,25 @@
+<div class="container" style="margin-top: 190px;height: 40vh;">
+    <h3 class="text-center  source-serif-heading">Create Faculty</h3>
+    <form [formGroup]="createFacultyForm" (ngSubmit)="FacultyHandler()" class="row g-3">
+        
+        <div class="col-md-3">
+            <label for="fname" class="form-label"> Name</label>
+            <input name="fname" formControlName="fname" type="text" class="form-control" placeholder="Please Enter Faculty Name">
+        </div>
+        <div class="col-md-3">
+            <label for="fempid" class="form-label">Employee ID</label>
+            <input name="fempid"  formControlName="fempid" type="text" class="form-control" placeholder="Please Enter Employee ID">
+        </div>
+        <div class="col-md-3">
+            <label for="fmobileno" class="form-label">Mobile No</label>
+            <input name="fmobileno" formControlName="fmobileno" type="number" class="form-control" placeholder="Please Enter Mobile No">
+        </div>
+        <div class="col-md-3">
+            <label for="femailid" class="form-label">Email ID </label>
+            <input name="femailid" formControlName="femailid" type="email" class="form-control" placeholder="Please Enter Email ID">
+        </div>
+        <div class="col-12 text-center my-4">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>

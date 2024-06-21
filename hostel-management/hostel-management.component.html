@@ -1,0 +1,44 @@
+<div class="container mb-4" style="margin-top:190px ;height:70vh">
+
+  <form [formGroup]="roomForm" (ngSubmit)="makeRoom()" class="row g-3 mt-5">
+    <h3 class="text-center  mt-5">Room Management</h3>
+
+    <div class="col-md-6">
+      <label for="hostelName" class="form-label">Hostel Name</label>
+      <select formControlName="hostelName" id="hostelName" class="form-select">
+
+        <option *ngFor='let data of hostelArray' value="{{data.id}}">{{data.hostelName}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="roomNo" class="form-label">Room No</label>
+      <input formControlName="roomNo" type="input" class="form-control" id="roomNo">
+    </div>
+
+    <div class="col-md-6">
+      <label for="roomType" class="form-label">Room Type</label>
+      <select formControlName="roomType" id="roomType" class="form-select">
+        <option *ngFor='let data of roomTypeArray' value="{{data.id}}">{{data.roomType}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="floor" class="form-label">Floor</label>
+      <input formControlName="floor" type="input" class="form-control" id="floor">
+    </div>
+
+    <div class="col-md-6">
+      <label for="roomFeatures" class="form-label">Room Features</label>
+      <select formControlName="roomFeatures" id="roomFeatures" class="form-select">
+
+        <option *ngFor='let data of roomFeaturesArray' value="{{data.id}}">{{data.hostelName}}</option>
+      </select>
+    </div>
+
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary">Book</button>
+    </div>
+  </form>
+
+</div>

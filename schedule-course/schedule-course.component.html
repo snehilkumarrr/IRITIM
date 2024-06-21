@@ -1,0 +1,47 @@
+<div class="container" style="margin-top:290px;height:50vh">
+    <h1 class="text-center">Schedule Course </h1>
+    <button (click)="ViewScheduleCourseHandler()" class="my-3 btn btn-primary">View Schedule Course</button>
+    <form #schedulecourse="ngForm" (ngSubmit)="ScheduleCourseHandler(schedulecourse.value)" class="row g-3">
+        <div class="col-md-2">
+            <label for="inputEmail4" class="form-label">Course Name</label>
+            <select ngModel name="courseName" class="form-select" id="courseName">
+                <option selected>Select Option</option>
+                <option *ngFor="let courses of coursesData" value="{{courses.id}}">
+                    {{courses.courseName }}-{{courses.courseCode}}
+                </option>
+
+            </select>
+
+
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputAddress" class="form-label">Course Coordinator</label>
+            <select ngModel name="coordinatorId" class="form-select" id="coursecoordinator">
+                <option selected>Please Select Option</option>
+                <option *ngFor="let coordinators of  coordinator" value={{coordinators.empid}}>{{coordinators.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputAddress" class="form-label">Select Faculty</label>
+            <select ngModel name="professorId" class="form-select">
+                <option selected>Please Select Option</option>
+                <option *ngFor="let Facultys of FacultyDetail" value="{{Facultys.fempid}}">{{Facultys.fname}}</option>
+
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputAddress" class="form-label">From Date</label>
+            <input ngModel name="startDate" type="datetime-local" class="form-control" id="inputAddress">
+        </div>
+        <div class="col-md-2">
+            <label for="inputAddress" class="form-label">To Date</label>
+            <input ngModel name="endDate" type="datetime-local" class="form-control" id="inputAddress">
+        </div>
+
+        <div class="col-12 text-center my-4">
+            <button type="submit" class="btn btn-primary">Schedule</button>
+        </div>
+    </form>
+</div>

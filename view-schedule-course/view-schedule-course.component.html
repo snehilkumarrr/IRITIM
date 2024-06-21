@@ -1,0 +1,30 @@
+<div class="container" style="margin-top: 190px;height:100vh">
+    <div class="row">
+        <h3 class="mt-4 text-center">View Scheduled Courses</h3>
+        <table class="table table-bordered mt-4">
+            <thead class="table-primary">
+                <tr >
+                    <th scope="col">S.No</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">StartDate</th>
+                    <th scope="col">EndDate</th>
+                    <th scope="col">CoordinatorName</th>
+                    <th scope="col">ProfessorName</th>
+                    <th scope="col">Course Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Scheduledcourse of scheduleDetail;let i = index">
+                    <th>{{ i + 1 }}</th>
+                    <td>{{Scheduledcourse.courseName}}</td>
+                    <td>{{Scheduledcourse.startDate|date}}</td>
+                    <td>{{Scheduledcourse.endDate|date}}</td>
+                    <td>{{Scheduledcourse.coordinatorName}}</td>
+                    <td>{{Scheduledcourse.professorNmae}}</td>
+                    <td>{{Scheduledcourse.courseDesc}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

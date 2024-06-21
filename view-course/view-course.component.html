@@ -1,0 +1,36 @@
+<div class="container" style="margin-top: 190px;height: 150vh;">
+    <div class="row">
+        <h1 class="text-center my-2">Course</h1>
+        <div>
+            <button (click)=" createCourses()" class=" btn btn-primary mt-5">Create Course <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+            <button (click)="SechduleCoure()" class=" btn btn-primary mt-5 mx-3">Sechdule Course <i class="fa fa-calendar" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <table class="table border table-bordered mt-2 " style="width:100% ;">
+            <thead class="table-primary">
+                <tr class="source-serif-heading">
+                    <th scope="col">S.No</th>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Course Description</th>
+                    <th scope="col-1">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ItemsArray; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ item.courseCode }}</td>
+                    <td>{{ item.courseName }}</td>
+                    <td class="text-justify">{{ item.courseDescription }}</td>
+                    <td class="p-4 mx-2">
+                        <button (click)="editCourseHandler(item.id)" class="btn btn-success">Edit </button>
+                        <button (click)="deleteCourse(item.id)" class="btn btn-danger">Delete </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
