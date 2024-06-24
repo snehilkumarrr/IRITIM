@@ -25,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { register } from 'swiper/element/bundle';
 import { AboutComponent } from './about/about.component';
 import { HashLocationStrategy,LocationStrategy } from '@angular/common';
+<<<<<<< HEAD
 import { DirectorGeneralComponent } from './about-us-nav-bar/director-general/director-general.component';
 import { AddlDirectorGeneralComponent } from './about-us-nav-bar/addl-director-general/addl-director-general.component';
 import { FacultyComponent } from './about-us-nav-bar/faculty/faculty.component';
@@ -84,6 +85,10 @@ import { TendersContractsComponent } from './knowledge-centre-nav-bar/tenders-co
 import { EstablishmentMattersComponent } from './knowledge-centre-nav-bar/establishment-matters/establishment-matters.component';
 import { MiscellaneousComponent } from './knowledge-centre-nav-bar/miscellaneous/miscellaneous.component';
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
+=======
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AboutUsComponent } from './about-us/about-us.component';
+>>>>>>> main
 // register Swiper custom elements
 register();
 
@@ -100,6 +105,7 @@ register();
     DiscussionTopicCommentsInnerComponent,
     DiscussionCommentReplyModalComponent,
     AboutComponent,
+<<<<<<< HEAD
     DirectorGeneralComponent,
     AddlDirectorGeneralComponent,
     FacultyComponent,
@@ -159,6 +165,9 @@ register();
     EstablishmentMattersComponent,
     MiscellaneousComponent,
     YogaPhysicalFitnessComponent,
+=======
+    AboutUsComponent,
+>>>>>>> main
   ],
   imports: [
     BrowserModule,
@@ -168,7 +177,7 @@ register();
     UserModule,
     FormsModule,
     NgbModule,
-
+    NgSelectModule
   ],
   providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],

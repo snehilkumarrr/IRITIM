@@ -85,6 +85,8 @@ import { TendersContractsComponent } from './knowledge-centre-nav-bar/tenders-co
 import { TrainsAtAGlanceComponent } from './knowledge-centre-nav-bar/trains-at-a-glance/trains-at-a-glance.component';
 import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilance.component';
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
+import { HostelManagementComponent } from './admin/hostel-management/hostel-management.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -171,6 +173,8 @@ const routes: Routes = [
   { path: 'trains-at-a-glance',component:TrainsAtAGlanceComponent},
   { path: 'vigilance', component:VigilanceComponent},
   { path: 'yoga-physical-fitness', component:YogaPhysicalFitnessComponent},
+  { path: 'HostelManagement', component: HostelManagementComponent },
+  { path: 'AboutUs', component: AboutUsComponent },
 ];
 
 @NgModule({
