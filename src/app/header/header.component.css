@@ -1,59 +1,57 @@
 @media (min-width: 544px) {
-    .dropdown:hover > .dropdown-menu {
+  .dropdown:hover > .dropdown-menu {
       display: block;
-    }
   }
-  .bg-danger {
-    background-color: #db1f48 !important;
-  }
-  .dropdown-item:hover {
-    background-color: #db1f48;
-    color: whitesmoke;
-  }
+}
+.bg-danger {
+  background-color: #db1f48 !important;
+}
+.dropdown-item:hover {
+  background-color: #db1f48;
+  color: whitesmoke;
+}
+.source-serif-heading {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+.dropdown-submenu {
+  position: relative;
+}
 
-  .source-serif-heading {
-    font-family: "Source Serif 4", serif;
-    font-optical-sizing: auto;
-    font-weight: bolder;
-    font-style: normal;
-  }
-<<<<<<< HEAD
-  .dropdown-submenu {
-    position: relative;
-  }
-  
-  .dropdown-submenu{
-    top: 0;
-    left: 100%;
-    margin-top: -1px;
-  }
-=======
-
-  /* Ensure the sub-dropdown is hidden by default */
+/* Ensure the sub-dropdown is hidden by default */
 .dropdown-submenu .dropdown-menu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    margin-top: -1px;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-top: -1px;
 }
 
 /* Display the sub-dropdown when the parent li is hovered */
 .dropdown-submenu:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 /* Optional: Additional styling for better appearance */
 .dropdown-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-item {
-    display: block;
-    padding: 10px;
-    color: #000;
-    text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
 }
->>>>>>> main
+
+/* Fixes for the sub-dropdown position */
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+  left: 100%;
+  top: 0;
+  margin-top: -1px;
+}

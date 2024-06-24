@@ -33,18 +33,22 @@
                     <li class="nav-item">
                         <a class="nav-link active  navText text-white" aria-current="page" routerLink="">Home</a>
                     </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navText text-white" routerLink="AboutUs" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        About
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a target="_blank" rel="noopener" class="dropdown-item" routerLink="Mission">
-                                Mission</a>
-                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle navText text-white" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> <a rel="noopener" class="dropdown-item" routerLink="AboutUs">
+                                    About Us</a>
+                            </li>
 
-                    </ul>
-                </li>
+                            <li><a target="_blank" rel="noopener" class="dropdown-item" routerLink="Mission">
+                                    Mission</a>
+                            </li>
+
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navText text-white" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,11 +59,7 @@
                                 <a target="_blank" rel="noopener" class="dropdown-item" href="#">
                                     Training Programme Calender
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 1</a></li>
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 2</a></li>
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 3</a></li>
-                                </ul>
+                                
                             </li>
                             <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Fourth Coming Training
                                 Courses</a></li>
@@ -71,6 +71,7 @@
                                 Programme Poster</a></li>
                         </ul>
                         
+
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle navText text-white" href="#" role="button"
@@ -78,8 +79,14 @@
                             Knowledge Center
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
+                            <li class="dropdown-submenu"><a rel="noopener" routerLink="library" class="dropdown-item" href="#">
                                     Library</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">List of Books</a></li>
+                                        <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">E- Granthalaya</a></li>
+                                        
+                                    </ul>
                             </li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">Train at a Glance</a>
                             </li>
@@ -127,7 +134,8 @@
                         <ul class="dropdown-menu">
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="https://gem.gov.in/">GeM
                                     Portal</a></li>
-                            <li><a rel="noopener" target="_blank" class="dropdown-item" href="https://www.ireps.gov.in/">IREPS</a>
+                            <li><a rel="noopener" target="_blank" class="dropdown-item"
+                                    href="https://www.ireps.gov.in/">IREPS</a>
                             </li>
                         </ul>
                     </li>
@@ -169,12 +177,13 @@
                         <ul class="dropdown-menu">
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
                                     Quotation Notices</a></li>
-                            <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">News & Announcements</a></li>
+                            <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">News &
+                                    Announcements</a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">IRITM Magazine</a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
                                     Vacancies</a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
-                                    Rajbhasha  </a></li>
+                                    Rajbhasha </a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
                                     Archives</a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
@@ -195,7 +204,7 @@
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
                                     Site Map</a></li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
-                                    Terms & Conditions  </a></li>
+                                    Terms & Conditions </a></li>
                         </ul>
                     </li>
 
@@ -210,22 +219,23 @@
                     <!-- <li class="nav-item">
                         <a class="nav-link navText text-white" *ngIf="username">{{ username }}</a>
                       </li> -->
-                      <ng-container *ngIf="authId=='1'">
+                    <ng-container *ngIf="authId=='1'">
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="adminDashboard">AdminDashboard</a>
                         </li>
-                      </ng-container>
+                    </ng-container>
 
-                      <ng-container *ngIf="authId=='4'">
+                    <ng-container *ngIf="authId=='4'">
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="userDashBoard">UserDashboard</a>
                         </li>
-                      </ng-container>
+                    </ng-container>
 
-                      <ng-container *ngIf="username">
+                    <ng-container *ngIf="username">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle navText text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle navText text-white" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ uname }}
                             </a>
                             <ul class="dropdown-menu">
@@ -233,7 +243,7 @@
                             </ul>
                         </li>
                     </ng-container>
-                    
+
                     <ng-container *ngIf="!username">
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="register">Register</a>
@@ -242,7 +252,7 @@
                             <a class="nav-link navText text-white" routerLink="login">Login</a>
                         </li>
                     </ng-container>
-                    
+
 
                 </ul>
             </div>
