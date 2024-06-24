@@ -1,0 +1,5 @@
+/* In your component's CSS file */
+::ng-deep .ng-select {
+  border: 1px solid #ccc; /* Adjust as needed */
+  padding: 5px;
+}

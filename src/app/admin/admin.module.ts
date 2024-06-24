@@ -19,6 +19,7 @@ import { ViewFacultyComponent } from './view-faculty/view-faculty.component';
 import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
 import { AppliedCoursesComponent } from './applied-courses/applied-courses.component';
 import { HostelManagementComponent } from './hostel-management/hostel-management.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -39,7 +40,7 @@ import { HostelManagementComponent } from './hostel-management/hostel-management
     HostelManagementComponent
   ],
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule
+    CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule, NgSelectModule
   ]
 })
 export class AdminModule { }

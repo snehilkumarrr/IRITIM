@@ -22,4 +22,10 @@ export class AdminService {
     return this.http.get(url)
   }
 
+ postCreateRoom(data:any){
+  const url = "http://172.16.14.78:8080/Dashboard/getRoomType"
+  return this.http.post(url, data)
+ }
+
+
 }

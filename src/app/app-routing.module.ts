@@ -26,6 +26,8 @@ import { EditFacultyComponent } from './admin/edit-faculty/edit-faculty.componen
 import { ViewFacultyComponent } from './admin/view-faculty/view-faculty.component';
 import { AboutComponent } from "./about/about.component"
 import { AppliedCoursesComponent } from './admin/applied-courses/applied-courses.component';
+import { HostelManagementComponent } from './admin/hostel-management/hostel-management.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -53,6 +55,8 @@ const routes: Routes = [
   { path: 'ViewFaculty', component: ViewFacultyComponent },
   { path: 'Mission', component: AboutComponent },
   { path: 'AppliedCourse', component: AppliedCoursesComponent },
+  { path: 'HostelManagement', component: HostelManagementComponent },
+  { path: 'AboutUs', component: AboutUsComponent },
 ];
 
 @NgModule({
