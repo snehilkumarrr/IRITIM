@@ -15,5 +15,4 @@ export class HrmsService {
     const url = constants.BASE_URL+`Dashboard/callHrmsId`
  return   this.http.post(url,{hrms_id:data})
   }
-
 }

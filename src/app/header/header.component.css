@@ -17,6 +17,17 @@
     font-weight: bolder;
     font-style: normal;
   }
+<<<<<<< HEAD
+  .dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu{
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+=======
 
   /* Ensure the sub-dropdown is hidden by default */
 .dropdown-submenu .dropdown-menu {
@@ -45,3 +56,4 @@
     color: #000;
     text-decoration: none;
 }
+>>>>>>> main
