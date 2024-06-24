@@ -8,10 +8,10 @@ export class FeedbacksService {
   constructor(private http : HttpClient) { }
 
 getTestimonials(){
-return   this.http.get('http://10.64.29.243:8080/IRITM/Dashboard/getfeedback')
+return   this.http.get('http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getfeedback')
 }
 postfeedback(data:any){
-  return this.http.post('http://10.64.29.243:8080/IRITM/Dashboard/savefeedback',data)
+  return this.http.post('http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/savefeedback',data)
 }
 
 }
