@@ -14,7 +14,7 @@ import { EditcourseComponent } from './editcourse/editcourse.component';
 import { HostelReqtsComponent } from './hostel-reqts/hostel-reqts.component';
 import { ViewScheduleCourseComponent } from './view-schedule-course/view-schedule-course.component';
 import { VehicleReqComponent } from './vehicle-req/vehicle-req.component';
-import { FacultyComponent } from './faculty/faculty.component';
+import { CreateFacultyComponent } from './faculty/faculty.component';
 import { ViewFacultyComponent } from './view-faculty/view-faculty.component';
 import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
 import { AppliedCoursesComponent } from './applied-courses/applied-courses.component';
@@ -33,7 +33,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     HostelReqtsComponent,
     ViewScheduleCourseComponent,
     VehicleReqComponent,
-    FacultyComponent,
+    CreateFacultyComponent,
     ViewFacultyComponent,
     EditFacultyComponent,
     AppliedCoursesComponent,
