@@ -24,6 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { register } from 'swiper/element/bundle';
 import { AboutComponent } from './about/about.component';
 import { HashLocationStrategy,LocationStrategy } from '@angular/common';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AboutUsComponent } from './about-us/about-us.component';
 // register Swiper custom elements
 register();
 
@@ -40,6 +42,7 @@ register();
     DiscussionTopicCommentsInnerComponent,
     DiscussionCommentReplyModalComponent,
     AboutComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ register();
     UserModule,
     FormsModule,
     NgbModule,
-
+    NgSelectModule
   ],
   providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent],

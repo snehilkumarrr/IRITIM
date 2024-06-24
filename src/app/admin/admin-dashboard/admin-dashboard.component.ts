@@ -33,5 +33,8 @@ export class AdminDashboardComponent {
   ViewAppliedCourse(){
     this.router.navigate(['AppliedCourse'])
   }
+  hostelManagement(){
+    this.router.navigate(['HostelManagement'])
+  }
 }
 
