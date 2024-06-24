@@ -22,3 +22,12 @@
     font-weight: bolder;
     font-style: normal;
   }
+  .dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu{
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }

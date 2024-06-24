@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
   templateUrl: './faculty.component.html',
   styleUrls: ['./faculty.component.css']
 })
-export class FacultyComponent {
+export class CreateFacultyComponent {
 
   Sucessmsg: any
   createFacultyForm: FormGroup = new FormGroup({

@@ -12,5 +12,4 @@ export class HrmsService {
     const url = `http://10.64.29.243:8080/IRITM/Dashboard/callHrmsId`
  return   this.http.post(url,{hrms_id:data})
   }
-
 }
