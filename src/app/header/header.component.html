@@ -39,7 +39,7 @@
                             About
                         </a>
                         <ul class="dropdown-menu">
-                            <li> rel="noopener" class="dropdown-item" routerLink="AboutUs">
+                            <li> <a rel="noopener" class="dropdown-item" routerLink="AboutUs">
                                     About Us</a>
                             </li>
 
@@ -59,24 +59,18 @@
                                 <a target="_blank" rel="noopener" class="dropdown-item" href="#">
                                     Training Programme Calender
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 1</a>
-                                    </li>
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 2</a>
-                                    </li>
-                                    <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Sub Item 3</a>
-                                    </li>
-                                </ul>
+                                
                             </li>
                             <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">Fourth Coming Training
-                                    Courses</a></li>
+                                Courses</a></li>
                             <li><a target="_blank" rel="noopener" class="dropdown-item"
-                                    href="https://eastcoastrail.indianrailways.gov.in/">Training
-                                    Programme Videos</a></li>
+                                   href="https://eastcoastrail.indianrailways.gov.in/">Training
+                                Programme Videos</a></li>
                             <li><a target="_blank" rel="noopener" class="dropdown-item"
-                                    href="https://er.indianrailways.gov.in/">Training
-                                    Programme Poster</a></li>
+                                   href="https://er.indianrailways.gov.in/">Training
+                                Programme Poster</a></li>
                         </ul>
+                        
 
                     </li>
                     <li class="nav-item dropdown">
@@ -85,8 +79,14 @@
                             Knowledge Center
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">
+                            <li class="dropdown-submenu"><a rel="noopener" routerLink="library" class="dropdown-item" href="#">
                                     Library</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">List of Books</a></li>
+                                        <li><a target="_blank" rel="noopener" class="dropdown-item" href="#">E- Granthalaya</a></li>
+                                        
+                                    </ul>
                             </li>
                             <li><a rel="noopener" target="_blank" class="dropdown-item" href="#">Train at a Glance</a>
                             </li>
