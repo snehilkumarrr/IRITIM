@@ -176,6 +176,7 @@ import { CommercialTicketClerksComponent } from './Non-G/commercial-ticket-clerk
 import { TrainingModuleComponent } from './Non-G/training-module/training-module.component';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
+import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
 // register Swiper custom elements
 register();
 
@@ -343,6 +344,7 @@ register();
     CommercialTicketClerksComponent,
     TrainingModuleComponent,
     DirGenComponent,
+    AddlDirGenComponent,
   ],
   imports: [
     BrowserModule,

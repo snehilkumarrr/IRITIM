@@ -13,10 +13,10 @@ export class ApplyVehicleService {
 
   }
   getVehicle() {
-   return this.http.get('http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getVehicleRequest/ya0146')
+   return this.http.get('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getVehicleRequest/ya0146')
   }
   VehicleRequest(data: any) {
-    const url = "http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/VehicleRequest"
+    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/VehicleRequest"
     return this.http.post(url, data)
 
 

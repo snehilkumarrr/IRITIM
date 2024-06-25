@@ -9,11 +9,11 @@ export class ZoneService {
 
   constructor(private http: HttpClient) { }
   getzoneType(data: any) {
-    const url = `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getzonebytype/${data}`;
+    const url = `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getzonebytype/${data}`;
     return this.http.get(url)
   }
   getDivision(data: any) {
-    const url = `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getdivision/${data}`
+    const url = `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getdivision/${data}`
     return this.http.get(url)
   }
 

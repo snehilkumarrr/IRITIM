@@ -92,7 +92,12 @@ export class SignupComponent {
         title: "SignUp",
         text: this.SuccessMsg.message,
         icon: 'success'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
       });
+      
     })
   }
 

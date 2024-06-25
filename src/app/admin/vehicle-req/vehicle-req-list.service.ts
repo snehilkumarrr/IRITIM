@@ -10,7 +10,7 @@ export class VehicleReqListService {
   
    }
    showVehicle(){
-    const url ="http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getAllVehicleRequest"
+    const url ="https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getAllVehicleRequest"
    return this.http.get(url)
    }
 }

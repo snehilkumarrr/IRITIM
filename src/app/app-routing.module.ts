@@ -176,6 +176,8 @@ import { StationMasterComponent } from './Non-G/station-master/station-master.co
 import { CommercialTicketClerksComponent } from './Non-G/commercial-ticket-clerks/commercial-ticket-clerks.component';
 import { TrainingModuleComponent } from './Non-G/training-module/training-module.component';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
+import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
+import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -264,6 +266,8 @@ const routes: Routes = [
   { path: 'yoga-physical-fitness', component:YogaPhysicalFitnessComponent},
   { path: 'HostelManagement', component: HostelManagementComponent },
   { path: 'AboutUs', component: AboutUsComponent },
+  { path: 'DirectorGeneral', component: DirGenComponent },
+  { path: 'AddlDirectorGeneral', component: AddlDirGenComponent },
   { path: 'central-railway', component:CentralRailwayComponent},
   { path: 'dfccil-map', component:DfccilMapComponent},
   { path: 'east-central-railway', component:EastCentralRailwayComponent},
