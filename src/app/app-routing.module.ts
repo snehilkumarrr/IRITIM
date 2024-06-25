@@ -87,6 +87,59 @@ import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilan
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
 import { HostelManagementComponent } from './admin/hostel-management/hostel-management.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CentralRailwayComponent } from './railway-system-map/central-railway/central-railway.component';
+import { DfccilMapComponent } from './railway-system-map/dfccil-map/dfccil-map.component';
+import { EastCentralRailwayComponent } from './railway-system-map/east-central-railway/east-central-railway.component';
+import { EastCoastRailwayComponent } from './railway-system-map/east-coast-railway/east-coast-railway.component';
+import { EasternRailwayComponent } from './railway-system-map/eastern-railway/eastern-railway.component';
+import { KolkataMetroComponent } from './railway-system-map/kolkata-metro/kolkata-metro.component';
+import { KolkataRailwayComponent } from './railway-system-map/kolkata-railway/kolkata-railway.component';
+import { NorthCentralRailwayComponent } from './railway-system-map/north-central-railway/north-central-railway.component';
+import { NorthEastFrontierRailwayComponent } from './railway-system-map/north-east-frontier-railway/north-east-frontier-railway.component';
+import { NorthEasternRailwayComponent } from './railway-system-map/north-eastern-railway/north-eastern-railway.component';
+import { NorthWesternRailwayComponent } from './railway-system-map/north-western-railway/north-western-railway.component';
+import { NorthernRailwayComponent } from './railway-system-map/northern-railway/northern-railway.component';
+import { SouthCentralRailwayComponent } from './railway-system-map/south-central-railway/south-central-railway.component';
+import { SouthEastCentralRailwayComponent } from './railway-system-map/south-east-central-railway/south-east-central-railway.component';
+import { SouthEasternRailwayComponent } from './railway-system-map/south-eastern-railway/south-eastern-railway.component';
+import { SouthWesternRailwayComponent } from './railway-system-map/south-western-railway/south-western-railway.component';
+import { SouthernRailwayComponent } from './railway-system-map/southern-railway/southern-railway.component';
+import { WestCentralRailwayComponent } from './railway-system-map/west-central-railway/west-central-railway.component';
+import { WesternRailwayComponent } from './railway-system-map/western-railway/western-railway.component';
+import { OperatingManualComponent } from './operating/operating-manual/operating-manual.component';
+import { ReadingMaterialComponent } from './operating/reading-material/reading-material.component';
+import { OperatingManualLinksComponent } from './operating-manual/operating-manual-links/operating-manual-links.component';
+import { OperatingManualRailwayBoardComponent } from './operating-manual/operating-manual-railway-board/operating-manual-railway-board.component';
+import { OperatingManualZonalRailwaysComponent } from './operating-manual/operating-manual-zonal-railways/operating-manual-zonal-railways.component';
+import { CoachingComponent } from './rolling-stock/coaching/coaching.component';
+import { LocomotiveComponent } from './rolling-stock/locomotive/locomotive.component';
+import { MetroComponent } from './rolling-stock/metro/metro.component';
+import { RollingStockSpeedComponent } from './rolling-stock/rolling-stock-speed/rolling-stock-speed.component';
+import { WagonComponent } from './rolling-stock/wagon/wagon.component';
+import { AccidentManualComponent } from './safety-disaster-management/accident-manual/accident-manual.component';
+import { BlockWorkingManualComponent } from './safety-disaster-management/block-working-manual/block-working-manual.component';
+import { GeneralSubsidiaryRulesComponent } from './safety-disaster-management/general-subsidiary-rules/general-subsidiary-rules.component';
+import { ZonalDisasterManagementPlanComponent } from './safety-disaster-management/zonal-disaster-management-plan/zonal-disaster-management-plan.component';
+import { ReadingMaterialDisasterComponent } from './safety-disaster-management/reading-material-disaster/reading-material-disaster.component';
+import { CasesComponent } from './tenders-contracts/cases/cases.component';
+import { PptsComponent } from './tenders-contracts/ppts/ppts.component';
+import { ProjectReportsComponent } from './tenders-contracts/project-reports/project-reports.component';
+import { StudeyMaterialComponent } from './tenders-contracts/studey-material/studey-material.component';
+import { CvcVigilanceManualComponent } from './vigilance/cvc-vigilance-manual/cvc-vigilance-manual.component';
+import { IndianRailwaysVigilanceManualComponent } from './vigilance/indian-railways-vigilance-manual/indian-railways-vigilance-manual.component';
+import { AccidentManualZonalComponent } from './accident-manual/accident-manual-zonal/accident-manual-zonal.component';
+import { AccidentManualZonalLinksComponent } from './accident-manual/accident-manual-zonal-links/accident-manual-zonal-links.component';
+import { GeneralSubsidiaryRulesZonalComponent } from './general-subsidiary-rules/general-subsidiary-rules-zonal/general-subsidiary-rules-zonal.component';
+import { GeneralSubsidiaryRulesZonalLinksComponent } from './general-subsidiary-rules/general-subsidiary-rules-zonal-links/general-subsidiary-rules-zonal-links.component';
+import { CodesManualsComponent } from './establishment-matters/codes-manuals/codes-manuals.component';
+import { ImportantCourtCasesComponent } from './establishment-matters/important-court-cases/important-court-cases.component';
+import { Archives2011Component } from './archives/archives-2011/archives-2011.component';
+import { Archives2012Component } from './archives/archives-2012/archives-2012.component';
+import { Archives2013Component } from './archives/archives-2013/archives-2013.component';
+import { Archives2014Component } from './archives/archives-2014/archives-2014.component';
+import { Archives2015Component } from './archives/archives-2015/archives-2015.component';
+import { Archives2016Component } from './archives/archives-2016/archives-2016.component';
+import { Archives2017Component } from './archives/archives-2017/archives-2017.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -175,6 +228,60 @@ const routes: Routes = [
   { path: 'yoga-physical-fitness', component:YogaPhysicalFitnessComponent},
   { path: 'HostelManagement', component: HostelManagementComponent },
   { path: 'AboutUs', component: AboutUsComponent },
+  { path: 'central-railway', component:CentralRailwayComponent},
+  { path: 'dfccil-map', component:DfccilMapComponent},
+  { path: 'east-central-railway', component:EastCentralRailwayComponent},
+  { path: 'east-coast-railway', component:EastCoastRailwayComponent},
+  { path: 'eastern-railway', component:EasternRailwayComponent},
+  { path: 'kolkata-metro', component:KolkataMetroComponent},
+  { path: 'kolkata-railway', component:KolkataRailwayComponent},
+  { path: 'north-central-railway', component:NorthCentralRailwayComponent},
+  { path: 'north-east-frontier-railway', component:NorthEastFrontierRailwayComponent},
+  { path: 'north-eastern-railway', component:NorthEasternRailwayComponent},
+  { path: 'north-western-railway', component:NorthWesternRailwayComponent},
+  { path: 'northern-railway', component:NorthernRailwayComponent},
+  { path: 'south-central-railway', component:SouthCentralRailwayComponent},
+  { path: 'south-east-central-railway', component:SouthEastCentralRailwayComponent},
+  { path: 'south-eastern-railway', component:SouthEasternRailwayComponent},
+  { path: 'south-western-railway', component:SouthWesternRailwayComponent},
+  { path: 'southern-railway', component:SouthernRailwayComponent},
+  { path: 'west-central-railway', component:WestCentralRailwayComponent},
+  { path: 'western-railway', component:WesternRailwayComponent},
+  { path: 'operating-manual', component:OperatingManualComponent},
+  { path: 'reading-material', component:ReadingMaterialComponent},
+  { path: 'operating-manual-links', component:OperatingManualLinksComponent},
+  { path: 'operating-manual-railway-board', component:OperatingManualRailwayBoardComponent},
+  { path: 'operating-manual-zonal-railways', component:OperatingManualZonalRailwaysComponent},
+  { path: 'coaching', component:CoachingComponent},
+  { path: 'locomotive', component:LocomotiveComponent},
+  { path: 'metro', component:MetroComponent},
+  { path: 'rolling-stock-speed', component:RollingStockSpeedComponent},
+  { path: 'wagon', component:WagonComponent},
+  { path: 'accident-manual', component:AccidentManualComponent},
+  { path: 'block-working-manual', component:BlockWorkingManualComponent},
+  { path: 'general-subsidiary-rules', component:GeneralSubsidiaryRulesComponent},
+  { path: 'zonal-disaster-management-plan', component:ZonalDisasterManagementPlanComponent},
+  { path: 'reading-material-disaster', component:ReadingMaterialDisasterComponent},
+  { path: 'cases', component:CasesComponent},
+  { path: 'ppts', component:PptsComponent},
+  { path: 'project-reports', component:ProjectReportsComponent},
+  { path: 'studey-material', component:StudeyMaterialComponent},
+  { path: 'cvc-vigilance-manual', component:CvcVigilanceManualComponent},
+  { path: 'indian-railways-vigilance-manual', component:IndianRailwaysVigilanceManualComponent},
+  { path: 'accident-manual-zonal', component:AccidentManualZonalComponent},
+  { path: 'accident-manual-zonal-links', component:AccidentManualZonalLinksComponent},
+  { path: 'general-subsidiary-rules-zonal', component:GeneralSubsidiaryRulesZonalComponent},
+  { path: 'general-subsidiary-rules-zonal-links', component:GeneralSubsidiaryRulesZonalLinksComponent},
+  { path: 'codes-manuals', component:CodesManualsComponent},
+  { path: 'important-court-cases', component:ImportantCourtCasesComponent},
+  { path: 'archives-2011', component:Archives2011Component},
+  { path: 'archives-2012', component:Archives2012Component},
+  { path: 'archives-2013', component:Archives2013Component},
+  { path: 'archives-2014', component:Archives2014Component},
+  { path: 'archives-2015', component:Archives2015Component},
+  { path: 'archives-2016', component:Archives2016Component},
+  { path: 'archives-2017', component:Archives2017Component},
+
 ];
 
 @NgModule({
