@@ -9,7 +9,7 @@ export class ViewScheduleCourseComponent {
   scheduleDetail: any
 
   constructor(private http: HttpClient) {
-    this.http.get("https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getall-course-schedule").subscribe((resData: any) => {
+    this.http.get("https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getall-course-schedule").subscribe((resData: any) => {
       console.log(resData)
       this.scheduleDetail = resData
     })

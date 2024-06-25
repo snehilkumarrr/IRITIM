@@ -20,7 +20,7 @@ export class EditcourseComponent {
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.id = this.route.snapshot.paramMap.get('id');
     this.http
-      .get(`http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getcoursewithid/${this.id}`)
+      .get(`https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getcoursewithid/${this.id}`)
       .subscribe((resData: any) => {
         // console.log(resData);
         this.editcourseform = new FormGroup({
@@ -36,7 +36,7 @@ export class EditcourseComponent {
 
     this.http
       .put(
-        `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/editcourse/${this.id}`,
+        `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/editcourse/${this.id}`,
         this.editcourseform.value
       )
       .subscribe((resData: any) => {

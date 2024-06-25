@@ -87,6 +87,7 @@ import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-ph
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
+import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
 // register Swiper custom elements
 register();
 
@@ -164,6 +165,7 @@ register();
     YogaPhysicalFitnessComponent,
     AboutUsComponent,
     DirGenComponent,
+    AddlDirGenComponent,
   ],
   imports: [
     BrowserModule,

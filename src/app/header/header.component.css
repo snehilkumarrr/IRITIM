@@ -7,19 +7,16 @@
 .bg-danger {
   background-color: #db1f48 !important;
 }
-
 .dropdown-item:hover {
   background-color: #db1f48;
   color: whitesmoke;
 }
-
 .source-serif-heading {
   font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
   font-weight: bolder;
   font-style: normal;
 }
-
 .dropdown-submenu {
   position: relative;
 }
@@ -58,10 +55,4 @@
   left: 100%;
   top: 0;
   margin-top: -1px;
-}
-
-/* Add scrolling for dropdown */
-.dropdown-menu {
-  max-height: 300px; /* Adjust the height as needed */
-  overflow-y: auto;
 }

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class SignupService {
-  url = "http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/saveregistraiondata"
+  url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/saveregistraiondata"
 
   constructor(private http: HttpClient) {
   }

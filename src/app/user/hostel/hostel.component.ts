@@ -37,7 +37,7 @@ export class HostelComponent {
     if (localStorage.getItem('officertype') === "GAZETTED") {
       this.showChidren = true
     }
-    this.http.get(`http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
+    this.http.get(`https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
       console.log(resData)
       this.hostelReq = resData
 
@@ -48,7 +48,7 @@ export class HostelComponent {
 
   ApplyHostelHandler() {
     console.log(this.hostelform.value)
-    this.http.post('http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
+    this.http.post('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
 
       // alert(resData.message)
 

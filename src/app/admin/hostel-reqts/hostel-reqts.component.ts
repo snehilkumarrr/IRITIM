@@ -10,7 +10,7 @@ export class HostelReqtsComponent {
 
   constructor(private http: HttpClient) {
 
-    this.http.get('http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getAllHostelRequest').subscribe((resData) => {
+    this.http.get('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getAllHostelRequest').subscribe((resData) => {
       console.log(resData)
       this.HostelRequest = resData
     })

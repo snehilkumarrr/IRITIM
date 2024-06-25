@@ -87,6 +87,8 @@ import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilan
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
 import { HostelManagementComponent } from './admin/hostel-management/hostel-management.component';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
+import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
+import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -175,6 +177,8 @@ const routes: Routes = [
   { path: 'yoga-physical-fitness', component:YogaPhysicalFitnessComponent},
   { path: 'HostelManagement', component: HostelManagementComponent },
   { path: 'AboutUs', component: AboutUsComponent },
+  { path: 'DirectorGeneral', component: DirGenComponent },
+  { path: 'AddlDirectorGeneral', component: AddlDirGenComponent },
 ];
 
 @NgModule({
