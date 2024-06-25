@@ -24,7 +24,7 @@ import { FeedbackComponent } from './user/feedback/feedback.component';
 import { CreateFacultyComponent } from './admin/faculty/faculty.component';
 import { EditFacultyComponent } from './admin/edit-faculty/edit-faculty.component';
 import { ViewFacultyComponent } from './admin/view-faculty/view-faculty.component';
-import { AboutComponent } from "./about/about.component"
+import { AboutComponent } from "./AboutUS/about/about.component"
 import { AppliedCoursesComponent } from './admin/applied-courses/applied-courses.component';
 import { AddlDirectorGeneralComponent } from './about-us-nav-bar/addl-director-general/addl-director-general.component';
 import { ApproachIritmComponent } from './about-us-nav-bar/approach-iritm/approach-iritm.component';
@@ -85,7 +85,6 @@ import { TrainsAtAGlanceComponent } from './knowledge-centre-nav-bar/trains-at-a
 import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilance.component';
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
 import { HostelManagementComponent } from './admin/hostel-management/hostel-management.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { LawPageComponent } from './Law/law-page/law-page.component';
 import { ConsumerprotectionComponent } from './Law/consumerprotection/consumerprotection.component';
 import { IndianrailwayactComponent } from './Law/indianrailwayact/indianrailwayact.component';
@@ -124,6 +123,7 @@ import { ModelComponent } from './public_pvt/model/model.component';
 import { StationMasterComponent } from './Non-G/station-master/station-master.component';
 import { CommercialTicketClerksComponent } from './Non-G/commercial-ticket-clerks/commercial-ticket-clerks.component';
 import { TrainingModuleComponent } from './Non-G/training-module/training-module.component';
+import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },

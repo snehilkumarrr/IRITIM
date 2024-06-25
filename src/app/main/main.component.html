@@ -4,9 +4,24 @@
         <p class="main-title-text">IRITM</p>
     </div>
     <div id="iritmabout" class="container p-5">
+        <div class="mx-sm-2 my-3 text-center ">
 
+
+            <a href="../../assets/images/ISO_Certificate_21001.png" class="mx-5 mb-1"> <img height="550px" width="550px"
+                    src="../../assets/images/ISO_Certificate_21001.png" /></a>
+
+
+
+            <a href="../../assets/images/CBC Certificate.jpg" class="mx-1 mb-1"> <img height="550px" width="550px"
+                    src="../../assets/images/CBC Certificate.jpg" /></a>
+
+
+
+
+
+        </div>
         <div class="d-grid gap-2 d-md-block text-center my-4">
-            <button class="btn btn-danger" type="button" routerLink="AboutUs" >More About IRITM</button>
+            <button class="btn btn-danger" type="button" routerLink="AboutUs">More About IRITM</button>
         </div>
         <!-- CourseComponent is Define -->
         <app-courses></app-courses>
@@ -43,8 +58,8 @@
                         Video Gallery
                     </div>
                     <div class="card-body">
-                        <swiper-container slides-per-view="1" grid-rows="1" grab-cursor="true" space-between="5" autoplay="true"
-                            loop="true">
+                        <swiper-container slides-per-view="1" grid-rows="1" grab-cursor="true" space-between="5"
+                            autoplay="true" loop="true">
                             <swiper-slide>
                                 <video width="590" height="295" autoplay controls loop muted>
                                     <source src="../../assets/images/main.mp4" type="video/mp4">
@@ -107,8 +122,8 @@
         <div class="row  my-3">
             <h2 class="text-center my-4 source-serif-heading testimonial-text fw-bolder">Testimonials</h2>
             <div class="row p-4">
-                <swiper-container slides-per-view="2" space-between="30" autoplay="true" grab-cursor="true" pagination="true" loop="true"
-                    navigation="false">
+                <swiper-container slides-per-view="2" space-between="30" autoplay="true" grab-cursor="true"
+                    pagination="true" loop="true" navigation="false">
                     <swiper-slide *ngFor="let feedbacks of   feedbackdetails">
                         <div>
                             <div class="card">
@@ -132,7 +147,7 @@
     <div class="parallaxTwo"></div>
     <div class="container bg-white">
         <div class="row py-2">
-            <swiper-container slides-per-view="4" grab-cursor="true"  autoplay="true" loop="true">
+            <swiper-container slides-per-view="4" grab-cursor="true" autoplay="true" loop="true">
                 <swiper-slide>
                     <div>
                         <img src="../../assets/images/cris-logo.png" alt="cris" />
