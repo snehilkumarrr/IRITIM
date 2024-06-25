@@ -4,197 +4,158 @@
         <form [formGroup]="SignupForm" (ngSubmit)="signupHandler()" class="row g-3">
             <div class="col-md-3 ">
                 <label for="employeeType" class="form-label">Employee Type</label>
-                <select name=" emptype" class="form-select" id="employeeType"
-                    (change)="EmployeeTypeHandler($event)">
+                <select name="emptype" class="form-select" id="employeeType" (change)="EmployeeTypeHandler($event)" required>
                     <option selected>Please Select Option</option>
                     <option value="Railways">Railways</option>
                     <option value="Non Railways">Non Railways</option>
                 </select>
             </div>
-            <ng-container class="row mt-3 " *ngIf=" emptype === 'Railways'">
-
+            <ng-container class="row mt-3" *ngIf="emptype === 'Railways'">
                 <div class="col-md-3 ">
-                    <label for="gender" class="form-label">HRMS ID</label>
+                    <label for="gender" class="form-label">HRMS ID<font color="red">*</font></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Please Enter HRMSID" #hrmsInput
-                            formControlName="hrmsid">
-                        <button class="btn btn-success" (click)="getValue(hrmsInput.value)" type="button"
-                            id="button-addon2">Load</button>
+                        <input type="text" class="form-control" placeholder="Please Enter HRMSID" #hrmsInput formControlName="hrmsid" required>
+                        <button class="btn btn-success" (click)="getValue(hrmsInput.value)" type="button" id="button-addon2">Load</button>
                     </div>
                 </div>
-
                 <div class="col-md-3 ">
-                    <label for="gender" class="form-label">Employee Name(English)</label>
-                    <input type="text" class="form-control" name="employeename" formControlName="name"
-                        placeholder="Please Enter Employee Name">
+                    <label for="gender" class="form-label">Employee Name (English)<font color="red">*</font></label>
+                    <input type="text" class="form-control" name="employeename" formControlName="name" placeholder="Please Enter Employee Name" required>
                 </div>
                 <div class="col-md-3 ">
-                    <label for="gender" class="form-label">Employee Name(Hindi)</label>
-                    <input type="text" class="form-control" name="usernamehindi" formControlName="usernamehindi"
-                        placeholder="Please Enter Employee Name">
+                    <label for="gender" class="form-label">Employee Name (Hindi)</label>
+                    <input type="text" class="form-control" name="usernamehindi" formControlName="usernamehindi" placeholder="Please Enter Employee Name">
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Gender</label>
-                    <input type="text" class="form-control" formControlName="gender" name="gender" 
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Gender<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="gender" name="gender" placeholder="Please Enter Gender" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">D.O.B</label>
-                    <input type="date" class="form-control" formControlName="dob" name="dob" 
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">D.O.B<font color="red">*</font></label>
+                    <input type="date" class="form-control" formControlName="dob" name="dob" placeholder="Please Enter D.O.B" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">D.O.J</label>
-                    <input type="date" class="form-control" formControlName="dateofappointment" name="dateofappointment" 
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">D.O.J<font color="red">*</font></label>
+                    <input type="date" class="form-control" formControlName="dateofappointment" name="dateofappointment" placeholder="Please Enter D.O.J" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Education</label>
-                    <input type="text" class="form-control" formControlName="education" name="education" 
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Education<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="education" name="education" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">GROUP</label>
-                    <input type="text" class="form-control" formControlName="group" name="group" 
-                        placeholder="Please Enter Group">
+                    <label for="gender" class="form-label">GROUP<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="group" name="group" placeholder="Please Enter Group" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Grade</label>
-                    <input type="text" class="form-control" formControlName="grade" name="grade" 
-                        placeholder="Please Enter Grade">
+                    <label for="gender" class="form-label">Grade<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="grade" name="grade" placeholder="Please Enter Grade" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Department</label>
-                    <input type="text" class="form-control" formControlName="department" name="department" 
-                        placeholder="Please Enter Department">
+                    <label for="gender" class="form-label">Department<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="department" name="department" placeholder="Please Enter Department" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">DesignationInEnglish</label>
-                    <input type="text" class="form-control" formControlName="designationineng" name="designationineng" 
-                        placeholder="Please Enter DesignationInEnglish">
+                    <label for="gender" class="form-label">Designation (English)<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="designationineng" name="designationineng" placeholder="Please Enter Designation (English)" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">DesignationInHindi</label>
-                    <input type="text" class="form-control" formControlName="designationineng" name="designationineng" 
-                        placeholder="Please Enter DesignationInHindi">
+                    <label for="gender" class="form-label">Designation (Hindi)</label>
+                    <input type="text" class="form-control" formControlName="designationinhindi" name="designationinhindi" placeholder="Please Enter Designation (Hindi)">
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Place of Posting</label>
-                    <input type="text" class="form-control" formControlName="placeofposting" name="placeofposting" 
-                        placeholder="Please Enter placeofposting">
+                    <label for="gender" class="form-label">Place of Posting<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="placeofposting" name="placeofposting" placeholder="Please Enter Place of Posting" required>
                 </div>
                 <div class="col-md-3 ">
-                    <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other </label>
-                    <input placeholder="Railways :Zone/PSU/ZRTI/CTI" type="text" class="form-control" formControlName="zone" name="zone">
+                    <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other<font color="red">*</font> </label>
+                    <input placeholder="Railways :Zone/PSU/ZRTI/CTI" type="text" class="form-control" formControlName="zone" name="zone" required>
                 </div>
                 <div class="col-md-3 ">
-                    <label for="inputState" class="form-label">Division </label>
-                    <input formControlName="division" type="text" class="form-control" name="division" 
-                        placeholder="Please Enter Division">
+                    <label for="inputState" class="form-label">Division<font color="red">*</font></label>
+                    <input formControlName="division" type="text" class="form-control" name="division" placeholder="Please Enter Division" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="whatsappNo" class="form-label">CUG / Whatsapp Number</label>
-                    <input name="whatsappno" placeholder="Please Enter Mobile No" formControlName="whatsappno" type="number" class="form-control" id="whatsappNo" #whatsappInput>
+                    <label for="whatsappNo" class="form-label">CUG / Whatsapp Number<font color="red">*</font></label>
+                    <input name="whatsappno" placeholder="Please Enter Mobile No" formControlName="whatsappno" type="number" class="form-control" id="whatsappNo" #whatsappInput required>
                 </div>
                 <div class="col-md-3">
-                    <label for="email" class="form-label">Email ID</label>
-                    <input placeholder="Please Enter Email ID" formControlName="emailid" name="emailid" type="email" class="form-control" id="email">
+                    <label for="email" class="form-label">Email ID<font color="red">*</font></label>
+                    <input placeholder="Please Enter Email ID" formControlName="emailid" name="emailid" type="email" class="form-control" id="email" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Divyangjan</label>
-                    <select formControlName="divyangjan" class="form-control">
+                    <label for="gender" class="form-label">Divyangjan <font color="red">*</font></label>
+                    <select formControlName="divyangjan" class="form-control" required>
                         <option value="yes">YES</option>
                         <option selected value="No">No</option>
-                       
-                     
                     </select>
                 </div>
             </ng-container>
-            <ng-container *ngIf=" emptype === 'Non Railways'">
-
+            <ng-container *ngIf="emptype === 'Non Railways'">
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Employee Name (English)</label>
-                    <input name="name" type="text" class="form-control"  formControlName="name"
-                        placeholder="Please Enter Name">
+                    <label for="gender" class="form-label">Employee Name (English)<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="name" placeholder="Please Enter Name" required>
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Employee Name (Hindi)</label>
-                    <input name="name" type="text" class="form-control"  formControlName="usernamehindi"
-                        placeholder="Please Enter Name">
-                </div>
-
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Employee ID</label>
-                    <input name="name" type="text" class="form-control"  formControlName="hrmsid"
-                        placeholder="Please Enter Name">
+                    <input name="name" type="text" class="form-control" formControlName="usernamehindi" placeholder="Please Enter Name">
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">D.O.B</label>
-                    <input name="name" type="date" class="form-control"  formControlName="dob"  placeholder="Please Enter Name"
-                        value="2024-04-12">
+                    <label for="gender" class="form-label">Employee ID<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="hrmsid" placeholder="Please Enter Name" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">D.O.J</label>
-                    <input name="name" type="date" class="form-control" formControlName="dateofappointment"  placeholder="Please Enter Name"
-                        value="2024-04-12">
+                    <label for="gender" class="form-label">D.O.B<font color="red">*</font></label>
+                    <input name="name" type="date" class="form-control" formControlName="dob" placeholder="Please Enter D.O.B" value="2024-04-12" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Designation(English)</label>
-                    <input name="name" type="text" class="form-control"  formControlName="designationineng"
-                        placeholder="Please Enter Name">
+                    <label for="gender" class="form-label">D.O.J<font color="red">*</font></label>
+                    <input name="name" type="date" class="form-control" formControlName="dateofappointment" placeholder="Please Enter D.O.J" value="2024-04-12" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Designation(Hindi)</label>
-                    <input name="name" type="text" class="form-control"  formControlName="designationinhindi"
-                        placeholder="Please Enter Name">
+                    <label for="gender" class="form-label">Designation (English)<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="designationineng" placeholder="Please Enter Designation (English)" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Educational Qualification</label>
-                    <input name="name" type="text" class="form-control" formControlName="education" 
-                        placeholder="Please Enter Educational Qualification">
+                    <label for="gender" class="form-label">Designation (Hindi)</label>
+                    <input name="name" type="text" class="form-control" formControlName="designationinhindi" placeholder="Please Enter Designation (Hindi)">
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Gender</label>
-                    <input name="name" type="text" class="form-control" formControlName="gender"
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Educational Qualification<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="education" placeholder="Please Enter Educational Qualification" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Organisation Name</label>
-                    <input name="name" type="text" class="form-control"  formControlName="organization"
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Gender<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="gender" placeholder="Please Enter Gender" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Place of Posting</label>
-                    <input name="name" type="text" class="form-control"  formControlName="placeofposting"
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Organisation Name<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="organization" placeholder="Please Enter Organisation Name" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Department</label>
-                    <input name="name" type="text" class="form-control" formControlName="department" 
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Place of Posting<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="placeofposting" placeholder="Please Enter Place of Posting" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Grade</label>
-                    <input name="name" type="text" class="form-control" formControlName="grade" 
-                        placeholder="Please Enter Gender">
-                </div>
-
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Whatsapp Mobile No</label>
-                    <input name="name" formControlName="" type="number" class="form-control"  formControlName="whatsappno"
-                        placeholder="Please Enter Gender">
+                    <label for="gender" class="form-label">Department<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="department" placeholder="Please Enter Department" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="email" class="form-label">Email ID</label>
-                    <input placeholder="Please Enter Email ID" formControlName="emailid" name="emailid" type="email" class="form-control" id="email">
+                    <label for="gender" class="form-label">Grade<font color="red">*</font></label>
+                    <input name="name" type="text" class="form-control" formControlName="grade" placeholder="Please Enter Grade" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">Divyangjan</label>
-                    <select formControlName="divyangjan" class="form-control">
+                    <label for="gender" class="form-label">Whatsapp Mobile No<font color="red">*</font></label>
+                    <input name="name" formControlName="whatsappno" type="number" class="form-control" placeholder="Please Enter Mobile No" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="email" class="form-label">Email ID<font color="red">*</font></label>
+                    <input placeholder="Please Enter Email ID" formControlName="emailid" name="emailid" type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="gender" class="form-label">Divyangjan<font color="red">*</font></label>
+                    <select formControlName="divyangjan" class="form-control" required>
                         <option value="yes">YES</option>
                         <option selected value="No">No</option>
-                       
-                     
                     </select>
                 </div>
             </ng-container>

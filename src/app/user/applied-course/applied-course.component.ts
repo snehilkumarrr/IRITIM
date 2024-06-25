@@ -40,7 +40,7 @@ export class AppliedCourseComponent {
         text: resData.message,
         icon: "success"
       });
-      // window.location.reload();
+       window.location.reload();
     })
 
 
