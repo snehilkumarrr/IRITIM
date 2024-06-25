@@ -75,16 +75,105 @@ import { RollingStockComponent } from './knowledge-centre-nav-bar/rolling-stock/
 import { CodesAndManualsComponent } from './knowledge-centre-nav-bar/codes-and-manuals/codes-and-manuals.component';
 import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilance.component';
 import { LawComponent } from './knowledge-centre-nav-bar/law/law.component';
-import { CommercialComponent } from './knowledge-centre-nav-bar/commercial/commercial.component';
 import { OperatingComponent } from './knowledge-centre-nav-bar/operating/operating.component';
 import { SafetyDisasterManagementComponent } from './knowledge-centre-nav-bar/safety-disaster-management/safety-disaster-management.component';
-import { PublicPrivatePartnershipComponent } from './knowledge-centre-nav-bar/public-private-partnership/public-private-partnership.component';
-import { NonGazettedComponent } from './knowledge-centre-nav-bar/non-gazetted/non-gazetted.component';
+import { PublicPrivatePartnershipComponent } from './public_pvt/public-private-partnership/public-private-partnership.component';
+import { NonGazettedComponent } from './Non-G/non-gazetted/non-gazetted.component';
 import { TendersContractsComponent } from './knowledge-centre-nav-bar/tenders-contracts/tenders-contracts.component';
 import { EstablishmentMattersComponent } from './knowledge-centre-nav-bar/establishment-matters/establishment-matters.component';
 import { MiscellaneousComponent } from './knowledge-centre-nav-bar/miscellaneous/miscellaneous.component';
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CentralRailwayComponent } from './railway-system-map/central-railway/central-railway.component';
+import { WestCentralRailwayComponent } from './railway-system-map/west-central-railway/west-central-railway.component';
+import { SouthernRailwayComponent } from './railway-system-map/southern-railway/southern-railway.component';
+import { SouthWesternRailwayComponent } from './railway-system-map/south-western-railway/south-western-railway.component';
+import { SouthEasternRailwayComponent } from './railway-system-map/south-eastern-railway/south-eastern-railway.component';
+import { SouthEastCentralRailwayComponent } from './railway-system-map/south-east-central-railway/south-east-central-railway.component';
+import { SouthCentralRailwayComponent } from './railway-system-map/south-central-railway/south-central-railway.component';
+import { NorthernRailwayComponent } from './railway-system-map/northern-railway/northern-railway.component';
+import { NorthWesternRailwayComponent } from './railway-system-map/north-western-railway/north-western-railway.component';
+import { NorthEastFrontierRailwayComponent } from './railway-system-map/north-east-frontier-railway/north-east-frontier-railway.component';
+import { NorthCentralRailwayComponent } from './railway-system-map/north-central-railway/north-central-railway.component';
+import { NorthEasternRailwayComponent } from './railway-system-map/north-eastern-railway/north-eastern-railway.component';
+import { KolkataRailwayComponent } from './railway-system-map/kolkata-railway/kolkata-railway.component';
+import { KolkataMetroComponent } from './railway-system-map/kolkata-metro/kolkata-metro.component';
+import { EasternRailwayComponent } from './railway-system-map/eastern-railway/eastern-railway.component';
+import { EastCoastRailwayComponent } from './railway-system-map/east-coast-railway/east-coast-railway.component';
+import { EastCentralRailwayComponent } from './railway-system-map/east-central-railway/east-central-railway.component';
+import { WesternRailwayComponent } from './railway-system-map/western-railway/western-railway.component';
+import { DfccilMapComponent } from './railway-system-map/dfccil-map/dfccil-map.component';
+import { CoachingComponent } from './rolling-stock/coaching/coaching.component';
+import { WagonComponent } from './rolling-stock/wagon/wagon.component';
+import { MetroComponent } from './rolling-stock/metro/metro.component';
+import { LocomotiveComponent } from './rolling-stock/locomotive/locomotive.component';
+import { RollingStockSpeedComponent } from './rolling-stock/rolling-stock-speed/rolling-stock-speed.component';
+import { IndianRailwaysVigilanceManualComponent } from './vigilance/indian-railways-vigilance-manual/indian-railways-vigilance-manual.component';
+import { CvcVigilanceManualComponent } from './vigilance/cvc-vigilance-manual/cvc-vigilance-manual.component';
+import { AccidentManualComponent } from './safety-disaster-management/accident-manual/accident-manual.component';
+import { GeneralSubsidiaryRulesComponent } from './safety-disaster-management/general-subsidiary-rules/general-subsidiary-rules.component';
+import { ZonalDisasterManagementPlanComponent } from './safety-disaster-management/zonal-disaster-management-plan/zonal-disaster-management-plan.component';
+import { BlockWorkingManualComponent } from './safety-disaster-management/block-working-manual/block-working-manual.component';
+import { OperatingManualComponent } from './operating/operating-manual/operating-manual.component';
+import { OperatingManualRailwayBoardComponent } from './operating-manual/operating-manual-railway-board/operating-manual-railway-board.component';
+import { OperatingManualLinksComponent } from './operating-manual/operating-manual-links/operating-manual-links.component';
+import { OperatingManualZonalRailwaysComponent } from './operating-manual/operating-manual-zonal-railways/operating-manual-zonal-railways.component';
+import { GeneralSubsidiaryRulesZonalComponent } from './general-subsidiary-rules/general-subsidiary-rules-zonal/general-subsidiary-rules-zonal.component';
+import { GeneralSubsidiaryRulesZonalLinksComponent } from './general-subsidiary-rules/general-subsidiary-rules-zonal-links/general-subsidiary-rules-zonal-links.component';
+import { AccidentManualZonalComponent } from './accident-manual/accident-manual-zonal/accident-manual-zonal.component';
+import { AccidentManualZonalLinksComponent } from './accident-manual/accident-manual-zonal-links/accident-manual-zonal-links.component';
+import { StudeyMaterialComponent } from './tenders-contracts/studey-material/studey-material.component';
+import { ProjectReportsComponent } from './tenders-contracts/project-reports/project-reports.component';
+import { PptsComponent } from './tenders-contracts/ppts/ppts.component';
+import { CasesComponent } from './tenders-contracts/cases/cases.component';
+import { CodesManualsComponent } from './establishment-matters/codes-manuals/codes-manuals.component';
+import { ImportantCourtCasesComponent } from './establishment-matters/important-court-cases/important-court-cases.component';
+import { Archives2011Component } from './archives/archives-2011/archives-2011.component';
+import { Archives2012Component } from './archives/archives-2012/archives-2012.component';
+import { Archives2013Component } from './archives/archives-2013/archives-2013.component';
+import { Archives2014Component } from './archives/archives-2014/archives-2014.component';
+import { Archives2015Component } from './archives/archives-2015/archives-2015.component';
+import { Archives2016Component } from './archives/archives-2016/archives-2016.component';
+import { Archives2017Component } from './archives/archives-2017/archives-2017.component';
+import { ReadingMaterialDisasterComponent } from './safety-disaster-management/reading-material-disaster/reading-material-disaster.component';
+import { ReadingMaterialComponent } from './operating/reading-material/reading-material.component';
+import { CommercialComponent } from './Commercial_bar/commercial/commercial.component';
+import { LawPageComponent } from './Law/law-page/law-page.component';
+import { ConsumerprotectionComponent } from './Law/consumerprotection/consumerprotection.component';
+import { IndianrailwayactComponent } from './Law/indianrailwayact/indianrailwayact.component';
+import { AdministrativelawComponent } from './Law/administrativelaw/administrativelaw.component';
+import { CompetitionactComponent } from './Law/competitionact/competitionact.component';
+import { AadharactComponent } from './Law/aadharact/aadharact.component';
+import { RightToInfoComponent } from './Law/right-to-info/right-to-info.component';
+import { AllIndiaServicesComponent } from './Law/all-india-services/all-india-services.component';
+import { ApprenticeComponent } from './Law/apprentice/apprentice.component';
+import { ArbitirationComponent } from './Law/arbitiration/arbitiration.component';
+import { CentralReserveComponent } from './Law/central-reserve/central-reserve.component';
+import { CentralVigilanceComponent } from './Law/central-vigilance/central-vigilance.component';
+import { CitizenshipActComponent } from './Law/citizenship-act/citizenship-act.component';
+import { ConsumerProtectionComponent } from './Law/consumer-protection/consumer-protection.component';
+import { DisasterManagementComponent } from './Law/disaster-management/disaster-management.component';
+import { EnergyConservationComponent } from './Law/energy-conservation/energy-conservation.component';
+import { EnvironmentProtectionComponent } from './Law/environment-protection/environment-protection.component';
+import { GSTComponent } from './Law/gst/gst.component';
+import { IncomeTaxComponent } from './Law/income-tax/income-tax.component';
+import { IncomeEvidenceComponent } from './Law/income-evidence/income-evidence.component';
+import { IndianPenalCodeComponent } from './Law/indian-penal-code/indian-penal-code.component';
+import { RailwayBoardActComponent } from './Law/railway-board-act/railway-board-act.component';
+import { ITActComponent } from './Law/it-act/it-act.component';
+import { MasterCircularComponent } from './Commercial_bar/master-circular/master-circular.component';
+import { TariffComponent } from './Commercial_bar/tariff/tariff.component';
+import { IndianRailwayCommercialComponent } from './Commercial_bar/indian-railway-commercial/indian-railway-commercial.component';
+import { AuctionComponent } from './Commercial_bar/auction/auction.component';
+import { GuidelinesComponent } from './public_pvt/guidelines/guidelines.component';
+import { PppComponent } from './public_pvt/ppp/ppp.component';
+import { GingerComponent } from './public_pvt/ginger/ginger.component';
+import { FrameworkComponent } from './public_pvt/framework/framework.component';
+import { PppChallangeComponent } from './public_pvt/ppp-challange/ppp-challange.component';
+import { ModelComponent } from './public_pvt/model/model.component';
+import { StationMasterComponent } from './Non-G/station-master/station-master.component';
+import { CommercialTicketClerksComponent } from './Non-G/commercial-ticket-clerks/commercial-ticket-clerks.component';
+import { TrainingModuleComponent } from './Non-G/training-module/training-module.component';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
 import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
@@ -164,6 +253,96 @@ register();
     MiscellaneousComponent,
     YogaPhysicalFitnessComponent,
     AboutUsComponent,
+    CentralRailwayComponent,
+    WestCentralRailwayComponent,
+    SouthernRailwayComponent,
+    SouthWesternRailwayComponent,
+    SouthEasternRailwayComponent,
+    SouthEastCentralRailwayComponent,
+    SouthCentralRailwayComponent,
+    NorthernRailwayComponent,
+    NorthWesternRailwayComponent,
+    NorthEastFrontierRailwayComponent,
+    NorthCentralRailwayComponent,
+    NorthEasternRailwayComponent,
+    KolkataRailwayComponent,
+    KolkataMetroComponent,
+    EasternRailwayComponent,
+    EastCoastRailwayComponent,
+    EastCentralRailwayComponent,
+    WesternRailwayComponent,
+    DfccilMapComponent,
+    CoachingComponent,
+    WagonComponent,
+    MetroComponent,
+    LocomotiveComponent,
+    RollingStockSpeedComponent,
+    IndianRailwaysVigilanceManualComponent,
+    CvcVigilanceManualComponent,
+    AccidentManualComponent,
+    GeneralSubsidiaryRulesComponent,
+    ZonalDisasterManagementPlanComponent,
+    BlockWorkingManualComponent,
+    OperatingManualComponent,
+    ReadingMaterialComponent,
+    OperatingManualRailwayBoardComponent,
+    OperatingManualLinksComponent,
+    OperatingManualZonalRailwaysComponent,
+    GeneralSubsidiaryRulesZonalComponent,
+    GeneralSubsidiaryRulesZonalLinksComponent,
+    AccidentManualZonalComponent,
+    AccidentManualZonalLinksComponent,
+    StudeyMaterialComponent,
+    ProjectReportsComponent,
+    PptsComponent,
+    CasesComponent,
+    CodesManualsComponent,
+    ImportantCourtCasesComponent,
+    Archives2011Component,
+    Archives2012Component,
+    Archives2013Component,
+    Archives2014Component,
+    Archives2015Component,
+    Archives2016Component,
+    Archives2017Component,
+    ReadingMaterialDisasterComponent,
+    LawPageComponent,
+    ConsumerprotectionComponent,
+    IndianrailwayactComponent,
+    AdministrativelawComponent,
+    CompetitionactComponent,
+    AadharactComponent,
+    RightToInfoComponent,
+    AllIndiaServicesComponent,
+    ApprenticeComponent,
+    ArbitirationComponent,
+    CentralReserveComponent,
+    CentralVigilanceComponent,
+    CitizenshipActComponent,
+    ConsumerProtectionComponent,
+    DisasterManagementComponent,
+    EnergyConservationComponent,
+    EnvironmentProtectionComponent,
+    GSTComponent,
+    IncomeTaxComponent,
+    IncomeEvidenceComponent,
+    IndianPenalCodeComponent,
+    RailwayBoardActComponent,
+    ITActComponent,
+    ReadingMaterialComponent,
+    MasterCircularComponent,
+    TariffComponent,
+    IndianRailwayCommercialComponent,
+    AuctionComponent,
+    GuidelinesComponent,
+    PppComponent,
+    GingerComponent,
+    FrameworkComponent,
+    PppChallangeComponent,
+    ModelComponent,
+    StationMasterComponent,
+    CommercialTicketClerksComponent,
+    TrainingModuleComponent,
     DirGenComponent,
     AddlDirGenComponent,
   ],
