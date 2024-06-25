@@ -75,16 +75,53 @@ import { RollingStockComponent } from './knowledge-centre-nav-bar/rolling-stock/
 import { CodesAndManualsComponent } from './knowledge-centre-nav-bar/codes-and-manuals/codes-and-manuals.component';
 import { VigilanceComponent } from './knowledge-centre-nav-bar/vigilance/vigilance.component';
 import { LawComponent } from './knowledge-centre-nav-bar/law/law.component';
-import { CommercialComponent } from './knowledge-centre-nav-bar/commercial/commercial.component';
 import { OperatingComponent } from './knowledge-centre-nav-bar/operating/operating.component';
 import { SafetyDisasterManagementComponent } from './knowledge-centre-nav-bar/safety-disaster-management/safety-disaster-management.component';
-import { PublicPrivatePartnershipComponent } from './knowledge-centre-nav-bar/public-private-partnership/public-private-partnership.component';
-import { NonGazettedComponent } from './knowledge-centre-nav-bar/non-gazetted/non-gazetted.component';
+import { PublicPrivatePartnershipComponent } from './public_pvt/public-private-partnership/public-private-partnership.component';
+import { NonGazettedComponent } from './Non-G/non-gazetted/non-gazetted.component';
 import { TendersContractsComponent } from './knowledge-centre-nav-bar/tenders-contracts/tenders-contracts.component';
 import { EstablishmentMattersComponent } from './knowledge-centre-nav-bar/establishment-matters/establishment-matters.component';
 import { MiscellaneousComponent } from './knowledge-centre-nav-bar/miscellaneous/miscellaneous.component';
 import { YogaPhysicalFitnessComponent } from './knowledge-centre-nav-bar/yoga-physical-fitness/yoga-physical-fitness.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { LawPageComponent } from './Law/law-page/law-page.component';
+import { ConsumerprotectionComponent } from './Law/consumerprotection/consumerprotection.component';
+import { IndianrailwayactComponent } from './Law/indianrailwayact/indianrailwayact.component';
+import { AdministrativelawComponent } from './Law/administrativelaw/administrativelaw.component';
+import { CompetitionactComponent } from './Law/competitionact/competitionact.component';
+import { AadharactComponent } from './Law/aadharact/aadharact.component';
+import { RightToInfoComponent } from './Law/right-to-info/right-to-info.component';
+import { AllIndiaServicesComponent } from './Law/all-india-services/all-india-services.component';
+import { ApprenticeComponent } from './Law/apprentice/apprentice.component';
+import { ArbitirationComponent } from './Law/arbitiration/arbitiration.component';
+import { CentralReserveComponent } from './Law/central-reserve/central-reserve.component';
+import { CentralVigilanceComponent } from './Law/central-vigilance/central-vigilance.component';
+import { CitizenshipActComponent } from './Law/citizenship-act/citizenship-act.component';
+import { ConsumerProtectionComponent } from './Law/consumer-protection/consumer-protection.component';
+import { DisasterManagementComponent } from './Law/disaster-management/disaster-management.component';
+import { EnergyConservationComponent } from './Law/energy-conservation/energy-conservation.component';
+import { EnvironmentProtectionComponent } from './Law/environment-protection/environment-protection.component';
+import { GSTComponent } from './Law/gst/gst.component';
+import { IncomeTaxComponent } from './Law/income-tax/income-tax.component';
+import { IncomeEvidenceComponent } from './Law/income-evidence/income-evidence.component';
+import { IndianPenalCodeComponent } from './Law/indian-penal-code/indian-penal-code.component';
+import { RailwayBoardActComponent } from './Law/railway-board-act/railway-board-act.component';
+import { ITActComponent } from './Law/it-act/it-act.component';
+import { ReadingMaterialComponent } from './Commercial_bar/reading-material/reading-material.component';
+import { CommercialComponent } from './Commercial_bar/commercial/commercial.component';
+import { MasterCircularComponent } from './Commercial_bar/master-circular/master-circular.component';
+import { TariffComponent } from './Commercial_bar/tariff/tariff.component';
+import { IndianRailwayCommercialComponent } from './Commercial_bar/indian-railway-commercial/indian-railway-commercial.component';
+import { AuctionComponent } from './Commercial_bar/auction/auction.component';
+import { GuidelinesComponent } from './public_pvt/guidelines/guidelines.component';
+import { PppComponent } from './public_pvt/ppp/ppp.component';
+import { GingerComponent } from './public_pvt/ginger/ginger.component';
+import { FrameworkComponent } from './public_pvt/framework/framework.component';
+import { PppChallangeComponent } from './public_pvt/ppp-challange/ppp-challange.component';
+import { ModelComponent } from './public_pvt/model/model.component';
+import { StationMasterComponent } from './Non-G/station-master/station-master.component';
+import { CommercialTicketClerksComponent } from './Non-G/commercial-ticket-clerks/commercial-ticket-clerks.component';
+import { TrainingModuleComponent } from './Non-G/training-module/training-module.component';
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
 // register Swiper custom elements
@@ -163,6 +200,43 @@ register();
     MiscellaneousComponent,
     YogaPhysicalFitnessComponent,
     AboutUsComponent,
+    LawPageComponent,
+    ConsumerprotectionComponent,
+    IndianrailwayactComponent,
+    AdministrativelawComponent,
+    CompetitionactComponent,
+    AadharactComponent,
+    RightToInfoComponent,
+    AllIndiaServicesComponent,
+    ApprenticeComponent,
+    ArbitirationComponent,
+    CentralReserveComponent,
+    CentralVigilanceComponent,
+    CitizenshipActComponent,
+    ConsumerProtectionComponent,
+    DisasterManagementComponent,
+    EnergyConservationComponent,
+    EnvironmentProtectionComponent,
+    GSTComponent,
+    IncomeTaxComponent,
+    IncomeEvidenceComponent,
+    IndianPenalCodeComponent,
+    RailwayBoardActComponent,
+    ITActComponent,
+    ReadingMaterialComponent,
+    MasterCircularComponent,
+    TariffComponent,
+    IndianRailwayCommercialComponent,
+    AuctionComponent,
+    GuidelinesComponent,
+    PppComponent,
+    GingerComponent,
+    FrameworkComponent,
+    PppChallangeComponent,
+    ModelComponent,
+    StationMasterComponent,
+    CommercialTicketClerksComponent,
+    TrainingModuleComponent,
     DirGenComponent,
   ],
   imports: [
