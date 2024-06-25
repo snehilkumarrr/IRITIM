@@ -8,29 +8,29 @@ export class CoordinatorService {
   constructor(private http: HttpClient) { }
 
   getCoordinators() {
-    const url = "http://10.64.29.243:8080/IRITM/Dashboard/getallcoordinator"
+    const url = "http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getallcoordinator"
     return this.http.get(url)
   }
 
   createCordinator(data: any) {
-    const url = "http://10.64.29.243:8080/IRITM/Dashboard/addcoordinator"
+    const url = "http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/addcoordinator"
     return this.http.post(url, data)
   }
 
   getSingleCoordinator(id: number) {
-    const url = `http://10.64.29.243:8080/IRITM/Dashboard/getcoordinator/${id}`
+    const url = `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/getcoordinator/${id}`
     return this.http.get(url)
 
   }
 
   editCordinator(id: number, data: any) {
-    const url = `http://10.64.29.243:8080/IRITM/Dashboard/editcoordinator/${id}`
+    const url = `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/editcoordinator/${id}`
     return this.http.put(url, data)
   }
 
 
   deleteCordinator(id: number) {
-    const url = `http://10.64.29.243:8080/IRITM/Dashboard/delcoordinator/${id}`
+    const url = `http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/delcoordinator/${id}`
     return this.http.delete(url)
   }
 

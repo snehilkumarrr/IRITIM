@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   Login(data: any) {
-    const url = "http://10.64.29.243:8080/IRITM/Dashboard/signin";
+    const url = "http://https://testiritm.indianrailways.gov.in//IRITM/Dashboard/signin";
     return this.http.post(url, data);
   }
 
