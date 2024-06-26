@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'kolkata-railway',
+  selector: 'konkan-railway',
   templateUrl: './kolkata-railway.component.html',
   styleUrls: ['./kolkata-railway.component.css']
 })

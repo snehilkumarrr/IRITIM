@@ -274,7 +274,7 @@ const routes: Routes = [
   { path: 'east-coast-railway', component:EastCoastRailwayComponent},
   { path: 'eastern-railway', component:EasternRailwayComponent},
   { path: 'kolkata-metro', component:KolkataMetroComponent},
-  { path: 'kolkata-railway', component:KolkataRailwayComponent},
+  { path: 'konkan-railway', component:KolkataRailwayComponent},
   { path: 'north-central-railway', component:NorthCentralRailwayComponent},
   { path: 'north-east-frontier-railway', component:NorthEastFrontierRailwayComponent},
   { path: 'north-eastern-railway', component:NorthEasternRailwayComponent},
