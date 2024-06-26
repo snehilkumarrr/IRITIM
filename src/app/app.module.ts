@@ -23,7 +23,6 @@ import { CreateFacultyComponent } from './admin/faculty/faculty.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { register } from 'swiper/element/bundle';
-import { AboutComponent } from './AboutUS/about/about.component';
 import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 import { DirectorGeneralComponent } from './about-us-nav-bar/director-general/director-general.component';
 import { AddlDirectorGeneralComponent } from './about-us-nav-bar/addl-director-general/addl-director-general.component';
@@ -199,7 +198,6 @@ register();
     DiscussionTopicCommentsComponent,
     DiscussionTopicCommentsInnerComponent,
     DiscussionCommentReplyModalComponent,
-    AboutComponent,
     DirectorGeneralComponent,
     AddlDirectorGeneralComponent,
     FacultyComponent,
