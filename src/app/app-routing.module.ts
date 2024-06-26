@@ -178,6 +178,13 @@ import { TrainingModuleComponent } from './Non-G/training-module/training-module
 import { AboutUsComponent } from './AboutUS/about-us/about-us.component';
 import { DirGenComponent } from './AboutUS/dir-gen/dir-gen.component';
 import { AddlDirGenComponent } from './AboutUS/addl-dir-gen/addl-dir-gen.component';
+import { IRSComponent } from './Info_services/irs/irs.component';
+import { IrmsComponent } from './Info_services/irms/irms.component';
+import { IrtsComponent } from './Info_services/irts/irts.component';
+import { IrssComponent } from './Info_services/irss/irss.component';
+import { IrpsComponent } from './Info_services/irps/irps.component';
+import { LearningComponent } from './publications_our/learning/learning.component';
+import { MapPdfComponent } from './iritm_map/map-pdf/map-pdf.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -362,8 +369,15 @@ const routes: Routes = [
   { path: 'commercial_ticket_clerks', component:CommercialTicketClerksComponent  },
   { path: 'training_module', component:TrainingModuleComponent  },
 
+  { path: 'IRS', component:IRSComponent  },
+  { path: 'irms', component:IrmsComponent  },
+  { path: 'irts', component:IrtsComponent  },
+  { path: 'irss', component:IrssComponent  },
 
+  { path: 'irps', component:IrpsComponent  },
+  { path: 'irps', component:LearningComponent  },
 
+  { path: 'map_pdf', component:MapPdfComponent  },
 
 
 
