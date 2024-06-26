@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from '../../Shared/constants';
 @Injectable({
   providedIn: 'root',
 })
 export class SignupService {
-  url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/saveregistraiondata"
+  url = constants.BASE_URL + 'Dashboard/saveregistraiondata'
 
   constructor(private http: HttpClient) {
   }

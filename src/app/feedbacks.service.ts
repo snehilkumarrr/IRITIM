@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from './Shared/constants';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,10 +9,10 @@ export class FeedbacksService {
   constructor(private http : HttpClient) { }
 
 getTestimonials(){
-return   this.http.get('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getfeedback')
+return   this.http.get(constants.BASE_URL + 'Dashboard/getfeedback')
 }
 postfeedback(data:any){
-  return this.http.post('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/savefeedback',data)
+  return this.http.post(constants.BASE_URL+ 'Dashboard/savefeedback',data)
 }
 
 }
