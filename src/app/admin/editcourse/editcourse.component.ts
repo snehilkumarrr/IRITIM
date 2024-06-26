@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2'
+import * as constants from '../../Shared/constants';
 @Component({
   selector: 'app-editcourse',
   templateUrl: './editcourse.component.html',
@@ -20,7 +21,7 @@ export class EditcourseComponent {
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.id = this.route.snapshot.paramMap.get('id');
     this.http
-      .get(`https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getcoursewithid/${this.id}`)
+      .get(constants.BASE_URL + `Dashboard/getcoursewithid/${this.id}`)
       .subscribe((resData: any) => {
         // console.log(resData);
         this.editcourseform = new FormGroup({
@@ -36,7 +37,7 @@ export class EditcourseComponent {
 
     this.http
       .put(
-        `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/editcourse/${this.id}`,
+        constants.BASE_URL + `Dashboard/editcourse/${this.id}`,
         this.editcourseform.value
       )
       .subscribe((resData: any) => {

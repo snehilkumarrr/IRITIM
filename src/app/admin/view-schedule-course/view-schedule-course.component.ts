@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from '../../Shared/constants';
 @Component({
   selector: 'app-view-schedule-course',
   templateUrl: './view-schedule-course.component.html',
@@ -9,7 +10,7 @@ export class ViewScheduleCourseComponent {
   scheduleDetail: any
 
   constructor(private http: HttpClient) {
-    this.http.get("https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getall-course-schedule").subscribe((resData: any) => {
+    this.http.get(constants.BASE_URL + 'Dashboard/getall-course-schedule').subscribe((resData: any) => {
       console.log(resData)
       this.scheduleDetail = resData
     })

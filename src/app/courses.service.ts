@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from './Shared/constants';
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesService {
 
-  url = 'https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getcourse';
+  url = constants.BASE_URL + 'Dashboard/getcourse';
   constructor(private http: HttpClient) { }
   getCourse() {
     return this.http.get(this.url);
@@ -13,29 +14,29 @@ export class CoursesService {
 
 
   createcourse(data: any) {
-    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/createcourse"
+    const url = constants.BASE_URL + 'Dashboard/createcourse'
     return this.http.post(url, data)
   }
 
   courseedit(id:number,data:any){
-    const url =`https://testiritm.indianrailways.gov.in/IRITM/Dashboard/editcourse/${id}`
+    const url =constants.BASE_URL + `Dashboard/editcourse/${id}`
     return this.http.post(url,data)
   }
 
-  CourseDelete(id: number) {
-    const url = `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/deletecourse/${id}`
-    return this.http.delete(url)
-  }
+  // CourseDelete(id: number) {
+  //   const url = constants.BASE_URL + `Dashboard/deletecourse/${id}`
+  //   return this.http.delete(url)
+  // }
 
 
   scheduleCourse(data: any) {
 
-    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/add-course-schedule"
+    const url = constants.BASE_URL + 'Dashboard/add-course-schedule'
     return this.http.post(url, data)
   }
 
   getScheduleCourse() {
-    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getall-course-schedule"
+    const url = constants.BASE_URL + 'Dashboard/getall-course-schedule'
     return this.http.get(url);
 
   }
@@ -44,18 +45,18 @@ export class CoursesService {
 
 
   CourseApply(data:any) {
-    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/saveAppliedCourse"
+    const url = constants.BASE_URL + 'Dashboard/saveAppliedCourse'
     return this.http.post(url,data)
   }
   UserAppliedCourse(id:any) {
     // console.log(id)
-    const url = `https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getAppliedCourse/${id}`
+    const url = constants.BASE_URL + `Dashboard/getAppliedCourse/${id}`
     return this.http.get(url)
 
   }
 
 getAllappliedCourse(){
-  const url = `http://172.16.14.78:8080/Dashboard/getAppliedAllCourse`
+  const url = constants.BASE_URL + `Dashboard/getAppliedAllCourse`
     return this.http.get(url)
 }
 

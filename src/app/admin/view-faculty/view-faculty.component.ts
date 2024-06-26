@@ -21,12 +21,12 @@ export class ViewFacultyComponent {
   createfaculty() {
     this.router.navigate(['CreateFaculty']);
   }
-  deleteFaculty(id: number) {
-    console.log(id)
-    this.Faculty.facultydelete(id).subscribe((resData:any) => {
-      console.log(resData)
-    })
-  }
+  // deleteFaculty(id: number) {
+  //   console.log(id)
+  //   this.Faculty.facultydelete(id).subscribe((resData:any) => {
+  //     console.log(resData)
+  //   })
+  // }
 
   editfaculty(id:number){
     this.router.navigate([`/EditFaculty//${id}`]);

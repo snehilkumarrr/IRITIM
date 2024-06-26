@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from '../../Shared/constants';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ export class VehicleReqListService {
   
    }
    showVehicle(){
-    const url ="https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getAllVehicleRequest"
+    const url =constants.BASE_URL + 'Dashboard/getAllVehicleRequest'
    return this.http.get(url)
    }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as constants from '../../Shared/constants';
 @Component({
   selector: 'app-hostel-reqts',
   templateUrl: './hostel-reqts.component.html',
@@ -10,7 +11,7 @@ export class HostelReqtsComponent {
 
   constructor(private http: HttpClient) {
 
-    this.http.get('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getAllHostelRequest').subscribe((resData) => {
+    this.http.get(constants.BASE_URL + 'Dashboard/getAllHostelRequest').subscribe((resData) => {
       console.log(resData)
       this.HostelRequest = resData
     })

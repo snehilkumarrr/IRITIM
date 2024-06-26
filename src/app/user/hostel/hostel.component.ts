@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms'; // Import FormsModule
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2'
+import * as constants from '../../Shared/constants';
 @Component({
   selector: 'app-hostel',
   templateUrl: './hostel.component.html',
@@ -37,7 +38,7 @@ export class HostelComponent {
     if (localStorage.getItem('officertype') === "GAZETTED") {
       this.showChidren = true
     }
-    this.http.get(`https://testiritm.indianrailways.gov.in/IRITM/Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
+    this.http.get(constants.BASE_URL + `Dashboard/getHostelRequest/${this.userid}`).subscribe((resData) => {
       console.log(resData)
       this.hostelReq = resData
 
@@ -48,7 +49,7 @@ export class HostelComponent {
 
   ApplyHostelHandler() {
     console.log(this.hostelform.value)
-    this.http.post('https://testiritm.indianrailways.gov.in/IRITM/Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
+    this.http.post(constants.BASE_URL + 'Dashboard/hostelRequest', this.hostelform.value).subscribe((resData: any) => {
 
       // alert(resData.message)
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import * as constants from '../../Shared/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   Login(data: any) {
-    const url = "https://testiritm.indianrailways.gov.in/IRITM/Dashboard/signin";
+    const url = constants.BASE_URL + 'Dashboard/signin';
     return this.http.post(url, data);
   }
 
