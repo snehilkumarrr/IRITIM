@@ -1,22 +1,20 @@
-@media (min-width: 544px) {
-  .dropdown:hover > .dropdown-menu {
-      display: block;
-  }
-}
-
+/* Base styles */
 .bg-danger {
   background-color: #db1f48 !important;
 }
+
 .dropdown-item:hover {
   background-color: #db1f48;
   color: whitesmoke;
 }
+
 .source-serif-heading {
   font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
   font-weight: bolder;
   font-style: normal;
 }
+
 .dropdown-submenu {
   position: relative;
 }
@@ -44,7 +42,7 @@
 
 .dropdown-item {
   display: block;
-  padding: 10px;
+  /* padding: 10px; */
   color: #000;
   text-decoration: none;
 }
@@ -57,3 +55,40 @@
   margin-top: -1px;
 }
 
+/* Responsive styles */
+
+/* For small screens (mobile devices) */
+@media (max-width: 543px) {
+  .dropdown-menu {
+    display: block;
+    position: static;
+  }
+  .dropdown-submenu .dropdown-menu {
+    display: block;
+    position: static;
+    margin-top: 0;
+  }
+  .dropdown-item {
+    /* padding: 8px; */
+  }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 544px) and (max-width: 767px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 768px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+  .dropdown-submenu .dropdown-menu {
+    display: none;
+  }
+  .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+  }
+}

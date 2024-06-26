@@ -24,7 +24,7 @@ import { FeedbackComponent } from './user/feedback/feedback.component';
 import { CreateFacultyComponent } from './admin/faculty/faculty.component';
 import { EditFacultyComponent } from './admin/edit-faculty/edit-faculty.component';
 import { ViewFacultyComponent } from './admin/view-faculty/view-faculty.component';
-import { AboutComponent } from "./AboutUS/about/about.component"
+// import { AboutComponent } from "./AboutUS/mission/about.component"
 import { AppliedCoursesComponent } from './admin/applied-courses/applied-courses.component';
 import { AddlDirectorGeneralComponent } from './about-us-nav-bar/addl-director-general/addl-director-general.component';
 import { ApproachIritmComponent } from './about-us-nav-bar/approach-iritm/approach-iritm.component';
@@ -203,7 +203,7 @@ const routes: Routes = [
   { path: 'CreateFaculty', component: CreateFacultyComponent },
   { path: 'EditFaculty/:id', component: EditFacultyComponent },
   { path: 'ViewFaculty', component: ViewFacultyComponent },
-  { path: 'Mission', component: AboutComponent },
+  // { path: 'Mission', component: AboutComponent },
   { path: 'AppliedCourse', component: AppliedCoursesComponent },
   { path: 'addl-director-general', component: AddlDirectorGeneralComponent},
   { path: 'approach-iritm', component:ApproachIritmComponent},
@@ -212,7 +212,7 @@ const routes: Routes = [
   { path: 'faculty',component:FacultyComponent},
   { path: 'iritm-map',component:IritmMapComponent},
   { path: 'iritm-song',component:IritmSongComponent},
-  { path: 'mission',component:MissionComponent},
+  { path: 'Mission',component:MissionComponent},
   { path: 'photo-gallery',component:PhotoGalleryComponent},
   { path: 'quality-policy',component:QualityPolicyComponent},
   { path: 'rti',component:RtiComponent},

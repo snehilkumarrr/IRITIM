@@ -5,7 +5,7 @@
                 <img height="89px" src="../../assets/images/logo.png" alt="Ashoka_Stambh" srcset="" />
             </a>
             <div class=" bgtext-color source-serif-heading">
-                <p class="h2 fw-bolder">Indian Railways Institue of Transport Management</p>
+                <p class="h2 fw-bolder">Indian Railways Institute of Transport Management</p>
                 <p class="h5 fw-bold"> Government of India</p>
 
             </div>
@@ -43,7 +43,7 @@
                                     About Us</a>
                             </li>
 
-                            <li><a target="_blank" rel="noopener" class="dropdown-item" routerLink="director-general">
+                            <li><a rel="noopener" class="dropdown-item" routerLink="director-general">
                                     Director General</a>
                             </li>
 
@@ -67,7 +67,7 @@
                                     Quality Policy</a>
                             </li>
 
-                            <li><a target="_blank" rel="noopener" class="dropdown-item" routerLink="Mission">
+                            <li><a target="_blank" rel="noopener" class="dropdown-item" routerLink="photo-gallery">
                                     Photo Gallery</a>
                             </li>
 
@@ -425,14 +425,14 @@
                             <a class="nav-link navText text-white" routerLink="adminDashboard">AdminDashboard</a>
                         </li>
                     </ng-container>
-
+<!-- 
                     <ng-container *ngIf="authId=='4'">
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="userDashboard">UserDashboard</a>
                         </li>
-                    </ng-container>
+                    </ng-container> -->
 
-                    <ng-container *ngIf="username">
+                    <!-- <ng-container *ngIf="username">
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle navText text-white" role="button"
@@ -443,15 +443,15 @@
                                 <li><button (click)="LogoutHandler()" class="dropdown-item">Logout</button></li>
                             </ul>
                         </li>
-                    </ng-container>
+                    </ng-container> -->
 
                     <ng-container *ngIf="!username">
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="register">Register</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="login">Login</a>
-                        </li>
+                        </li> -->
                     </ng-container>
 
 
