@@ -183,6 +183,7 @@ import { IrssComponent } from './Info_services/irss/irss.component';
 import { IrpsComponent } from './Info_services/irps/irps.component';
 import { LearningComponent } from './publications_our/learning/learning.component';
 import { MapPdfComponent } from './iritm_map/map-pdf/map-pdf.component';
+import { OurPublicationComponent } from './knowledge-centre-nav-bar/our-publication/our-publication.component';
 // register Swiper custom elements
 register();
 
@@ -357,6 +358,7 @@ register();
     IrpsComponent,
     LearningComponent,
     MapPdfComponent,
+    OurPublicationComponent,
   ],
   imports: [
     BrowserModule,
