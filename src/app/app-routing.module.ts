@@ -186,6 +186,7 @@ import { IrpsComponent } from './Info_services/irps/irps.component';
 import { LearningComponent } from './publications_our/learning/learning.component';
 import { MapPdfComponent } from './iritm_map/map-pdf/map-pdf.component';
 import { OurPublicationComponent } from './knowledge-centre-nav-bar/our-publication/our-publication.component';
+import { EBooksComponent } from './knowledge-centre-nav-bar/e-books/e-books.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -381,6 +382,7 @@ const routes: Routes = [
   { path: 'map_pdf', component:MapPdfComponent  },
 
   { path: 'our-publication', component:OurPublicationComponent  },
+  { path: 'eBooks', component:EBooksComponent  },
 
 
 
