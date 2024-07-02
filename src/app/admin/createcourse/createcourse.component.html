@@ -2,21 +2,24 @@
     <h1 class="text-center">Create Course </h1>
     <form [formGroup]="createcourseform" (ngSubmit)="createCourseHandler()" class="row g-3">
         <div class="col-md-4">
-            <label for="inputEmail4" class="form-label">Course Name</label>
-            <input  name="coursename" formControlName="coursename" type="text" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-4">
             <label for="inputEmail4" class="form-label">Course Code</label>
             <input  name="coursecode" formControlName="coursecode" type="text" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-4">
+            <label for="inputEmail4" class="form-label">Course Name</label>
+            <input  name="coursename" formControlName="coursename" type="text" class="form-control" id="inputEmail4">
         </div>
 
         <div class="col-md-4">
             <label for="inputAddress" class="form-label">Advertisment No</label>
-            <input  name="advertisement" formControlName="" type="text" class="form-control" id="inputAddress">
+            <input  name="advertisement" formControlName="advertisement" type="text" class="form-control" id="inputAddress">
         </div>
         <div class="col-md-12">
             <label for="inputPassword4" class="form-label">Course Description</label>
-            <textarea maxlength="200"  name="coursedescription" formControlName="coursedescription" class="form-control p-5" id="inputPassword4"> </textarea>
+            <textarea maxlength="200" name="coursedescription" formControlName="coursedescription" class="form-control p-5" id="inputPassword4"></textarea>
+        </div>
+        <div class="col-md-12">
+            <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
         </div>
 
         <div class="col-12 text-center my-4">
