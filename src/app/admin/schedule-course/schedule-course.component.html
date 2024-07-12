@@ -7,7 +7,7 @@
             <select ngModel name="courseName" class="form-select" id="courseName">
                 <option selected>Select Option</option>
                 <option *ngFor="let courses of coursesData" value="{{courses.id}}">
-                    {{courses.courseName }}-{{courses.courseCode}}
+                    {{courses.courseCode}} - {{courses.courseName }}
                 </option>
 
             </select>

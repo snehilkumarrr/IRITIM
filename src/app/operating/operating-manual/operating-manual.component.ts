@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'operating-manual',
+  selector: 'operating-manuals',
   templateUrl: './operating-manual.component.html',
   styleUrls: ['./operating-manual.component.css']
 })
