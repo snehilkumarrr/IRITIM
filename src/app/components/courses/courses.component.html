@@ -5,7 +5,7 @@
             <div class="card my-2">
                 <div class="card-body">
                     <h6 *ngIf="false" class="text-center text-danger">Cancellation</h6>
-                    <h5 class="card-title text-center my-2"> {{courses.courseName}} -{{courses.courseCode}} </h5>
+                    <h5 class="card-title text-center my-2"><a href={{courses.downloadLink}}> {{courses.courseName}} -{{courses.courseCode}} </a> </h5>
                     <p class="card-text text-justify">{{courses.courseDesc}}</p>
 
                 </div>
