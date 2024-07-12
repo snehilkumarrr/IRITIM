@@ -7,7 +7,7 @@
           <thead class="table-primary">
               <tr class="source-serif-heading">
                   <th scope="col">S.No</th>
-                  <th scope="col">Course Id</th>
+                  <th scope="col">Course Code</th>
                   <th scope="col">Course Name</th>
                   <th scope="col">Applied Date</th>
                   <th scope="col-1">User Id</th>
@@ -17,7 +17,7 @@
           <tbody>
               <tr *ngFor="let item of ItemsArray; let i = index">
                   <th scope="row">{{ i + 1 }}</th>
-                  <td>{{ item.courseid }}</td>
+                  <td>{{ item.courseCode }}</td>
                   <td>{{ item.coursename }}</td>
                   <td>{{ item.appileddate }}</td>
                   <td>{{ item.userid }}</td>
