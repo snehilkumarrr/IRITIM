@@ -264,7 +264,7 @@ const routes: Routes = [
   { path: 'library', component:LibraryComponent},
   { path: 'miscellaneous', component:MiscellaneousComponent},
   { path: 'non-gazetted', component:NonGazettedComponent},
-  { path: 'operating', component:OperatingComponent},
+  { path: 'operating-manual', component:OperatingComponent},
   { path: 'public-private-partnership', component:PublicPrivatePartnershipComponent},
   { path: 'railway-system-map', component:RailwaySystemMapComponent},
   { path: 'rolling-stock', component:RollingStockComponent},
@@ -331,22 +331,22 @@ const routes: Routes = [
   { path: 'archives-2016', component:Archives2016Component},
   { path: 'archives-2017', component:Archives2017Component},
   { path: 'lawPage', component: LawPageComponent },
-  { path: 'consumerprotection', component: ConsumerprotectionComponent },
-  { path: 'indianrailwayact', component:IndianrailwayactComponent  },
-  { path: 'administrativelaw', component:AdministrativelawComponent  },
-  { path: 'competitionact', component:CompetitionactComponent  },
-  { path: 'aadharact', component:AadharactComponent  },
-  { path: 'right_to_info', component:RightToInfoComponent  },
+  { path: 'consumerprotection', component: ConsumerprotectionComponent},
+  { path: 'indianrailwayact', component:IndianrailwayactComponent},
+  { path: 'administrativelaw', component:AdministrativelawComponent},
+  { path: 'competitionact', component:CompetitionactComponent},
+  { path: 'aadharact', component:AadharactComponent},
+  { path: 'right_to_info', component:RightToInfoComponent},
   { path: 'apprentice', component:ApprenticeComponent  },
   { path: 'arbitiration', component:ArbitirationComponent  },
   { path: 'central_reserve', component:CentralReserveComponent  },
   { path: 'central_vigilance', component:CentralVigilanceComponent  },
   { path: 'citizenship_act', component:CitizenshipActComponent  },
-  { path: 'consumer_protection', component:ConsumerProtectionComponent  },
+  { path: 'consumer-protection', component:ConsumerProtectionComponent  },
   { path: 'disaster_management', component:DisasterManagementComponent  },
   { path: 'energy_conservation', component:EnergyConservationComponent  },
   { path: 'environment_protection', component:EnvironmentProtectionComponent  },
-
+  { path: 'all-india-services', component:AllIndiaServicesComponent},
   { path: 'GST', component:GSTComponent  },
   { path: 'income_tax', component:IncomeTaxComponent  },
 
@@ -383,6 +383,7 @@ const routes: Routes = [
 
   { path: 'our-publication', component:OurPublicationComponent  },
   { path: 'eBooks', component:EBooksComponent  },
+
 
 
 
