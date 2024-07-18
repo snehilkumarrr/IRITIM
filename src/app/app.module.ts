@@ -185,6 +185,7 @@ import { LearningComponent } from './publications_our/learning/learning.componen
 import { MapPdfComponent } from './iritm_map/map-pdf/map-pdf.component';
 import { OurPublicationComponent } from './knowledge-centre-nav-bar/our-publication/our-publication.component';
 import { EBooksComponent } from './knowledge-centre-nav-bar/e-books/e-books.component';
+import { CommonContentComponent } from './common-content/common-content.component';
 // register Swiper custom elements
 register();
 
@@ -361,6 +362,7 @@ register();
     MapPdfComponent,
     OurPublicationComponent,
     EBooksComponent,
+    CommonContentComponent,
   ],
   imports: [
     BrowserModule,
