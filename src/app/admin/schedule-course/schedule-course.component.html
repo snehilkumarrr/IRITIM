@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-2">
             <label for="inputAddress" class="form-label">Select Faculty</label>
-            <select ngModel name="professorId" class="form-select">
+            <select ngModel name="professorId" class="form-select" id="faculty">
                 <option selected>Please Select Option</option>
                 <option *ngFor="let Facultys of FacultyDetail" value="{{Facultys.fempid}}">{{Facultys.fname}}</option>
 

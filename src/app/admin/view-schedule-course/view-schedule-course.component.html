@@ -3,7 +3,7 @@
         <h3 class="mt-4 text-center">View Scheduled Courses</h3>
         <table class="table table-bordered mt-4">
             <thead class="table-primary">
-                <tr >
+                <tr>
                     <th scope="col">S.No</th>
                     <th scope="col">Course Name</th>
                     <th scope="col">StartDate</th>
@@ -11,10 +11,11 @@
                     <th scope="col">CoordinatorName</th>
                     <th scope="col">ProfessorName</th>
                     <th scope="col">Course Description</th>
+                    <th scope="col-1">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let Scheduledcourse of scheduleDetail;let i = index">
+                <tr *ngFor="let Scheduledcourse of scheduleDetail;let item of ItemsArray;let i = index">
                     <th>{{ i + 1 }}</th>
                     <td>{{Scheduledcourse.courseName}}</td>
                     <td>{{Scheduledcourse.startDate|date}}</td>
@@ -22,6 +23,9 @@
                     <td>{{Scheduledcourse.coordinatorName}}</td>
                     <td>{{Scheduledcourse.professorNmae}}</td>
                     <td>{{Scheduledcourse.courseDesc}}</td>
+                    <td class="p-4 mx-2">
+                        <button (click)="deleteScheduledCourse(item.id)" class="btn btn-danger">Delete </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
