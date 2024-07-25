@@ -41,47 +41,47 @@
                                     About Us</a>
                             </li>
 
-                            <li><a rel="noopener" class="dropdown-item" routerLink="director-general">
+                            <li><a rel="noopener" class="dropdown-item  " [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,13'}">
                                     Director General</a>
                             </li>
 
-                            <li> <a rel="noopener" class="dropdown-item" routerLink="addl-director-general">
+                            <li> <a rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,526'}">
                                     Addl. Director General</a>
                             </li>
 
-                            <li> <a rel="noopener" class="dropdown-item" routerLink="faculty">
+                            <li> <a rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,15'}">
                                 Faculty</a>
                         </li>
 
-                            <li><a   rel="noopener" class="dropdown-item" routerLink="Mission">
+                            <li><a   rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,655'}">
                                     Mission</a>
                             </li>
 
-                            <li> <a rel="noopener" class="dropdown-item" routerLink="vision">
+                            <li> <a rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,14'}">
                                     Vision</a>
                             </li>
 
-                            <li><a   rel="noopener" class="dropdown-item" routerLink="campus">
+                            <li><a   rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,16'}">
                                     Campus</a>
                             </li>
 
-                            <li><a   rel="noopener" class="dropdown-item" routerLink="map_pdf">
+                            <li><a   rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,585'}">
                                 IRITM Maps</a>
                         </li>
 
-                            <li> <a rel="noopener" class="dropdown-item" routerLink="quality-policy">
+                            <li> <a rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,658'}">
                                     Quality Policy</a>
                             </li>
 
-                            <li><a   rel="noopener" class="dropdown-item" routerLink="photo-gallery">
+                            <li><a   rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,304'}">
                                     Photo Gallery</a>
                             </li>
 
-                            <li> <a rel="noopener" class="dropdown-item" routerLink="rti">
+                            <li> <a rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,316'}">
                                     RTI</a>
                             </li>
 
-                            <li><a   rel="noopener" class="dropdown-item" routerLink="approach-iritm">
+                            <li><a   rel="noopener" class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,1,342'}">
                                     Approach to IRITM</a>
                             </li>
 
@@ -378,18 +378,18 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a rel="noopener"   class="dropdown-item"
-                                    href="#">IRTS(P)2019(EoL)Batch</a></li>
+                                [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,582'}">IRTS(P)2019(EoL)Batch</a></li>
                             <li><a rel="noopener"   class="dropdown-item" href="#" routerLink="irts-2019-batch">IRTS(P)2019Batch</a>
                             </li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">IRTS(P)2018Batch</a>
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,522'}">IRTS(P)2018Batch</a>
                             </li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">IRTS(P)2017Batch</a>
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,495'}">IRTS(P)2017Batch</a>
                             </li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,460'}">
                                 IRTS(P)2016Batch</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">IRTS(P)2015Batch</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">IRTS(P)2014Batch</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">OutsandingIRTS
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,455'}">IRTS(P)2015Batch</a></li>
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,448'}">IRTS(P)2014Batch</a></li>
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,5,458'}">OutsandingIRTS
                                     Probationers</a></li>
                             <li><a rel="noopener"   class="dropdown-item" routerLink="rules-regarding-eol" href="#">
                                     Rules regarding EoL</a></li>
@@ -407,9 +407,9 @@
                         <ul class="dropdown-menu">
                             <li><a rel="noopener"   class="dropdown-item" href="#" routerLink="quotation-notices">
                                     Quotation Notices</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">News &
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,4,310'}">News &
                                     Announcements</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">IRITM Magazine</a></li>
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,4,521'}">IRITM Magazine</a></li>
                             <li><a rel="noopener"   class="dropdown-item" href="#" routerLink="vacancies">
                                     Vacancies</a></li>
                             <li><a rel="noopener"   class="dropdown-item" href="#" routerLink="rajbhasha">
@@ -441,13 +441,13 @@
                             <li><a rel="noopener"   class="dropdown-item" href="#">
                                     Help</a>
                             </li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">Other Railway Sites</a>
+                            <li><a rel="noopener"   class="dropdown-item"  [routerLink]="['/getContent']" [queryParams]="{contentId :'0,7,330'}" >Other Railway Sites</a>
                             </li>
                             <li><a rel="noopener"   class="dropdown-item" href="#" routerLink="complaints-committee">Complaints Committee to
                                     Sexual Harassment of women at Workplace</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,7,325'}" >
                                     Site Map</a></li>
-                            <li><a rel="noopener"   class="dropdown-item" href="#">
+                            <li><a rel="noopener"   class="dropdown-item" [routerLink]="['/getContent']" [queryParams]="{contentId :'0,7,347'}">
                                     Terms & Conditions </a></li>
                         </ul>
                     </li>
