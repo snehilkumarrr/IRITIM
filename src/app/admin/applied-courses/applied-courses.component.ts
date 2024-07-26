@@ -17,6 +17,10 @@ export class AppliedCoursesComponent {
     })
 
   }
+
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
+  }
   // deleteCourse(id: any) {
   //   console.log(id)
   //   this.courseDetail.CourseDelete(id).subscribe((resData: any) => {

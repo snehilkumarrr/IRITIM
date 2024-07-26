@@ -47,6 +47,9 @@ export class ScheduleCourseComponent {
     this.router.navigate(['ViewScheduleCourse'])
   }
 
+  ViewCourse() {
+    this.router.navigate(['ViewCourse'])
+  }
 
 
 

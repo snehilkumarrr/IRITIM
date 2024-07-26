@@ -22,8 +22,12 @@
             <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
         </div>
 
-        <div class="col-12 text-center my-4">
+        <div class="col-md-1 text-center my-4">
             <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+        
+        <div class="col-md-1 text-center my-4">
+            <button (click)="ViewCourseHandler()" class="btn btn-primary">Back</button>
         </div>
     </form>
 </div>

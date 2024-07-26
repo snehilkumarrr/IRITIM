@@ -31,8 +31,11 @@ export class ViewCourseComponent implements OnInit {
        window.location.reload();
      })
   }
-  SechduleCoure() {
+  SechduleCourse() {
     this.router.navigate(['ScheduleCourse'])
+  }
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
   }
 }
 

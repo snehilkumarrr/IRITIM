@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as constants from '../../Shared/constants';
 import { CoursesService } from 'src/app/courses.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-view-schedule-course',
   templateUrl: './view-schedule-course.component.html',
@@ -12,7 +13,7 @@ export class ViewScheduleCourseComponent implements OnInit{
   ItemsArray: any;
   scheduleDetail: any
 
-  constructor(private courseDetail: CoursesService,private http: HttpClient) {
+  constructor(private courseDetail: CoursesService,private http: HttpClient,private router: Router) {
     this.http.get(constants.BASE_URL + 'Dashboard/getall-course-schedule').subscribe((resData: any) => {
       console.log(resData)
       this.scheduleDetail = resData
@@ -25,6 +26,8 @@ export class ViewScheduleCourseComponent implements OnInit{
     })
 
   }
+
+  
 
   deleteScheduledCourse(id: any) {
     console.log(id)
@@ -40,7 +43,9 @@ export class ViewScheduleCourseComponent implements OnInit{
       
       
     })
-    
- }
+  }
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
+  }
 
 }
