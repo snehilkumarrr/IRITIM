@@ -22,6 +22,9 @@ export class ViewcoordinatorComponent {
   CreateCoordinator() {
     this.router.navigate(['CreateCoordinator']);
   }
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
+  }
 
   // deleteCoordinator(id: number) {
   //   console.log(id)

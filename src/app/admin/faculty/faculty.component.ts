@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FacultyService } from 'src/app/services/faculty.service';
 import Swal from 'sweetalert2'
 @Component({
@@ -20,7 +21,7 @@ export class CreateFacultyComponent {
   })
 
 
-  constructor(private  Faculty : FacultyService){}
+  constructor(private  Faculty : FacultyService, private router: Router){}
 
 
 
@@ -46,7 +47,9 @@ export class CreateFacultyComponent {
     })
     
   }
-
+  ViewFaculty() {
+    this.router.navigate(['ViewFaculty'])
+  }
 
 
 
