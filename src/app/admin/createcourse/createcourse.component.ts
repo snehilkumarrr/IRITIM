@@ -52,10 +52,10 @@ export class CreatecourseComponent {
     const fileSize = file.size;
     const fileMb = fileSize / 1024 / 1024; // Adjusted to calculate MB correctly
 
-    if (fileMb <= 2) {
+    if (fileMb <= 10) {
       this.file = file;
     } else {
-      alert('File size exceeds 2 MB');
+      alert('File size exceeds 10 MB');
       this.file = null;
     }
   }
