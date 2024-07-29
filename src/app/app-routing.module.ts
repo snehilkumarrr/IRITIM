@@ -188,6 +188,9 @@ import { MapPdfComponent } from './iritm_map/map-pdf/map-pdf.component';
 import { OurPublicationComponent } from './knowledge-centre-nav-bar/our-publication/our-publication.component';
 import { EBooksComponent } from './knowledge-centre-nav-bar/e-books/e-books.component';
 import { CommonContentComponent } from './common-content/common-content.component';
+import { AboutusIritmMapsComponent } from './AboutUS/aboutus-iritm-maps/aboutus-iritm-maps.component';
+import { AboutusRtiComponent } from './AboutUS/aboutus-rti/aboutus-rti.component';
+import { KnowledgeCommercialComponent } from './knowledge-centre-nav-bar/knowledge-commercial/knowledge-commercial.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -386,6 +389,9 @@ const routes: Routes = [
   { path: 'eBooks', component:EBooksComponent  },
 
   { path: 'getContent', component:CommonContentComponent  },
+  { path: 'aboutus-iritm-maps', component:AboutusIritmMapsComponent},
+  { path: 'aboutus-rti', component:AboutusRtiComponent},
+  { path: 'knowledge-commercial', component:KnowledgeCommercialComponent},
 
 
 
