@@ -21,7 +21,7 @@ export class ViewScheduleCourseComponent implements OnInit{
   }
   ngOnInit() {
 
-    this.courseDetail.getCourse().subscribe((res) => {
+    this.courseDetail.getScheduleCourse().subscribe((res) => {
       this.ItemsArray = res
     })
 
@@ -33,11 +33,6 @@ export class ViewScheduleCourseComponent implements OnInit{
     console.log(id)
     this.courseDetail.ScheduledCourseDelete(id).subscribe((resData: any) => {
       console.log(resData)
-      // Swal.fire({
-      //   title: 'Success',
-      //   text: resData.msg,
-      //   icon: 'success'
-      // });
       alert(resData.msg)
       window.location.reload();
       
