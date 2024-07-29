@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonContentService } from '../commonContent.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +6,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-common-content',
   templateUrl: './common-content.component.html',
-  styleUrls: ['./common-content.component.css']
+  styleUrls: ['./common-content.component.css'],
+  encapsulation: ViewEncapsulation.None 
 })
 export class CommonContentComponent {
 
