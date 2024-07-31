@@ -10,6 +10,10 @@
                     <option *ngFor="let courses of scheduleCourse" value={{courses.courseId}}>{{courses.courseName}}-{{courses.courseCode}}</option>
                 </select>
             </div>
+
+            <div class="col-md-6 mt-4 ">
+                <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+            </div>
             <div class="col-md-3 mt-4 ">
                 <button class="btn btn-primary">Apply</button>
             </div>
@@ -20,17 +24,25 @@
             <thead>
                 <tr class="table-primary">
                     <th scope="col">S.No</th>
+                    <th scope="col">Course Code</th>
                     <th scope="col">Course Name</th>
                     <th scope="col">Applied Date</th>
                     <th scope="col">Duration</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let appliescourse of usercourses ;let i = index">
                     <th scope="row">{{ i + 1 }}</th>
+                    <td>{{appliescourse.coursecode}}</td>
                     <td>{{appliescourse.coursename}}</td>
                     <td>{{appliescourse.appileddate |date}}</td>
                     <td>{{appliescourse.duration}}</td>
+                    <td>{{appliescourse.status}}</td>
+                    <!-- <td>      
+                        <button (click)="editCourse(appliescourse.id)" class="btn btn-primary">Edit</button>
+                    </td> -->
 
                 </tr>
             </tbody>

@@ -49,8 +49,8 @@ export class CoursesService {
 
 
   CourseApply(data:any) {
-    const url = constants.BASE_URL + 'Dashboard/saveAppliedCourse'
-    return this.http.post(url,data)
+    const url = constants.BASE_URL + 'Dashboard/updateEnrolledCourseByUser'
+    return this.http.put(url,data)
   }
   UserAppliedCourse(id:any) {
     // console.log(id)
