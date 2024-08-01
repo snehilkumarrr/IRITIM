@@ -20,6 +20,7 @@ import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
 import { AppliedCoursesComponent } from './applied-courses/applied-courses.component';
 import { HostelManagementComponent } from './hostel-management/hostel-management.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CoordinatorDashboardComponent } from './coordinator-dashboard/coordinator-dashboard.component';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -37,7 +38,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ViewFacultyComponent,
     EditFacultyComponent,
     AppliedCoursesComponent,
-    HostelManagementComponent
+    HostelManagementComponent,
+    CoordinatorDashboardComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, BrowserModule, NgSelectModule

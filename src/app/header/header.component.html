@@ -474,6 +474,11 @@
                             <a class="nav-link navText text-white" routerLink="userDashboard">UserDashboard</a>
                         </li>
                     </ng-container>
+                    <ng-container *ngIf="authId=='2'">
+                        <li class="nav-item">
+                            <a class="nav-link navText text-white" routerLink="coordinator-dashboard">Coordinator Dashboard</a>
+                        </li>
+                    </ng-container>
 
                     <ng-container *ngIf="username">
 
@@ -492,9 +497,9 @@
                         <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="register">Register</a>
                         </li>
-                       <!-- <li class="nav-item">
+                       <li class="nav-item">
                             <a class="nav-link navText text-white" routerLink="login">Login</a>
-                        </li> -->
+                        </li>
                     </ng-container>
 
 

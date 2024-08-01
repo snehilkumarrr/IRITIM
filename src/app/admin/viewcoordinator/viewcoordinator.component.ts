@@ -26,19 +26,19 @@ export class ViewcoordinatorComponent {
     this.router.navigate(['adminDashboard'])
   }
 
-  // deleteCoordinator(id: number) {
-  //   console.log(id)
-  //   this.CoordinatorDetail.deleteCordinator(id).subscribe((resData: any) => {
-  //     console.log(resData)
-  //     // alert(resData.msg)
-  //     Swal.fire({
-  //       title: "Success",
-  //       text: resData.msg,
-  //       icon: "success"
-  //     });
-  //     // window.location.reload();
-  //   })
-  // }
+  deleteCoordinator(id: number) {
+    console.log(id)
+    this.CoordinatorDetail.deleteCordinator(id).subscribe((resData: any) => {
+      console.log(resData)
+      alert(resData.msg)
+      // Swal.fire({
+      //   title: "Success",
+      //   text: resData.msg,
+      //   icon: "success"
+      // });
+      window.location.reload();
+    })
+  }
 
 
 }

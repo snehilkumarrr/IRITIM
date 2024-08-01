@@ -191,6 +191,7 @@ import { CommonContentComponent } from './common-content/common-content.componen
 import { AboutusIritmMapsComponent } from './AboutUS/aboutus-iritm-maps/aboutus-iritm-maps.component';
 import { AboutusRtiComponent } from './AboutUS/aboutus-rti/aboutus-rti.component';
 import { KnowledgeCommercialComponent } from './knowledge-centre-nav-bar/knowledge-commercial/knowledge-commercial.component';
+import { CoordinatorDashboardComponent } from './admin/coordinator-dashboard/coordinator-dashboard.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -392,6 +393,7 @@ const routes: Routes = [
   { path: 'aboutus-iritm-maps', component:AboutusIritmMapsComponent},
   { path: 'aboutus-rti', component:AboutusRtiComponent},
   { path: 'knowledge-commercial', component:KnowledgeCommercialComponent},
+  { path: 'coordinator-dashboard', component:CoordinatorDashboardComponent},
 
 
 
