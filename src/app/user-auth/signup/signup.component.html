@@ -43,17 +43,55 @@
                     <input type="text" class="form-control" formControlName="education" name="education" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">GROUP<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="group" name="group" placeholder="Please Enter Group" required>
+                    <label for="group" class="form-label">GROUP<font color="red">*</font></label>
+                    <select class="form-control" formControlName="group" (change)="onGroupChange($event)" required>
+                        <option value="" disabled selected>Please Select Group</option>
+                        <option value="groupA">Group A</option>
+                        <option value="groupB">Group B</option>
+                        <option value="groupC">Group C</option>
+                        <option value="otherGroup">Others</option>
+                    </select>
                 </div>
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Grade<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="grade" name="grade" placeholder="Please Enter Grade" required>
+                                
+                <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+                    <label for="otherGroupName" class="form-label">Please specify the group</label>
+                    <input type="text" class="form-control" formControlName="otherGroupName" placeholder="Enter Group Name">
                 </div>
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Department<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="department" name="department" placeholder="Please Enter Department" required>
+
+                <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+                    
+                        <label for="grade" class="form-label">Grade<font color="red">*</font></label>
+                        <input name="name" type="text" class="form-control" formControlName="grade" placeholder="Please Enter Grade" required>
+                 
                 </div>
+
+                <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+
+                    <div class="col-md-3">
+                        <label for="gender" class="form-label">Department<font color="red">*</font></label>
+                        <input type="text" class="form-control" formControlName="department" name="department" placeholder="Please Enter Department" required>
+                    </div>
+                </div>
+
+
+                <div *ngIf="selectedGroup && selectedGroup != 'otherGroup'" class="col-md-3">
+                    <label for="grade" class="form-label">Grade<font color="red">*</font></label>
+                    <select class="form-control" formControlName="grade" required>
+                        <option value="" disabled selected>Please Select Grade</option>
+                        <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+                    </select>
+                </div>
+
+                <div *ngIf="selectedGroup && selectedGroup !== 'otherGroup'" class="col-md-3">
+                    <label for="department" class="form-label">Department<font color="red">*</font></label>
+                    <select class="form-control" formControlName="department" required>
+                        <option value="" disabled selected>Please Select Department</option>
+                        <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+                    </select>
+                </div>
+
+
+
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Designation (English)<font color="red">*</font></label>
                     <input type="text" class="form-control" formControlName="designationineng" name="designationineng" placeholder="Please Enter Designation (English)" required>
@@ -88,6 +126,25 @@
                         <option value="yes">YES</option>
                         <option selected value="No">No</option>
                     </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="earlierTraining" class="form-label">Earlier Training <font color="red">*</font></label>
+                    <select formControlName="earlierTraining" class="form-control" required>
+                      <option value="yes">YES</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                <div class="col-md-3">
+                    <label for="remark" class="form-label">Remark</label>
+                    <input type="text" class="form-control" formControlName="remark" name="remark" placeholder="Please Enter Remark">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(50KB max size)</font></label>
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                    </div>
                 </div>
             </ng-container>
             <ng-container *ngIf="emptype === 'Non Railways'">
@@ -158,7 +215,28 @@
                         <option selected value="No">No</option>
                     </select>
                 </div>
+                <div class="col-md-3">
+                    <label for="earlierTraining" class="form-label">Earlier Training <font color="red">*</font></label>
+                    <select formControlName="earlierTraining" class="form-control" required>
+                      <option value="yes">YES</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                <div class="col-md-3">
+                    <label for="remark" class="form-label">Remark</label>
+                    <input type="text" class="form-control" formControlName="remark" name="remark" placeholder="Please Enter Remark">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(50KB max size)</font></label>
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                    </div>
+                </div>
+
             </ng-container>
+
             <div class="col-12 text-center my-5">
                 <button type="submit" class="btn btn-primary">Sign in <i class="fa fa-user-plus" aria-hidden="true"></i></button>
             </div>
