@@ -14,46 +14,94 @@
                 <div class="col-md-3 ">
                     <label for="gender" class="form-label">HRMS ID<font color="red">*</font></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Please Enter HRMSID" #hrmsInput formControlName="hrmsid" required>
+                        <input type="text" class="form-control"  #hrmsInput formControlName="hrmsid" required>
                         <button class="btn btn-success" (click)="getValue(hrmsInput.value)" type="button" id="button-addon2">Load</button>
                     </div>
                 </div>
                 <div class="col-md-3 ">
                     <label for="gender" class="form-label">Employee Name (English)<font color="red">*</font></label>
-                    <input type="text" class="form-control" name="employeename" formControlName="name" placeholder="Please Enter Employee Name" required>
+                    <input type="text" class="form-control" name="employeename" formControlName="name" required>
                 </div>
                 <div class="col-md-3 ">
                     <label for="gender" class="form-label">Employee Name (Hindi)</label>
-                    <input type="text" class="form-control" name="usernamehindi" formControlName="usernamehindi" placeholder="Please Enter Employee Name">
+                    <input type="text" class="form-control" name="usernamehindi" formControlName="usernamehindi">
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Gender<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="gender" name="gender" placeholder="Please Enter Gender" required>
+                    <input type="text" class="form-control" formControlName="gender" name="gender" required>
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">D.O.B<font color="red">*</font></label>
-                    <input type="date" class="form-control" formControlName="dob" name="dob" placeholder="Please Enter D.O.B" required>
+                    <input type="date" class="form-control" formControlName="dob" name="dob" required>
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">D.O.J<font color="red">*</font></label>
-                    <input type="date" class="form-control" formControlName="dateofappointment" name="dateofappointment" placeholder="Please Enter D.O.J" required>
+                    <input type="date" class="form-control" formControlName="dateofappointment" name="dateofappointment" required>
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Education<font color="red">*</font></label>
                     <input type="text" class="form-control" formControlName="education" name="education" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender" class="form-label">GROUP<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="group" name="group" placeholder="Please Enter Group" required>
+                    <label for="group" class="form-label">GROUP<font color="red">*</font></label>
+                    <select class="form-control" formControlName="group" (change)="onGroupChange($event)" required>
+                        <option value="" disabled selected>Please Select Group</option>
+                        <option value="groupA">Group A</option>
+                        <option value="groupB">Group B</option>
+                        <option value="groupC">Group C</option>
+                        <option value="otherGroup">Others</option>
+                    </select>
                 </div>
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Grade<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="grade" name="grade" placeholder="Please Enter Grade" required>
+                
+                <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+                    <label for="otherGroupName" class="form-label">Please specify the group<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="otherGroupName">
                 </div>
-                <div class="col-md-3">
-                    <label for="gender" class="form-label">Department<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="department" name="department" placeholder="Please Enter Department" required>
+
+                 <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+                    
+                        <label for="grade" class="form-label">Grade<font color="red">*</font></label>
+                        <input name="name" type="text" class="form-control" formControlName="grade" required>
+                 
                 </div>
+
+                <div *ngIf="selectedGroup == 'otherGroup'" class="col-md-3">
+
+                    <div class="col-md-3">
+                        <label for="gender" class="form-label">Department<font color="red">*</font></label>
+                        <input type="text" class="form-control" formControlName="department" name="department"required>
+                    </div>
+                </div>
+                
+                <div *ngIf="selectedGroup && selectedGroup != 'otherGroup'" class="col-md-3">
+                    <label for="grade" class="form-label">Grade<font color="red">*</font></label>
+                    <select class="form-control" formControlName="grade" (change)="onGradeChange($event)" required>
+                        <option value="" disabled selected>Please Select Grade</option>
+                        <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+                    </select>
+                </div>
+                
+                <div *ngIf="selectedGrade == 'Others'" class="col-md-3">
+                    <label for="otherGradeName" class="form-label">Please specify the grade<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="otherGradeName" >
+                </div>
+                
+                <div *ngIf="selectedGroup && selectedGroup !== 'otherGroup'" class="col-md-3">
+                    <label for="department" class="form-label">Department<font color="red">*</font></label>
+                    <select class="form-control" formControlName="department" (change)="onDepartmentChange($event)" required>
+                        <option value="" disabled selected>Please Select Department</option>
+                        <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+                    </select>
+                </div>
+                
+                <div *ngIf="selectedDepartment == 'Others'" class="col-md-3">
+                    <label for="otherDepartmentName" class="form-label">Please specify the department<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="otherDepartmentName" >
+                </div>
+                
+
+
+
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Designation (English)<font color="red">*</font></label>
                     <input type="text" class="form-control" formControlName="designationineng" name="designationineng" placeholder="Please Enter Designation (English)" required>
@@ -64,23 +112,23 @@
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Place of Posting<font color="red">*</font></label>
-                    <input type="text" class="form-control" formControlName="placeofposting" name="placeofposting" placeholder="Please Enter Place of Posting" required>
+                    <input type="text" class="form-control" formControlName="placeofposting" name="placeofposting" required>
                 </div>
                 <div class="col-md-3 ">
                     <label for="inputState" class="form-label">Railways :Zone/PSU/ZRTI/CTI/MDTI/Other<font color="red">*</font> </label>
-                    <input placeholder="Railways :Zone/PSU/ZRTI/CTI" type="text" class="form-control" formControlName="zone" name="zone" required>
+                    <input type="text" class="form-control" formControlName="zone" name="zone" required>
                 </div>
                 <div class="col-md-3 ">
                     <label for="inputState" class="form-label">Division<font color="red">*</font></label>
-                    <input formControlName="division" type="text" class="form-control" name="division" placeholder="Please Enter Division" required>
+                    <input formControlName="division" type="text" class="form-control" name="division"  required>
                 </div>
                 <div class="col-md-3">
                     <label for="whatsappNo" class="form-label">CUG / Whatsapp Number<font color="red">*</font></label>
-                    <input name="whatsappno" placeholder="Please Enter Mobile No" formControlName="whatsappno" type="number" class="form-control" id="whatsappNo" #whatsappInput required>
+                    <input name="whatsappno" formControlName="whatsappno" type="number" class="form-control" id="whatsappNo" #whatsappInput required>
                 </div>
                 <div class="col-md-3">
                     <label for="email" class="form-label">Email ID<font color="red">*</font></label>
-                    <input placeholder="Please Enter Email ID" formControlName="emailid" name="emailid" type="email" class="form-control" id="email" required>
+                    <input formControlName="emailid" name="emailid" type="email" class="form-control" id="email" required>
                 </div>
                 <div class="col-md-3">
                     <label for="gender" class="form-label">Divyangjan <font color="red">*</font></label>
@@ -88,6 +136,25 @@
                         <option value="yes">YES</option>
                         <option selected value="No">No</option>
                     </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="earlierTraining" class="form-label">Earlier Training <font color="red">*</font></label>
+                    <select formControlName="earlierTraining" class="form-control" required>
+                      <option value="yes">YES</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                <div class="col-md-3">
+                    <label for="remark" class="form-label">Remark</label>
+                    <input type="text" class="form-control" formControlName="remark" name="remark">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(100KB max size)</font></label>
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                    </div>
                 </div>
             </ng-container>
             <ng-container *ngIf="emptype === 'Non Railways'">
@@ -136,6 +203,10 @@
                     <input name="name" type="text" class="form-control" formControlName="placeofposting" placeholder="Please Enter Place of Posting" required>
                 </div>
                 <div class="col-md-3">
+                    <label for="group" class="form-label">Group(Group-A, Group-B etc)<font color="red">*</font></label>
+                    <input type="text" class="form-control" formControlName="group">
+                </div>
+                <div class="col-md-3">
                     <label for="gender" class="form-label">Department<font color="red">*</font></label>
                     <input name="name" type="text" class="form-control" formControlName="department" placeholder="Please Enter Department" required>
                 </div>
@@ -158,7 +229,28 @@
                         <option selected value="No">No</option>
                     </select>
                 </div>
+                <div class="col-md-3">
+                    <label for="earlierTraining" class="form-label">Earlier Training <font color="red">*</font></label>
+                    <select formControlName="earlierTraining" class="form-control" required>
+                      <option value="yes">YES</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                <div class="col-md-3">
+                    <label for="remark" class="form-label">Remark</label>
+                    <input type="text" class="form-control" formControlName="remark" name="remark" placeholder="Please Enter Remark">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(100KB max size)</font></label>
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                    </div>
+                </div>
+
             </ng-container>
+
             <div class="col-12 text-center my-5">
                 <button type="submit" class="btn btn-primary">Sign in <i class="fa fa-user-plus" aria-hidden="true"></i></button>
             </div>
