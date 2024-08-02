@@ -39,6 +39,9 @@ export class LoginComponent  {
         } else if (resData.roleId == 1) {
           this.router.navigate(['adminDashboard']);
         }
+        else if (resData.roleId ==2){
+          this.router.navigate(['coordinator-dashboard']);
+        }
 
         this.loginService.emitLoginStatus(true);
       }

@@ -30,9 +30,9 @@ export class CoordinatorService {
   }
 
 
-  // deleteCordinator(id: number) {
-  //   const url = `constants.BASE_URL + 'Dashboard/delcoordinator/${id}`
-  //   return this.http.delete(url)
-  // }
+  deleteCordinator(id: number) {
+    const url = constants.BASE_URL + `Dashboard/delcoordinator/${id}`
+    return this.http.delete(url)
+  }
 
 }
