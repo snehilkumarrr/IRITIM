@@ -23,16 +23,19 @@ export class ViewCourseComponent implements OnInit {
     // console.log(id);
     this.router.navigate([`/Editcourse//${id}`]);
   }
-  // deleteCourse(id: any) {
-  //   console.log(id)
-  //   this.courseDetail.CourseDelete(id).subscribe((resData: any) => {
-  //     console.log(resData)
-  //     alert(resData.message)
-  //     window.location.reload();
-  //   })
-  // }
-  SechduleCoure() {
+   deleteCourse(id: any) {
+     console.log(id)
+     this.courseDetail.CourseDelete(id).subscribe((resData: any) => {
+       console.log(resData)
+       alert(resData.message)
+       window.location.reload();
+     })
+  }
+  SechduleCourse() {
     this.router.navigate(['ScheduleCourse'])
+  }
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
   }
 }
 

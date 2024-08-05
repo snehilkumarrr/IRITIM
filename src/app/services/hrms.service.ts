@@ -13,6 +13,6 @@ export class HrmsService {
   getEmp(data:any) {
 
     const url = constants.BASE_URL+`Dashboard/callHrmsId`
- return   this.http.post(url,{hrms_id:data})
+ return   this.http.post(url,{phrms_id:data})
   }
 }

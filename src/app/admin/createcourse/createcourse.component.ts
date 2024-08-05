@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CoursesService } from 'src/app/courses.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'createcourse',
@@ -22,7 +23,7 @@ export class CreatecourseComponent {
     file: new FormControl(null, Validators.required)
   });
 
-  constructor(private crcourse: CoursesService) { }
+  constructor(private crcourse: CoursesService,private router: Router) { }
 
   createCourseHandler() {
     if (this.createcourseform.valid && this.file) {
@@ -51,11 +52,14 @@ export class CreatecourseComponent {
     const fileSize = file.size;
     const fileMb = fileSize / 1024 / 1024; // Adjusted to calculate MB correctly
 
-    if (fileMb <= 2) {
+    if (fileMb <= 10) {
       this.file = file;
     } else {
-      alert('File size exceeds 2 MB');
+      alert('File size exceeds 10 MB');
       this.file = null;
     }
+  }
+  ViewCourseHandler() {
+    this.router.navigate(['ViewCourse'])
   }
 }

@@ -23,11 +23,15 @@ export class CoursesService {
     return this.http.post(url,data)
   }
 
-  // CourseDelete(id: number) {
-  //   const url = constants.BASE_URL + `Dashboard/deletecourse/${id}`
-  //   return this.http.delete(url)
-  // }
+   CourseDelete(id: number) {
+     const url = constants.BASE_URL + `Dashboard/deletecourse/${id}`
+    return this.http.delete(url)
+  }
 
+  ScheduledCourseDelete(id: number){
+    const url = constants.BASE_URL + `Dashboard/delete-course-schedule/${id}`
+    return this.http.delete(url)
+  }
 
   scheduleCourse(data: any) {
 
@@ -62,8 +66,3 @@ getAllappliedCourse(){
 
 
 }
-
-
-
-
-

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CoordinatorService } from 'src/app/services/coordinator.service';
 import Swal from 'sweetalert2'
 @Component({
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2'
 export class CreatecoordinatorComponent {
 
   Sucessmsg: any
-  constructor(private createCoordinator: CoordinatorService) {
+  constructor(private createCoordinator: CoordinatorService, private router: Router) {
   }
 
 
@@ -34,6 +35,10 @@ export class CreatecoordinatorComponent {
 
 
     })
+  }
+
+  ViewCoordinator() {
+    this.router.navigate(['ViewCoordinator'])
   }
 
 }

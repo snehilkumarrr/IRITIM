@@ -14,7 +14,6 @@ export class ScheduleCourseComponent {
   coordinator: any
   FacultyDetail: any
   ScheduleMSG: any
-
   constructor(private courseDetail: CoursesService, private CoordinatorDetail: CoordinatorService, private Faculty: FacultyService, private router: Router) {
     courseDetail.getCourse().subscribe((resData) => {
       // console.log(resData)
@@ -48,6 +47,9 @@ export class ScheduleCourseComponent {
     this.router.navigate(['ViewScheduleCourse'])
   }
 
+  ViewCourse() {
+    this.router.navigate(['ViewCourse'])
+  }
 
 
 

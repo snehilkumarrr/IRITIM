@@ -21,6 +21,10 @@ export class ViewFacultyComponent {
   createfaculty() {
     this.router.navigate(['CreateFaculty']);
   }
+
+  ViewAdminDashboard() {
+    this.router.navigate(['adminDashboard'])
+  }
   // deleteFaculty(id: number) {
   //   console.log(id)
   //   this.Faculty.facultydelete(id).subscribe((resData:any) => {

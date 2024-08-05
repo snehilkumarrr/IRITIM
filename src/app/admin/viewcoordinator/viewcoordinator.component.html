@@ -4,6 +4,7 @@
         <div>
             <button (click)="CreateCoordinator()" class=" btn btn-primary mt-5">Create Coordinator <i class="fa fa-pencil" aria-hidden="true"></i>
             </button>
+            <button (click)="ViewAdminDashboard()" class="btn btn-primary mt-5 mx-3">Back</button>
         </div>
         <table class="table border table-bordered my-5">
 
@@ -25,11 +26,10 @@
 
                     <td>
                         <button (click)=" EditCoordinator(item.id)" class="btn btn-success mx-3">Edit</button>
-                        <!-- <button (click)="deleteCoordinator(item.id )" class="btn btn-danger">Delete</button> -->
+                        <button (click)="deleteCoordinator(item.id )" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>
-        </table>
-
+        </table>   
     </div>
 </div>
