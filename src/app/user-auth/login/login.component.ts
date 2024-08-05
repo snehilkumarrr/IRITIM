@@ -33,6 +33,7 @@ export class LoginComponent  {
         localStorage.setItem('uname', resData.userfullname);
         localStorage.setItem('officertype', resData.officertype);
         localStorage.setItem('authID', resData.roleId);
+        localStorage.setItem('access_token', resData.token);
 
         if (resData.roleId == 4) {
           this.router.navigate(['userDashboard']);

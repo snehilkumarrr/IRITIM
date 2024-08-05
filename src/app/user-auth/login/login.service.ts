@@ -13,7 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   Login(data: any) {
-    const url = constants.BASE_URL + 'Dashboard/signin';
+    const url = constants.BASE_URL + 'Dashboard/login';
     return this.http.post(url, data);
   }
 

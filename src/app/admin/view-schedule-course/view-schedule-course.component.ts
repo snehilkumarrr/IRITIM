@@ -4,6 +4,7 @@ import * as constants from '../../Shared/constants';
 import { CoursesService } from 'src/app/courses.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Utils } from 'src/app/Shared/Utils';
 @Component({
   selector: 'app-view-schedule-course',
   templateUrl: './view-schedule-course.component.html',
@@ -14,7 +15,7 @@ export class ViewScheduleCourseComponent implements OnInit{
   scheduleDetail: any
 
   constructor(private courseDetail: CoursesService,private http: HttpClient,private router: Router) {
-    this.http.get(constants.BASE_URL + 'Dashboard/getall-course-schedule').subscribe((resData: any) => {
+    this.http.get(constants.BASE_URL + 'Dashboard/getall-course-schedule', { headers: Utils.getHeader() }).subscribe((resData: any) => {
       console.log(resData)
       this.scheduleDetail = resData
     })
