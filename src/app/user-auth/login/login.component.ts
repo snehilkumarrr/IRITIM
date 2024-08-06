@@ -33,11 +33,15 @@ export class LoginComponent  {
         localStorage.setItem('uname', resData.userfullname);
         localStorage.setItem('officertype', resData.officertype);
         localStorage.setItem('authID', resData.roleId);
+        localStorage.setItem('access_token', resData.token);
 
         if (resData.roleId == 4) {
           this.router.navigate(['userDashboard']);
         } else if (resData.roleId == 1) {
           this.router.navigate(['adminDashboard']);
+        }
+        else if (resData.roleId ==2){
+          this.router.navigate(['coordinator-dashboard']);
         }
 
         this.loginService.emitLoginStatus(true);
