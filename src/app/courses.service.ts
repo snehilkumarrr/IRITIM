@@ -16,7 +16,7 @@ export class CoursesService {
 
   createcourse(data: any) {
     const url = constants.BASE_URL + 'Dashboard/createcourse'
-    return this.http.post(url, data, { headers: Utils.getHeader() })
+    return this.http.post(url, data, { headers: Utils.getMultipartHeader() })
   }
 
   courseedit(id:number,data:any){
@@ -50,8 +50,8 @@ export class CoursesService {
 
 
   CourseApply(data:any) {
-    const url = constants.BASE_URL + 'Dashboard/updateEnrolledCourseByUser'
-    return this.http.put(url,data, { headers: Utils.getHeader() })
+    const url = constants.BASE_URL + 'Dashboard/saveAppliedCourse1'
+    return this.http.put(url,data, { headers: Utils.getMultipartHeader() })
   }
   UserAppliedCourse(id:any) {
     // console.log(id)
