@@ -29,7 +29,7 @@
 }
 
 /* Display the sub-dropdown when the parent li is hovered */
-.dropdown-submenu:hover .dropdown-menu {
+.dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
 
@@ -42,7 +42,6 @@
 
 .dropdown-item {
   display: block;
-  /* padding: 10px; */
   color: #000;
   text-decoration: none;
 }
@@ -68,9 +67,6 @@
     position: static;
     margin-top: 0;
   }
-  .dropdown-item {
-    /* padding: 8px; */
-  }
 }
 
 /* For medium screens (tablets) */
@@ -88,7 +84,7 @@
   .dropdown-submenu .dropdown-menu {
     display: none;
   }
-  .dropdown-submenu:hover .dropdown-menu {
+  .dropdown-submenu:hover > .dropdown-menu {
     display: block;
   }
 }
