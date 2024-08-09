@@ -192,6 +192,9 @@ import { AboutusIritmMapsComponent } from './AboutUS/aboutus-iritm-maps/aboutus-
 import { AboutusRtiComponent } from './AboutUS/aboutus-rti/aboutus-rti.component';
 import { KnowledgeCommercialComponent } from './knowledge-centre-nav-bar/knowledge-commercial/knowledge-commercial.component';
 import { CoordinatorDashboardComponent } from './admin/coordinator-dashboard/coordinator-dashboard.component';
+import { CoordinatorDashboardNewComponent } from './coordinator/coordinator-dashboard-new/coordinator-dashboard-new.component';
+import { CoordinatorAppliedCourseNewComponent } from './coordinator/coordinator-applied-course-new/coordinator-applied-course-new.component';
+import { CoordinatorAppliedCourseEditComponent } from './coordinator/coordinator-applied-course-edit/coordinator-applied-course-edit.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -394,11 +397,9 @@ const routes: Routes = [
   { path: 'aboutus-rti', component:AboutusRtiComponent},
   { path: 'knowledge-commercial', component:KnowledgeCommercialComponent},
   { path: 'coordinator-dashboard', component:CoordinatorDashboardComponent},
-
-
-
-
-
+  { path: 'coordinator-dashboard-new', component:CoordinatorDashboardNewComponent},
+  { path: 'coordinator-applied-course-new', component:CoordinatorAppliedCourseNewComponent},
+  { path: 'coordinator-applied-course-edit', component:CoordinatorAppliedCourseEditComponent},
 
 ];
 

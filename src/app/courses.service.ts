@@ -45,9 +45,11 @@ export class CoursesService {
     return this.http.get(url, { headers: Utils.getHeader() });
 
   }
-   
 
-
+  CoordinatorAppliedCourseEdit(data:any){
+    const url =constants.BASE_URL + `Dashboard/updateEnrolledCourseBycoordinator`
+    return this.http.put(url,data, { headers: Utils.getHeader() })
+  }
 
   CourseApply(data:any) {
     const url = constants.BASE_URL + 'Dashboard/saveAppliedCourse'
@@ -59,6 +61,14 @@ export class CoursesService {
     return this.http.get(url, { headers: Utils.getHeader() })
 
   }
+
+  CoordinatorAppliedCourse(id:any) {
+    // console.log(id)
+    const url = constants.BASE_URL + `Dashboard/getAppliedUserByCoordinator/${id}`
+    return this.http.get(url, { headers: Utils.getHeader() })
+
+  }
+  
 
 getAllappliedCourse(){
   const url = constants.BASE_URL + `Dashboard/getAppliedAllCourse`
