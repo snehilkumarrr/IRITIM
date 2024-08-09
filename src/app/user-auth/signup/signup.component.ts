@@ -87,6 +87,7 @@ selectedDepartment: string = '';
         otherGroupName: new FormControl(''),
         otherGradeName: new FormControl(''),
         otherDepartmentName: new FormControl(''),
+        file: new FormControl(null, Validators.required)
       })
     })
     // You can perform further actions with the value here
@@ -172,11 +173,13 @@ updateDepartments(): void {
       this.formData.append('dob', this.SignupForm.get('dob')?.value);
       this.formData.append('dateofappointment', this.SignupForm.get('dateofappointment')?.value);
 
-      this.formData.delete('group');
+      
 
       if(this.selectedGroup=='otherGroup'){
+        this.formData.delete('group');
         this.formData.append('group', this.SignupForm.get('otherGroupName')?.value);
       }else{
+        this.formData.delete('group');
         this.formData.append('group', this.SignupForm.get('group')?.value);
       }
 
@@ -188,11 +191,13 @@ updateDepartments(): void {
         this.formData.append('grade', this.SignupForm.get('grade')?.value);
       }
       
-      this.formData.delete('department');
+      
 
       if(this.selectedDepartment == 'Others'){
+        this.formData.delete('department');
         this.formData.append('department', this.SignupForm.get('otherDepartmentName')?.value);
       }else{
+        this.formData.delete('department');
         this.formData.append('department', this.SignupForm.get('department')?.value);
       }
       
@@ -229,8 +234,10 @@ updateDepartments(): void {
         
       })
     }else{
+
       alert('Form is invalid or file not selected');
     }
+
 
   }
 

@@ -9,11 +9,11 @@ export class Utils {
   }
 
   
-  // static getMultipartHeader(): HttpHeaders {
-  //   return new HttpHeaders()
-  //     .append("enctype", "multipart/form-data")
-  //     .append("Authorization", "Bearer " + localStorage.getItem("access_token"));
-  // }
+  static getMultipartHeader(): HttpHeaders {
+    return new HttpHeaders()
+      .append("enctype", "multipart/form-data")
+      .append("Authorization", "Bearer " + localStorage.getItem("access_token"));
+  }
 
   // static fetchDataFromResponse(response: any): any {
   //   return response.data.data;

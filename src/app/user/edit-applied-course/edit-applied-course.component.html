@@ -1,0 +1,38 @@
+
+<div class="container" style="margin-top:240px;height: 150vh;">
+  <h4 class="text-center">Edit Course</h4>
+  <div class="row mt-3">
+      <table class="table table-bordered">
+          <thead>
+              <tr class="table-primary">
+                  <th scope="col">Course Code</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Applied Date</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Co-ordinator Message</th>
+                  <th scope="col">Upload Photo</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr >
+                  <td>{{appliescourse.coursecode}}</td>
+                  <td>{{appliescourse.coursename}}</td>
+                  <td>{{appliescourse.appileddate |date}}</td>
+                  <td>{{appliescourse.duration}}</td>
+                  <td>{{appliescourse.status}}</td>
+                  <td>{{appliescourse.coordinatorMsg}}</td>
+                  <td>      
+                      <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                  </td>
+
+              </tr>
+          </tbody>
+      </table>
+      <div class="col-md-3 mt-4 ">
+        <button class="btn btn-primary" (click)="editApply()">Submit</button>
+    </div>
+  </div>
+
+
+</div>

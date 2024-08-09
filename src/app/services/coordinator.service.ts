@@ -20,7 +20,7 @@ export class CoordinatorService {
   }
 
   getSingleCoordinator(id: number) {
-    const url = constants.BASE_URL + `Dashboard/getcoordinator/${id}`
+    const url = constants.BASE_URL + `Dashboard/getcoordinatorwithid/${id}`
     return this.http.get(url, { headers: Utils.getHeader() })
 
   }

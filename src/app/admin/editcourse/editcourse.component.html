@@ -16,6 +16,10 @@
 
             </div>
 
+            <div class="col-md-12 mt-3">   
+                    <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+            </div>
+
         </div>
         <div class="row mt-3">
             <div class="col-12  text-center">

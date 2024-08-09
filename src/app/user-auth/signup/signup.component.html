@@ -4,7 +4,7 @@
         <form [formGroup]="SignupForm" (ngSubmit)="signupHandler()" class="row g-3">
             <div class="col-md-3 ">
                 <label for="employeeType" class="form-label">Employee Type</label>
-                <select name="emptype" class="form-select" id="employeeType" (change)="EmployeeTypeHandler($event)" required>
+                <select name="emptype" class="form-select" formControlName="employeeType" id="employeeType" (change)="EmployeeTypeHandler($event)" required>
                     <option selected>Please Select Option</option>
                     <option value="Railways">Railways</option>
                     <option value="Non Railways">Non Railways</option>
@@ -242,10 +242,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 mt-4">
-                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(100KB max size)</font></label>
+                        <label for="Photo" class="form-label">Upload Passport Size Photo<font color="red">*(100KB max size) Only JPG Files are allowed</font></label>
                     </div>
                     <div class="col-md-4 mt-4">
-                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg,application/pdf">
+                        <input formControlName="file" type="file" #fileInput (change)="onFileSelected($event)" accept=".jpg,.jpeg">
                     </div>
                 </div>
 
