@@ -21,7 +21,7 @@ export class FacultyService {
     return this.http.put(constants.BASE_URL + `Dashboard/editFaculty/${id}`, data, { headers: Utils.getHeader() })
   }
   getFacultywithId(id: number) {
-    return this.http.get(constants.BASE_URL + `Dashboard/getFaculty/${id}`, { headers: Utils.getHeader() })
+    return this.http.get(constants.BASE_URL + `Dashboard/getFacultywithid/${id}`, { headers: Utils.getHeader() })
   }
   // facultydelete(id: any) {
   //   return this.http.delete(`constants.BASE_URL + 'Dashboard/delfaculty/${id}`)
