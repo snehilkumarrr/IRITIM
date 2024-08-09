@@ -195,6 +195,7 @@ import { CoordinatorDashboardComponent } from './admin/coordinator-dashboard/coo
 import { CoordinatorDashboardNewComponent } from './coordinator/coordinator-dashboard-new/coordinator-dashboard-new.component';
 import { CoordinatorAppliedCourseNewComponent } from './coordinator/coordinator-applied-course-new/coordinator-applied-course-new.component';
 import { CoordinatorAppliedCourseEditComponent } from './coordinator/coordinator-applied-course-edit/coordinator-applied-course-edit.component';
+import { EditAppliedCourseComponent } from './user/edit-applied-course/edit-applied-course.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: SignupComponent },
@@ -400,6 +401,11 @@ const routes: Routes = [
   { path: 'coordinator-dashboard-new', component:CoordinatorDashboardNewComponent},
   { path: 'coordinator-applied-course-new', component:CoordinatorAppliedCourseNewComponent},
   { path: 'coordinator-applied-course-edit', component:CoordinatorAppliedCourseEditComponent},
+  { path: 'editAppliedCourse', component:EditAppliedCourseComponent},
+
+
+
+
 
 ];
 

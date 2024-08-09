@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditAppliedCourseComponent } from './edit-applied-course/edit-applied-course.component';
 @NgModule({
   declarations: [
     UserDashboardComponent,
@@ -18,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BooksComponent,
     HostelComponent,
     FeedbackComponent,
+    EditAppliedCourseComponent,
     
   ],
   imports: [
