@@ -1,0 +1,42 @@
+<app-loader [loading]="loading"></app-loader>
+<div class="container" style="margin-top: 190px; height: 150vh;">
+  <div class="row">
+      <h1 class="text-center my-2">Applied Course</h1>
+
+      <table class="table border table-bordered mt-2 " style="width:100%;">
+          <thead class="table-primary">
+              <tr class="source-serif-heading">
+                  <th scope="col">S.No</th>
+                  <th scope="col">Course Code</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Applied Date</th>
+                  <th scope="col-1">User Id</th>
+                  <th scope="col-1">Status</th>
+                  <th scope="col-1">Coordinator Message</th>
+                  <th scope="col-1">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let appliescourse of coordinatorcourses; let i = index">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ appliescourse.coursecode }}</td>
+                  <td>{{ appliescourse.coursename }}</td>
+                  <td>{{ appliescourse.appileddate }}</td>
+                  <td>{{ appliescourse.userid }}</td>
+                  <td>
+                    <select [(ngModel)]="appliescourse.status">
+                      <option value="1">Accept</option>
+                      <option value="0">Pending</option>
+                      <option value="2">Cancel</option>
+                      <option value="3">Reject</option>
+                    </select>
+                  </td>
+                  <td><input type="text" [(ngModel)]="appliescourse.coordinatorMsg" class="form-control"/></td>
+                  <td>
+                    <button (click)="editApplyCourse(appliescourse)" class="btn btn-primary">Edit Course</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

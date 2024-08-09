@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'coordinator-dashboard',
-  templateUrl: './coordinator-dashboard.component.html',
-  styleUrls: ['./coordinator-dashboard.component.css']
+  selector: 'coordinator-dashboard-new',
+  templateUrl: './coordinator-dashboard-new.component.html',
+  styleUrls: ['./coordinator-dashboard-new.component.css']
 })
-export class CoordinatorDashboardComponent {
+export class CoordinatorDashboardNewComponent {
   username = localStorage.getItem('uname')
   constructor(private router: Router) { }
   createCourses() {
@@ -32,7 +32,7 @@ export class CoordinatorDashboardComponent {
     this.router.navigate(['ViewFaculty'])
   }
   ViewAppliedCourse(){
-    this.router.navigate(['AppliedCourse'])
+    this.router.navigate(['coordinator-applied-course-new'])
   }
   hostelManagement(){
     this.router.navigate(['HostelManagement'])

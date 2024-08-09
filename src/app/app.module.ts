@@ -189,6 +189,10 @@ import { CommonContentComponent } from './common-content/common-content.componen
 import { AboutusIritmMapsComponent } from './AboutUS/aboutus-iritm-maps/aboutus-iritm-maps.component';
 import { AboutusRtiComponent } from './AboutUS/aboutus-rti/aboutus-rti.component';
 import { KnowledgeCommercialComponent } from './knowledge-centre-nav-bar/knowledge-commercial/knowledge-commercial.component';
+import { CoordinatorDashboardNewComponent } from './coordinator/coordinator-dashboard-new/coordinator-dashboard-new.component';
+import { CoordinatorAppliedCourseNewComponent } from './coordinator/coordinator-applied-course-new/coordinator-applied-course-new.component';
+import { CoordinatorAppliedCourseEditComponent } from './coordinator/coordinator-applied-course-edit/coordinator-applied-course-edit.component';
+import { LoaderComponent } from './loader/loader.component';
 // register Swiper custom elements
 register();
 
@@ -369,6 +373,10 @@ register();
     AboutusIritmMapsComponent,
     AboutusRtiComponent,
     KnowledgeCommercialComponent,
+    CoordinatorDashboardNewComponent,
+    CoordinatorAppliedCourseNewComponent,
+    CoordinatorAppliedCourseEditComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
